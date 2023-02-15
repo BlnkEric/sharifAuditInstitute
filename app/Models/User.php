@@ -41,4 +41,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
+    public function proposals(){
+        return $this->hasMany(Proposal::class);
+    }
+
+    public function reports(){
+        return $this->hasMany(Report::class);
+    }
+
+    public function image() {
+        return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function scopeMostActiveUsers(Builder $query) {
+        return $query->withCount('proposals')->orderBy('propsal_count', 'DESC');
+    }
+
+    // public function scopeAdminUsers(Builder $query) {
+    //         return $query->where('is_admin', true);
+    // }
+
 }
