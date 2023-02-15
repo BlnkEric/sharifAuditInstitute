@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class UserFactory extends Factory
@@ -33,6 +34,18 @@ class UserFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    public function admin_user() {
+        return $this->state(function() {
+            return [
+                'name' => 'admin',
+                'email' => 'admin@admin.com',
+                'password' => Hash::make('12345678'),
+                'is_admin' => true,
+                'phone' => '123456789',
             ];
         });
     }
