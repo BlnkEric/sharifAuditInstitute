@@ -18,6 +18,10 @@ class CreateServiceUserTable extends Migration
             $table->foreignId('service_id')->constrained()->onDelete('CASCADE');
             $table->foreignId('user_id')->constrained()->onDelete('CASCADE');
 
+<<<<<<< HEAD
+=======
+            $table->string('contract_path');
+>>>>>>> 1f415a796416bfc2da95012fbb897de758a422d3
             $table->timestamps();
         });
     }
