@@ -6,22 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-class Image extends Model
+class DescriptionImage extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
-        'path'
+        'path',
     ];
 
-    public function imageable() {
-        return $this->morphTo();
+    public function descriptionImageable() {
+        return $this->morphTo('dimageable');
     }
 
-    protected static function boot() {
+    protected static function boot()
+    {
         parent::boot();
-
-        static::deleting(function($image) {
+        DescriptionImage::deleting(function($image) {
             Storage::delete($image->path);
         });
     }

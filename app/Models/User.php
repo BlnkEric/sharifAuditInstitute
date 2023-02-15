@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'approved_client'
     ];
 
     /**
@@ -61,7 +62,7 @@ class User extends Authenticatable
     }
 
     public function scopeMostActiveUsers(Builder $query) {
-        return $query->withCount('proposals')->orderBy('propsal_count', 'DESC');
+        return $query->withCount('proposals')->orderBy('proposal_count', 'DESC');
     }
 
     // public function scopeAdminUsers(Builder $query) {

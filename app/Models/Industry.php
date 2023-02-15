@@ -11,7 +11,7 @@ class Industry extends Model
 
     
     protected $fillable = [
-        'naem', 'description'
+        'name', 'description'
     ];
 
     public function articles() {
@@ -21,10 +21,4 @@ class Industry extends Model
     public function proposals() {
         return $this->hasMany(Proposal::class);
     }
-
-    // public function products() {
-    //     return $this->belongsToMany(Product::class)->as('attribute_product')
-    //                                                ->withPivot(['stock', 'price']);
-    // }
-
 }

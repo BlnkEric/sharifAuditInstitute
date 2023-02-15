@@ -19,11 +19,10 @@ class CreateProposalsTable extends Migration
             $table->string('company_name');
             $table->string('email')->unique();
             $table->text('description');
-
+            $table->string('file_path');
             $table->foreignId('user_id')->constrained()->onDelete('CASCADE');
             $table->foreignId('industry_id')->constrained()->onDelete('CASCADE');
             $table->foreignId('service_id')->constrained()->onDelete('CASCADE');
-
             $table->timestamps();
         });
     }
