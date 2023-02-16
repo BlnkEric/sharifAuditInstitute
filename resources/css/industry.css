@@ -1,0 +1,30 @@
+.industryItemsContainer {
+    position: relative;
+    top: -10%;
+}
+.industryItemsContainer .container {
+    background-color: orange;
+    padding: 35px;
+}
+.industryItemsContainer .container .row {
+    direction: rtl;
+}
+/* Important */
+.industryItemsContainer .container .row div section {
+    padding: 20px;
+    margin: 20px;
+    background: red;
+    transition: 1s linear;
+    color: white;
+    background-size: cover;
+}
+.industryItemsContainer .container .row div section:hover {
+    border: 1px solid blue;
+}
+.industryItemsContainer .container .row div div h1 {
+    margin-right: 10px;
+    display: inline;
+}
+.industryItemsContainer .container .row div section p {
+    margin-top: 10px;
+}

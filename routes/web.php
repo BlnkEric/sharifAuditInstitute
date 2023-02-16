@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('realHome');
 });
 
-Route::get('/temp-page', function() {
-    return view('temp');
+Route::get('/account', function () {
+    return view('account');
+});
+
+Route::get('/industry', function () {
+    return view('industry');
 });
 
 Auth::routes();

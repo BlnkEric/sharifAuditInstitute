@@ -1,0 +1,31 @@
+.footerContainer .container .row {
+    direction: rtl;
+}
+.footerContainer {
+    background-color: green;
+}
+.footerContainer .container .row div:first-child section h1 {
+    padding: 0.3rem 0rem 0.3rem 0.3rem;
+}
+.footerContainer .container .row div:first-child section button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+    border-radius: 8px;
+}
+.footerContainer .container .row div:first-child section ul {
+    overflow: hidden;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+.footerContainer .container .row div:first-child section ul li {
+    float: right;
+    margin-right: 1rem;
+}
+.footerContainer .container .row div:first-child section ul li:first-child {
+    margin-right: 0 !important;
+}
+.footerContainer .container .row:nth-child(2) div:last-child section ul li {
+    margin-top: 10px;
+}

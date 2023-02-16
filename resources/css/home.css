@@ -1,0 +1,107 @@
+@media screen and (max-width: 753px) {
+    .faqContainer .container .row:nth-child(3) section {
+        width: 100% !important;
+        background-color: blue;
+        margin: 0 auto;
+    }
+}
+.faqContainer .container .row:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.faqContainer .container .row:nth-child(2) h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.faqContainer .container .row:nth-child(3) section {
+    width: 70%;
+    background-color: blue;
+    margin: 0 auto;
+}
+/* Accordion */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+.accordion span{
+    float: right;
+    transition: 0.3s linear;
+}
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+.panel {
+    background-color: white;
+    max-height: 0;
+    padding: 0 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.rotateTheAccordionArrow {
+    rotate: 90deg;
+}
+
+/* SliderLOOP */
+.slider {
+    height: 250px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.slide-track {
+    display: flex;
+    /* slide track width = total number of slides 9*2 = 18 * individual width (250px) */
+    width: calc(var(--eachSliderLoopWidth) * 18);
+    background-color: red;
+    animation: scroll 20S linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(calc(var(--eachSliderLoopWidth) *9 * -1))
+    }
+}
+.slide {
+    height: auto;
+    width: var(--eachSliderLoopWidth);
+    display: flex;
+    align-items: center;
+    padding: 35px;
+    perspective: 100px;
+    font-size: 2rem;
+}
+
+/* HeroBoxMain */
+.mainHeroBoxContainer {
+    width: 100%;
+    height:500px;
+    background-color: green;
+}
+
