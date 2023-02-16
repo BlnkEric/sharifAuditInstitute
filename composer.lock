@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80cbd5dfc0d8fe03e7736fdb6241a567",
+    "content-hash": "a232b57caf64e0489cc2247f896d2ddd",
     "packages": [
         {
             "name": "abolfazl-talebi/laravel6-persian-lang",
