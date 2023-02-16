@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('realHome');
+});
+
+Route::get('/temp-page', function() {
+    return view('temp');
 });
 
 Auth::routes();
