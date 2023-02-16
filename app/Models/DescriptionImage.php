@@ -18,6 +18,10 @@ class DescriptionImage extends Model
         return $this->morphTo('dimageable');
     }
 
+    public function url() {
+        return Storage::url($this->path);
+    }
+
     protected static function boot()
     {
         parent::boot();

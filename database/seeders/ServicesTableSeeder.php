@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
 use App\Models\Service;
 use Illuminate\Database\Seeder;
 
@@ -26,6 +27,9 @@ class ServicesTableSeeder extends Seeder
         foreach($services as $service) {
             $service->name = $names[$i++];
             $service->save();
+            $service->image()->save(Image::make([
+                'path' => 'seed'
+            ]));
         }
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'articles')
+@section('title', 'مدیریت صنایع')
 
 @section('content')
     <div class="container">
@@ -16,7 +16,7 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <input class="form-control" type="search" name="search"
-                                        placeholder="Search in articles">
+                                        placeholder="Search in industries">
                                 </div>
                                 <div class="col-md-4">
                                     <button class="btn btn-secondary">
@@ -30,8 +30,6 @@
                 @include('admin.industries._table')
             </div>
         </div>
-
-    </div>
     </div>
 
 
