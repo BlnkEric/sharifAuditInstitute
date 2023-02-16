@@ -14,7 +14,11 @@ class ProposalFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'company_name' => $this->faker->name(),
+            'email' => $this->faker->email(),
+            'description' => $this->faker->text(),
+            'file_path' => 'seed',
         ];
     }
 }

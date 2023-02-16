@@ -11,17 +11,21 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable = [
-        'path'
+        'path',
     ];
 
     public function imageable() {
         return $this->morphTo();
     }
 
+    public function url() {
+        return Storage::url($this->path);
+    }
+
     protected static function boot() {
         parent::boot();
 
-        static::deleting(function($image) {
+        Image::deleting(function($image) {
             Storage::delete($image->path);
         });
     }

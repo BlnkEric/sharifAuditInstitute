@@ -21,3 +21,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard')->middleware('is_admin');
+
+Route::get('/industries', [App\Http\Controllers\IndustryController::class, 'index'])->name('front.industries');
+Route::prefix('admin')->group(function() {
+    Route::resource('industries', App\Http\Controllers\Admin\IndustryController::class, [
+        'as' => 'admin'
+    ])->middleware('auth', 'is_admin');
+});
