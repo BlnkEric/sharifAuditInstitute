@@ -13,9 +13,9 @@
     </thead>
     <tbody style="vertical-align: middle;">
 
-    @forelse ($industries as $industry)
+    @forelse ($industries as $key => $industry)
     <tr>
-        <th scope="row">{{ $loop->iteration }}</th>
+        <th scope="row">{{ $industries->firstItem() + $key }}</th>
         <td>{{ $industry->slug }}</td>
         <td>{{ $industry->name }}</td>
         <td>{{ Str::limit($industry->description, 40, $end='...') }}</td>
