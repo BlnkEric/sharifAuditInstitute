@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             IndustriesTableSeeder::class,
             ServicesTableSeeder::class,
             ProposalsTableSeeder::class,
+            ArticlesTableSeeder::class
         ]);
     }
 }

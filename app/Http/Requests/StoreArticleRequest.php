@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CustomSlug;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreArticleRequest extends FormRequest
@@ -13,7 +14,7 @@ class StoreArticleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,10 @@ class StoreArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:60',
+            'slug' => new CustomSlug('articles'),
+            'description' => 'required',
+            'image' => 'required|image|mimes:png,jpeg,gif,png,svg'
         ];
     }
 }

@@ -10,8 +10,13 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["title", "description", "industry_id", "service_id"];
+    protected $fillable = ["name", "slug", "description", "industry_id", "service_id"];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    
     public function service() {
         return $this->belongsTo(Service::class);
     }
@@ -36,5 +41,13 @@ class Article extends Model
     public static function boot(){
         // static::addGlobalScope(new DeletedAdminScope);
         parent::boot();
+
+        Article::deleting(function($article) {
+            $article->image->delete();
+            $descriptionImages = $article->descriptionImages;
+            foreach($descriptionImages as $dImages) {
+                $dImages->delete();
+            }
+        });
     }
 }

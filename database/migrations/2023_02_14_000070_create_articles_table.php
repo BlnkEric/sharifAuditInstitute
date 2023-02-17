@@ -15,12 +15,11 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->string('name');
+            $table->string('slug')->unique();
             $table->text('description');
-
             $table->foreignId('industry_id')->nullable()->constrained()->onDelete('CASCADE');
             $table->foreignId('service_id')->nullable()->constrained()->onDelete('CASCADE');
-
             $table->timestamps();
         });
     }

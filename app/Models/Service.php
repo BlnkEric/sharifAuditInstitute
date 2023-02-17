@@ -42,6 +42,10 @@ class Service extends Model
 
         static::deleting(function($service) {
             $service->image->delete();
+            $descriptionImages = $service->descriptionImages;
+            foreach($descriptionImages as $dImages) {
+                $dImages->delete();
+            }
         });
     }
 

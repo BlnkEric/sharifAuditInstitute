@@ -10,4 +10,6 @@ class Staff extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'phone', 'email', 'role', 'service_id'];
+
+    
 }

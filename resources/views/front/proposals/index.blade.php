@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>درخواست های خدمات</h1>
+        <h1>درخواست های خدمات ارسال شده توسط شما</h1>
 
         <div class="row">
             @foreach ($proposals as $proposal)

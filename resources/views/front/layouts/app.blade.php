@@ -70,6 +70,18 @@
                                 </div>
                             </li>
                         @endguest
+                        <li class="nav-item">
+                            <a href="{{ route('services.index') }}" class="nav-link">خدمات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('proposals.index') }}" class="nav-link">پروپوزال‌های شما</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('industries.index') }}" class="nav-link">صنایع</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('articles.index') }}" class="nav-link">مقالات</a>
+                        </li>
                     </ul>
                 </div>
             </div>
