@@ -9,7 +9,7 @@ class Proposal extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','slug', 'company_name', 'email', 'description', 'file_path', 'user_id', 'industry_id', 'service_id'];
+    protected $fillable = ['name','slug', 'company_name', 'email', 'description', 'user_id', 'industry_id', 'service_id'];
 
     public function getRouteKeyName()
     {

@@ -35,8 +35,6 @@ class UserProposalController extends Controller
     {
         $industries = Industry::all();
         $services = Service::all();
-        // $proposals = Proposal::paginate(10);
-
         return view('front.proposals.create', compact('industries', 'services'));
     }
 
@@ -50,12 +48,9 @@ class UserProposalController extends Controller
     {
         $request->merge([
             'slug' => $this->make_slug($request),
-            'file_path' => $request->has('file_path') == false ? 'null' : $request->file_path
-
+            'user_id' => Auth::user()->id
         ]);
-
-        $proposal = Proposal::create($request->all());
-
+        Proposal::create($request->all());
         return redirect(route('proposals.index'))->with('success', 'درخواست خدمات جدید با موفقیت ثبت شد!');
     }
 
@@ -80,10 +75,7 @@ class UserProposalController extends Controller
     {
         $industries = Industry::all();
         $services = Service::all();
-        // $proposals = Proposal::paginate(10);
-
         return view('front.proposals.edit', compact('proposal', 'industries', 'services'));
-        // return view('front.proposals.edit', compact('proposal'));
     }
 
     /**
@@ -99,7 +91,6 @@ class UserProposalController extends Controller
             'slug' => $this->make_slug($request)
         ]);
         $proposal->update($request->all());
-
         return redirect(route('proposals.index'))->with('success', "درخواست خدمات شما با نام: $proposal->name با موفقیت ویرایش شد");
     }
 

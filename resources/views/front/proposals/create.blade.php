@@ -14,8 +14,6 @@
         <div class="row">
             <form class="bg-dark text-white" action="{{ route('proposals.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                {{-- {{ Form::hidden('user_id', {{ Auth::user()->name }}, array('id' => 'user_id')) }} --}}
-                <input id="user_id" name="user_id" type="hidden" value="{{ Auth::user()->id }}">
                 <div class="form-group">
                     <label for="name">نام:</label>
                     <input type="text" id="name" name="name"
@@ -57,57 +55,43 @@
                     </span>
                 </div>
 
-                <br style="clear: left;" />
-
-                <div style="width: 500px;">
-                    <div style="float: left; width: 200px;">                            
-                        <select name="industry_id" class="form-control @error('industry_id') is-invalid @enderror">
-                            <option value="null">انتخاب کنید</option>
-                            @foreach ($industries as $key => $industry)
-                                <option value="{{ $industry->id }}"
-                                @if ($industry->id == old('industry_id'))
-                                    selected="selected"
-                                @endif
-                                >{{ $industry->name }}</option>
-                            @endforeach
-                        </select>
-                        <span class="invalid-feedback" role="alert">
-                            @error('industry_id')
-                                <strong>{{ $message }}</strong>
-                            @enderror
-                        </span>
-                    </div>
-                    <div style="float: left; width: 100px;">
-                        <select name="service_id" class="form-control @error('service_id') is-invalid @enderror">
-                            <option value="null">انتخاب کنید</option>
-                            @foreach ($services as $key => $service)
-                                <option value="{{ $service->id }}"
-                                @if ($service->id == old('service_id'))
-                                    selected="selected"
-                                @endif
-                                >{{ $service->name }}</option>
-                            @endforeach
-                        </select>
-                        <span class="invalid-feedback" role="alert">
-                            @error('service_id')
-                                <strong>{{ $message }}</strong>
-                            @enderror
-                        </span>
-                    </div>
-                    <div style="float: left; width: 200px;">
-                    
-                            <input type="file" class="form-control"
-                                id="file_path" name="file_path"
-                                accept="image/png, image/jpeg">
-                            
-                    </div>
-                    <br style="clear: left;" />
+                <div class="form-group">
+                    <label for="industry_id">صنعت:</label>
+                    <select name="industry_id" class="form-control @error('industry_id') is-invalid @enderror">
+                        <option value="">انتخاب کنید</option>
+                        @foreach ($industries as $key => $industry)
+                            <option value="{{ $industry->id }}" {{ old('industry_id') == $industry->id ? 'selected' : '' }}>
+                                {{ $industry->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <span class="invalid-feedback" role="alert">
+                        @error('industry_id')
+                            <strong>{{ $message }}</strong>
+                        @enderror
+                    </span>
                 </div>
 
+                <div class="form-group">
+                    <label for="industry_id">خدمت مورد درخواست:</label>
+                    <select name="service_id" class="form-control @error('service_id') is-invalid @enderror">
+                        <option value="">انتخاب کنید</option>
+                        @foreach ($services as $key => $service)
+                            <option value="{{ $service->id }}" {{ $service->id == old('service_id') ? 'selected' : '' }}>
+                                {{ $service->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <span class="invalid-feedback" role="alert">
+                        @error('service_id')
+                            <strong>{{ $message }}</strong>
+                        @enderror
+                    </span>
+                </div>
 
                 <div class="form-group">
                     <label for="description">توضیحات:</label>
-                    <textarea id="editor" name="description" cols="30" rows="10"
+                    <textarea name="description" cols="30" rows="10"
                         class="text-dark @error('description') is-invalid @enderror">{{old('description')}}</textarea>
                     <span class="invalid-feedback" role="alert">
                         @error('description')
@@ -123,7 +107,4 @@
         </div>
     </div>
 
-    {{-- <input type="hidden" value="{{ route('upload.service.image.create', ['_token' => csrf_token()]) }}" id="upload_url"> --}}
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/super-build/ckeditor.js"></script>
-    <script type="module" src="{{ asset('js/ckeditor.js') }}"></script>
 @endsection

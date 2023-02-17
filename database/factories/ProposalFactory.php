@@ -18,7 +18,6 @@ class ProposalFactory extends Factory
             'company_name' => $this->faker->name(),
             'email' => $this->faker->email(),
             'description' => $this->faker->text(),
-            'file_path' => 'seed',
         ];
     }
 }

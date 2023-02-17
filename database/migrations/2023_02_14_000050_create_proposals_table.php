@@ -20,7 +20,6 @@ class CreateProposalsTable extends Migration
             $table->string('company_name')->nullable();
             $table->string('email')->unique();
             $table->text('description');
-            $table->string('file_path')->default("null");
             $table->foreignId('user_id')->constrained()->onDelete('CASCADE');
             $table->foreignId('industry_id')->constrained()->onDelete('CASCADE');
             $table->foreignId('service_id')->constrained()->onDelete('CASCADE');

@@ -24,18 +24,25 @@ class StoreProposalRequest extends FormRequest
      */
     public function rules()
     {
-        // dd($this->service_id);
         return [
             'name' => 'required|max:60',
             //class should be add after merge !!
             'slug' => new CustomSlug('proposals'),
             'company_name' => 'nullable',
-            'file_path' => 'nullable',
             'email' => 'required',
-            'user_id' => 'required|exists:users,id',
             'industry_id' => 'required|exists:industries,id',
             'service_id' => 'required|exists:services,id',
             'description' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'industry_id.required' => 'انتخاب بخش صنعت الزامی است.',
+            'industry_id.exists' => 'لطفاً یک صنعت معتبر را انتخاب نمایید.',
+            'service_id.required' => 'انتخاب بخش خدمت الزامی است.',
+            'service_id.exists' => 'لطفاً یک خدمت معتبر را انتخاب نمایید.',
         ];
     }
 }

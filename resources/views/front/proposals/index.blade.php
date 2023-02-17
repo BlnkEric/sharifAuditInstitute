@@ -24,10 +24,10 @@
                         @auth
                         {{-- @can('update', $proposal) --}}
                         <div style="display: flex;">
-                            <a href=" {{ route('proposals.edit', ['proposal' => $proposal->slug]) }} " class="btn btn-secondary btn-sm">
+                            <a href=" {{ route('proposals.edit', $proposal->slug) }} " class="btn btn-secondary btn-sm">
                                 edit
                             </a>
-                            <form action="{{ route('proposals.destroy', ['proposal' => $proposal->slug]) }}" method="post" class="fm-inline">
+                            <form action="{{ route('proposals.destroy', $proposal->slug) }}" method="post" class="fm-inline">
                                 @csrf
                                 @method('DELETE')
                                 {{-- <button type="submit">Delete</button> --}}
