@@ -1,4 +1,4 @@
-<table class="table table-striped mt-3 text-center" style="border-color: black;" border="1px;">
+<table class="table table-striped mt-3 text-center table-hover" style="border-color: black;" border="1px;">
     <thead>
     <tr>
         <th>#</th>
@@ -14,7 +14,7 @@
     <tbody style="vertical-align: middle;">
 
     @forelse ($services as $key => $service)
-    <tr>
+    <tr onclick="window.location='{{ route('services.show', $service->slug) }}'" style="cursor: pointer;">
         <th scope="row">{{ $services->firstItem() + $key }}</th>
         <td>{{ $service->slug }}</td>
         <td>{{ $service->name }}</td>

@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\AttachDescriptionImage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
     use HasFactory;
+    use AttachDescriptionImage;
 
     protected $fillable = ['name', 'description', 'slug'];
 
@@ -36,7 +38,7 @@ class Service extends Model
         parent::boot();
 
         Service::created(function($service) {
-            self::findImagesInDescriptionAndAttach($service);
+            AttachDescriptionImage::findAndAttach($service);
         });
 
 
@@ -47,26 +49,5 @@ class Service extends Model
                 $dImages->delete();
             }
         });
-    }
-
-    private static function findImagesInDescriptionAndAttach($service) {
-        preg_match_all('/<img.*?src=["\'](.*?)["\'].*?>/', $service->description, $matches);
-        $sources = $matches[1];
-        foreach($sources as $src) {
-            $pathForDB = self::buildPathForDB($src);
-            $service->descriptionImages()->save(DescriptionImage::make(["path"=>$pathForDB]));
-        }
-    }
-    private static function buildPathForDB($src) {
-        $pathForDB = "";
-        $srcArraySeparatedBySlash = explode("/", $src);
-        if (!self::isSourceFromOutsideURL($srcArraySeparatedBySlash)) {
-            $pathForDB = "public/" . $srcArraySeparatedBySlash[2] . "/" .  $srcArraySeparatedBySlash[3];
-        }
-        return $pathForDB;
-    }
-
-    public static function isSourceFromOutsideURL($src) {
-        return $src[1] != "storage";
     }
 }

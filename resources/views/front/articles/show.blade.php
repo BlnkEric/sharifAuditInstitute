@@ -24,7 +24,7 @@
     </style>
     <div class="container">
         <div class="card mb-3">
-            <img src="{{ $article->image->path == 'seed' ? 'https://picsum.photos/800/400' : $article->image->path }}"
+            <img src="{{ $article->image->path == 'seed' ? 'https://picsum.photos/800/400' : $article->image->url() }}"
                 class="card-img-top" alt="{{ $article->name }}">
             <div class="card-body">
                 <h1 class="card-title">{{ $article->name }}</h1>

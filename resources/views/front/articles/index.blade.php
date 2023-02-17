@@ -11,7 +11,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="{{ route('articles.show', $article->slug) }}" class="card-link text-decoration-none text-dark">
                         <div class="card">
-                            <img src="{{ $article->image->path == 'seed' ? 'https://picsum.photos/200/300' : $article->image->path }}"
+                            <img src="{{ $article->image->path == 'seed' ? 'https://picsum.photos/200/300' : $article->image->url() }}"
                                 class="card-img-top" alt="{{ $article->title }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $article->title }}</h5>

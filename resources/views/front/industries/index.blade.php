@@ -8,7 +8,7 @@
             @foreach ($industries as $industry)
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="{{ $industry->image->path == 'seed' ? 'https://picsum.photos/200/300' : $industry->image->path }}"
+                        <img src="{{ $industry->image->path == 'seed' ? 'https://picsum.photos/200/300' : $industry->image->url() }}"
                             class="card-img-top" alt="{{ $industry->name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $industry->name }}</h5>

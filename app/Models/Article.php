@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\AttachDescriptionImage;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+    use AttachDescriptionImage;
 
     protected $fillable = ["name", "slug", "description", "industry_id", "service_id"];
 
@@ -42,7 +44,7 @@ class Article extends Model
         parent::boot();
 
         Article::created(function($article) {
-            self::findImagesInDescriptionAndAttach($article);
+            AttachDescriptionImage::findAndAttach($article);
         });
 
         Article::deleting(function($article) {
@@ -52,26 +54,5 @@ class Article extends Model
                 $dImages->delete();
             }
         });
-    }
-
-    private static function findImagesInDescriptionAndAttach($article) {
-        preg_match_all('/<img.*?src=["\'](.*?)["\'].*?>/', $article->description, $matches);
-        $sources = $matches[1];
-        foreach($sources as $src) {
-            $pathForDB = self::buildPathForDB($src);
-            $article->descriptionImages()->save(DescriptionImage::make(["path"=>$pathForDB]));
-        }
-    }
-    private static function buildPathForDB($src) {
-        $pathForDB = "";
-        $srcArraySeparatedBySlash = explode("/", $src);
-        if (!self::isSourceFromOutsideURL($srcArraySeparatedBySlash)) {
-            $pathForDB = "public/" . $srcArraySeparatedBySlash[2] . "/" .  $srcArraySeparatedBySlash[3];
-        }
-        return $pathForDB;
-    }
-
-    public static function isSourceFromOutsideURL($src) {
-        return $src[1] != "storage";
     }
 }
