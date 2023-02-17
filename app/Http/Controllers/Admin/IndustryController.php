@@ -45,6 +45,7 @@ class IndustryController extends Controller
         $request->merge([
             'slug' => $this->make_slug($request)
         ]);
+        dd($request->all());
         $industry = Industry::create($request->all());
         $imagePath = $request->file('image')->store('public/industry_images');
         $industry->image()->save(Image::make([

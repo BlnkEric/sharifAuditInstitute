@@ -41,3 +41,13 @@ Route::prefix('admin')->group(function() {
     Route::get('/service-image-delete', [App\Http\Controllers\Admin\ServiceController::class, 'deleteImage'])
         ->name('delete.service.description.photo');
 });
+
+
+// Route::get('/proposals', [App\Http\Controllers\UserProposalController::class, 'index'])->name('front.proposals');
+Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
+
+Route::prefix('admin')->group(function() {
+    Route::resource('proposals', App\Http\Controllers\Admin\ProposalController::class, [
+        'as' => 'admin'
+    ])->middleware('auth', 'is_admin')->only(['index', 'show', 'destroy']);
+});

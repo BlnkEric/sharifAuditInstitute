@@ -9,10 +9,19 @@ class Proposal extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'company_name', 'email', 'description', 'file_path', 'user_id', 'industry_id', 'service_id'];
+    protected $fillable = ['name','slug', 'company_name', 'email', 'description', 'file_path', 'user_id', 'industry_id', 'service_id'];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    
     public function industry() {
         return $this->belongsTo(Industry::class);
+    }
+
+    public function service() {
+        return $this->belongsTo(Service::class);
     }
 
     public function user() {
