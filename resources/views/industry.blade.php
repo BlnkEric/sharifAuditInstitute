@@ -4,3 +4,4 @@
 @include('components.industryItems')
 
 
+@include('components.footer')

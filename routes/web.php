@@ -25,6 +25,10 @@ Route::get('/account', function () {
 Route::get('/industry', function () {
     return view('industry');
 });
+Route::get('/article', function () {
+    return view('article');
+});
+
 
 Auth::routes();
 

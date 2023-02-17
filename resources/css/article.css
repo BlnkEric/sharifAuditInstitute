@@ -1,0 +1,110 @@
+.sliderContainer {
+    margin-top: 30px;
+}
+.carousel {
+    background: #fafafa;
+}
+
+.carousel-cell {
+    width: 100%; /* full width */
+    height: auto; /* height of carousel */
+    max-height: 600px;
+    margin-right: 10px;
+    background: #8c8;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0.8;
+    transition: 0.5s linear;
+}
+.carousel-cell img {
+    width: 100%;
+}
+/* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+.carousel-cell.is-selected {
+    opacity: 1;
+}
+/* Artilces */
+.articleContainer .container .row {
+    background-color: red;
+    direction: rtl;
+}
+.articleContainer .container .row div {
+    padding: 10px;
+    overflow: hidden;
+}
+.articleContainer {
+    margin-top: 80px;
+}
+.underTheArticle {
+    width: 100%;
+    height: 500px;
+    background-image: url("/images/LightHouseImage.png");
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+}
+.underTheArticleV2 {
+    width: 100%;
+    height: 240px;
+    background-image: url("/images/LightHouseImage.png");
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+}
+.overTheArticle {
+    width: 80%;
+    background-color: blue;
+    display: flex;
+    position: absolute;
+    top: 55%;
+    right: 5%;
+    height: 35%;
+}
+/* Secion 2 */
+.articleSection2 .container .row div section{
+    background-color: blue;
+    padding: 10px;
+}
+.bigArticleSection2Item {
+    background-color: green;
+    height: 500px;
+}
+.bigArticleSection2Item section:first-child {
+    width: 100%;
+    background-image: url("/images/LightHouseImage.png");
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 300px;
+}
+.articelFilterRowSection2 {
+   padding: 10px 20px;
+}
+.articleSection2AllArticels {
+    width: 100%;
+    padding: 10px;
+    background-color: purple;
+    height: 500px;
+    overflow-y: scroll
+}
+.articleSection2AllArticels section {
+    width: 100%;
+    height: 150px;
+    background-color: orange !important;
+}
+.rightOfArticleSection2 {
+    height: 555px;
+    padding: 10px;
+}
+.articleSection2AllArticels section .row div:first-child {
+    height: 100px;
+    background-image: url("/images/LightHouseImage.png");
+    background-size: cover;
+    background-position: 50% 50%;
+}
