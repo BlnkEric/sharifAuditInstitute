@@ -20,6 +20,6 @@ class IndustryController extends Controller
                 return $query->where('approved_client', true);
             }
         ]);
-        return view('industries.index', compact('industries'));
+        return view('front.industries.index', compact('industries'));
     }
 }

@@ -20,20 +20,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard')->middleware('is_admin');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/industries', [App\Http\Controllers\IndustryController::class, 'index'])->name('front.industries');
-Route::prefix('admin')->group(function() {
+Route::resource('services', App\Http\Controllers\ServiceController::class)->only(['index', 'show']);
+Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
+
+Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('industries', App\Http\Controllers\Admin\IndustryController::class, [
         'as' => 'admin'
-    ])->middleware('auth', 'is_admin');
+    ]);
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class, [
         'as' => 'admin'
-    ])->middleware('auth', 'is_admin');
+    ]);
+    Route::prefix('admin')->group(function() {
+        Route::resource('proposals', App\Http\Controllers\Admin\ProposalController::class, [
+            'as' => 'admin'
+        ])->only(['index', 'show', 'destroy']);
+    });
     Route::post('/service-image-create', [App\Http\Controllers\Admin\ServiceController::class, 'uploadImageOnCreate'])
         ->name("upload.service.image.create");
     Route::post('/service-image-update/{service}', [App\Http\Controllers\Admin\ServiceController::class, 'uploadImageOnUpdate'])
@@ -43,11 +46,5 @@ Route::prefix('admin')->group(function() {
 });
 
 
-// Route::get('/proposals', [App\Http\Controllers\UserProposalController::class, 'index'])->name('front.proposals');
-Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
 
-Route::prefix('admin')->group(function() {
-    Route::resource('proposals', App\Http\Controllers\Admin\ProposalController::class, [
-        'as' => 'admin'
-    ])->middleware('auth', 'is_admin')->only(['index', 'show', 'destroy']);
-});
+

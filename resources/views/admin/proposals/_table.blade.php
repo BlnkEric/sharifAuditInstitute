@@ -4,11 +4,8 @@
         <th>#</th>
         <th>نام</th>
         <th>نام شرکت</th>
-        {{-- <th>توضیحات</th> --}}
         <th>Actions</th>
-        <th></th>
         <th>ایجاد شده</th>
-        <th>ویرایش شده</th>
     </tr>
     </thead>
     <tbody style="vertical-align: middle;">
@@ -18,10 +15,6 @@
         <th scope="row">{{ $proposals->firstItem() + $key }}</th>
         <td>{{ $proposal->name }}</td>
         <td>{{ $proposal->company_name }}</td>
-        {{-- <td>{{ Str::limit($proposal->description, 40, $end='...') }}</td> --}}
-        {{-- <td>
-            <a href="{{ route('admin.proposals.edit', $proposal->slug) }}" class="btn btn-warning">ویرایش</a>
-        </td> --}}
         <td>
             <form action="{{ route('admin.proposals.destroy', $proposal->slug) }}" method="POST">
                 @csrf
@@ -30,7 +23,6 @@
             </form>
         </td>
         <td> {{ $proposal->created_at }}</td>
-        <td> {{ $proposal->updated_at }}</td>
     </tr>
     @empty
         <tr>
