@@ -39,8 +39,11 @@ class Article extends Model
     }
 
     public static function boot(){
-        // static::addGlobalScope(new DeletedAdminScope);
         parent::boot();
+
+        Article::created(function($article) {
+            self::findImagesInDescriptionAndAttach($article);
+        });
 
         Article::deleting(function($article) {
             $article->image->delete();
@@ -49,5 +52,26 @@ class Article extends Model
                 $dImages->delete();
             }
         });
+    }
+
+    private static function findImagesInDescriptionAndAttach($article) {
+        preg_match_all('/<img.*?src=["\'](.*?)["\'].*?>/', $article->description, $matches);
+        $sources = $matches[1];
+        foreach($sources as $src) {
+            $pathForDB = self::buildPathForDB($src);
+            $article->descriptionImages()->save(DescriptionImage::make(["path"=>$pathForDB]));
+        }
+    }
+    private static function buildPathForDB($src) {
+        $pathForDB = "";
+        $srcArraySeparatedBySlash = explode("/", $src);
+        if (!self::isSourceFromOutsideURL($srcArraySeparatedBySlash)) {
+            $pathForDB = "public/" . $srcArraySeparatedBySlash[2] . "/" .  $srcArraySeparatedBySlash[3];
+        }
+        return $pathForDB;
+    }
+
+    public static function isSourceFromOutsideURL($src) {
+        return $src[1] != "storage";
     }
 }
