@@ -1,6 +1,18 @@
 @extends('layouts.app')
 @include('components.navbar')
 
+<div class="container-fluid mainIntroContactUs">
+    <div class="container">
+        <div class="row">
+            <section>
+                <h1 class="mb-2 mt-5">Arash</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, tenetur?</p>
+            </section>
+            <div id="mainIntroContactUsClippath"></div>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluid contactContainer">
     <div class="container">
         <div class="row">

@@ -34,6 +34,9 @@ Route::get('/contactus', function () {
     return view('contactus');
 });
 
+Route::get('/work', function () {
+    return view('workwithus');
+});
 
 Auth::routes();
 
