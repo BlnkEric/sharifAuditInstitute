@@ -25,7 +25,7 @@ Route::resource('services', App\Http\Controllers\ServiceController::class)->only
 Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
 
 Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
     Route::resource('industries', App\Http\Controllers\Admin\IndustryController::class, [
         'as' => 'admin'
     ]);
