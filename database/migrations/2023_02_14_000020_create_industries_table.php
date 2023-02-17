@@ -16,6 +16,7 @@ class CreateIndustriesTable extends Migration
         Schema::create('industries', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->timestamps();
         });

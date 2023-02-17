@@ -14,7 +14,8 @@ class ServiceFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'slug' => $this->faker->slug(2),
+            'description' => $this->faker->text()
         ];
     }
 }

@@ -25,3 +25,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/industries', [App\Http\Controllers\IndustryController::class, 'index'])->name('front.industries');
+Route::prefix('admin')->group(function() {
+    Route::resource('industries', App\Http\Controllers\Admin\IndustryController::class, [
+        'as' => 'admin'
+    ])->middleware('auth', 'is_admin');
+    Route::resource('services', App\Http\Controllers\Admin\ServiceController::class, [
+        'as' => 'admin'
+    ])->middleware('auth', 'is_admin');
+    Route::post('/service-image-create', [App\Http\Controllers\Admin\ServiceController::class, 'uploadImageOnCreate'])
+        ->name("upload.service.image.create");
+    Route::post('/service-image-update/{service}', [App\Http\Controllers\Admin\ServiceController::class, 'uploadImageOnUpdate'])
+        ->name("upload.service.image.update");
+    Route::get('/service-image-delete', [App\Http\Controllers\Admin\ServiceController::class, 'deleteImage'])
+        ->name('delete.service.description.photo');
+});

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CustomSlug;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateIndustryRequest extends FormRequest
@@ -13,7 +14,7 @@ class UpdateIndustryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,10 @@ class UpdateIndustryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:60',
+            'slug' => new CustomSlug('industries', $this->industry->id),
+            'description' => 'required',
+            'image' => 'image|mimes:png,jpeg,gif,png,svg'
         ];
     }
 }
