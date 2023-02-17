@@ -11,9 +11,16 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Services\EditorImageUploadService;
 
 class ServiceController extends Controller
 {
+    private $editorImageService;
+
+    public function __construct(EditorImageUploadService $imageService)
+    {
+        $this->editorImageService = $imageService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -56,36 +63,15 @@ class ServiceController extends Controller
     }
 
     public function uploadImageOnCreate(Request $request) {
-        if($request->has("upload")) {
-            $imageFile = $request->file("upload");
-            $extension = $imageFile->guessClientExtension();
-            $imagePath = $imageFile->storeAs("public/service_images", "description_" . sha1(time()) . "." . $extension);
-            $url = Storage::url($imagePath);
-            echo json_encode([
-                'default' => $url,
-                '500' => $url
-            ]);
-        }
+        return $this->editorImageService->create($request);
     }
 
     public function uploadImageOnUpdate(Request $request, Service $service) {
-        if($request->has("upload")) {
-            $imageFile = $request->file("upload");
-            $extension = $imageFile->guessClientExtension();
-            $imagePath = $imageFile->storeAs("public/service_images", "description_" . sha1(time()) . "." . $extension);
-            $service->descriptionImages()->save(DescriptionImage::make(["path"=>$imagePath]));
-            $url = Storage::url($imagePath);
-            echo json_encode([
-                'default' => $url,
-                '500' => $url
-            ]);
-        }
+        return $this->editorImageService->update($request, $service);
     }
 
     public function deleteImage(Request $request) {
-        $descriptionImage = DescriptionImage::findOrFail($request->id);
-        $descriptionImage->descriptionImageable()->dissociate();
-        $descriptionImage->delete();
+        $this->editorImageService->delete($request);
         return redirect()->back()->with("success", "عکس توضیحات با موفقیت حذف شد!");
     }
 

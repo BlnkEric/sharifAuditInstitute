@@ -8,11 +8,18 @@ use App\Http\Requests\UpdateArticleRequest;
 use App\Models\Article;
 use App\Models\DescriptionImage;
 use App\Models\Image;
+use App\Services\EditorImageUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
+    private $editorImageService;
+
+    public function __construct(EditorImageUploadService $imageService)
+    {
+        $this->editorImageService = $imageService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -100,41 +107,20 @@ class ArticleController extends Controller
     }
 
 
-
     public function uploadImageOnCreate(Request $request) {
-        if($request->has("upload")) {
-            $imageFile = $request->file("upload");
-            $extension = $imageFile->guessClientExtension();
-            $imagePath = $imageFile->storeAs("public/article_images", "description_" . sha1(time()) . "." . $extension);
-            $url = Storage::url($imagePath);
-            echo json_encode([
-                'default' => $url,
-                '500' => $url
-            ]);
-        }
+        return $this->editorImageService->create($request);
     }
 
     public function uploadImageOnUpdate(Request $request, Article $article) {
-        if($request->has("upload")) {
-            $imageFile = $request->file("upload");
-            $extension = $imageFile->guessClientExtension();
-            $imagePath = $imageFile->storeAs("public/article_images", "description_" . sha1(time()) . "." . $extension);
-            $article->descriptionImages()->save(DescriptionImage::make(["path"=>$imagePath]));
-            $url = Storage::url($imagePath);
-            echo json_encode([
-                'default' => $url,
-                '500' => $url
-            ]);
-        }
+        return $this->editorImageService->update($request, $article);
     }
 
     public function deleteImage(Request $request) {
-        $descriptionImage = DescriptionImage::findOrFail($request->id);
-        $descriptionImage->descriptionImageable()->dissociate();
-        $descriptionImage->delete();
+        $this->editorImageService->delete($request);
         return redirect()->back()->with("success", "عکس توضیحات با موفقیت حذف شد!");
     }
 
+ 
     /**
      * Remove the specified resource from storage.
      *
