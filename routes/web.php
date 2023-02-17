@@ -25,8 +25,13 @@ Route::get('/account', function () {
 Route::get('/industry', function () {
     return view('industry');
 });
+
 Route::get('/article', function () {
     return view('article');
+});
+
+Route::get('/contactus', function () {
+    return view('contactus');
 });
 
 
