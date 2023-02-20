@@ -14,7 +14,8 @@ class StaffFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'email' => $this->faker->email(),
+            'phone' => random_int(100000000, 900000000)
         ];
     }
 }

@@ -17,6 +17,14 @@
                                 <h5 class="card-title">{{ $service->name }}</h5>
                                 <p class="card-text">{{ $service->description }}</p>
                             </div>
+                            <ul>
+                                @foreach($service->staffs as $staff)
+                                    <li>
+                                        {{ $staff->name }} - 
+                                        {{ $staff->role }}
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
                     </a>
                 </div>

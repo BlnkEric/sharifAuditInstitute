@@ -34,6 +34,10 @@ class Service extends Model
         return $this->morphMany(DescriptionImage::class, 'dimageable');
     }
 
+    public function staffs() {
+        return $this->hasMany(Staff::class);
+    }
+
     protected static function boot() {
         parent::boot();
 
