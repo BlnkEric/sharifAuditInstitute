@@ -39,7 +39,7 @@ return [
     'digits_between' => ':attribute باید مابین :min و :max رقم باشد.',
     'dimensions' => ':attribute طول و عرض تصویر معتبر نیست.',
     'distinct' => ':attribute دارای مقدار تکراری است.',
-    'email' => ':attribute ایمیل آدرس معتبر نیست.',
+    'email' => ':attribute معتبر نیست',
     'ends_with' => ':attribute آخرین مقدار باید شامل این موارد باشد: :values',
     'exists' => ':attribute مورد انتخاب شده معتبر نیست.',
     'file' => ':attribute باید یک فایل انتخاب شود.',
@@ -94,7 +94,7 @@ return [
     'not_regex' => ':attribute فرمت وارد شده معتبر نیست.',
     'numeric' => ':attribute باید یک عدد باشد.',
     'present' => ':attribute باید موجودیت داشته باشد.',
-    'regex' => ':attribute فرمت قابل قبول نیست.',
+    'regex' => ' فرمت :attribute قابل قبول نیست',
     'required' => 'فیلد :attribute اجباری است.',
     'required_if' => 'فیلد :attribute اجباری است در صورتی که :other برابر با :value باشد',
     'required_unless' => 'فیلد :attribute اجباری است مگر اینکه :other برابر با :values باشد',
@@ -131,6 +131,9 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+        ],
+        'phone' => [
+            'per_phone' => 'فرمت قابل قبول یکی از 2 موارد بالا میباشد',
         ],
     ],
 

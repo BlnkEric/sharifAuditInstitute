@@ -17,7 +17,7 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
-            $table->string("path");
+            // $table->string("path")->;
             $table->foreignId('user_id')->constrained()->onDelete('CASCADE');
             $table->timestamps();
         });

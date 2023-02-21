@@ -6,3 +6,24 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+#phoneLabel, #phone {
+    position: relative;
+    display: block;
+    // padding-right: 150px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+#phoneLabel::after {
+    content: attr(data-domain);
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    display: block;
+    color: rgba(190, 16, 16, 0.6);
+    font-weight: bold;
+}

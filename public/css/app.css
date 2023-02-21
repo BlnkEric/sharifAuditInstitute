@@ -10819,3 +10819,21 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#phoneLabel, #phone {
+  position: relative;
+  display: block;
+  width: 200px;
+  box-sizing: border-box;
+}
+
+#phoneLabel::after {
+  content: attr(data-domain);
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(190, 16, 16, 0.6);
+  font-weight: bold;
+}

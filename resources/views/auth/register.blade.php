@@ -42,8 +42,25 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="email" autofocus>
-
+                                {{-- <div style="display: flex;"> --}}
+                                    {{-- <span class="">+98</span> --}}
+                                    <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="email" autofocus>
+                                {{-- </div> --}}
+                                {{-- <label id="phoneLabel" data-domain="+98">
+                                    <input id="phone" type="phone" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="email" autofocus>
+                                <label> --}}
+                                <small>
+                                    Formats:
+                                    <ul>
+                                        
+                                        <li>
+                                            +98 9XX XXX XXXX
+                                        </li>
+                                        <li>
+                                            09XX XXX XXXX
+                                        </li>
+                                    </ul>
+                                </small>
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
