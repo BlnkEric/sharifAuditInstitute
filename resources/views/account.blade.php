@@ -17,25 +17,25 @@
             </div>
             <div class="col-12 col-md-6">
                 <section id="loginTab">
-                    <h2>ArashSign</h2>
+                    <h2>لاگين</h2>
                     <form action="">
                         <input type="text" placeholder="Name">
                         <input type="text" placeholder="Password">
-                        <button>Submit</button>
+                        <button class="accountSubmitBtn">ورود</button>
                     </form>
                 </section>
                 <section id="registerTab">
-                    <h2>ArashSign</h2>
+                    <h2>رجيستر</h2>
                     <form action="">
                         <input type="text" placeholder="Name">
                         <input type="text" placeholder="Password">
                         <input type="text" placeholder="Confirm Password">
                         <input type="email" placeholder="Email">
-                        <button>Submit</button>
+                        <button class="accountSubmitBtn">ورود</button>
                     </form>
                 </section>
-                <button onclick="changeLoginPosition()" id="LoginChangeBtn">Register</button>
-                <button onclick="changeRegisterPosition()" id="RegisterChangeBtn">Login</button>
+                <button onclick="changeLoginPosition()" id="LoginChangeBtn">رجيستر</button>
+                <button onclick="changeRegisterPosition()" id="RegisterChangeBtn">لاگين</button>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
     }
 
     function changeRegisterPosition() {
-        registerTab.style.right = '100%'
+        registerTab.style.right = '120%'
         loginTab.style.right = '20%';
     }
 </script>

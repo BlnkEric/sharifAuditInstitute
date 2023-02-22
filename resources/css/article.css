@@ -1,5 +1,6 @@
 .sliderContainer {
     margin-top: 30px;
+    z-index: 2;
 }
 .carousel {
     background: #fafafa;
@@ -90,13 +91,15 @@
     width: 100%;
     padding: 10px;
     background-color: purple;
+    direction: rtl;
     height: 500px;
     overflow-y: scroll
 }
 .articleSection2AllArticels section {
     width: 100%;
     height: 150px;
-    background-color: orange !important;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 .rightOfArticleSection2 {
     height: 555px;
@@ -107,4 +110,13 @@
     background-image: url("/images/LightHouseImage.png");
     background-size: cover;
     background-position: 50% 50%;
+}
+.articleSection2AllArticels section .row h1 {
+    margin-bottom: 10px;
+    font-family: secondFont;
+    font-size: 1.2rem;
+}
+.articleSection2AllArticels section .row p {
+   font-family: firstFont;
+   font-size: 1.1rem;
 }

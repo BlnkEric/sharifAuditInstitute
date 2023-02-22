@@ -1,35 +1,64 @@
 .contactContainer .container .row:first-child {
-    background-color: red;
+    color: white;
     text-align: center;
+    font-family: secondFont;
+    font-size: 2.5rem;
     padding: 30px;
 }
-.contactUsRow section{
+.contactContainer {
+    padding: 20px;
+    background-color: var(--tenthColor);
+}
+.contactUsRow div div:first-child {
     width: 100%;
     height: 100px;
-    background-color: blue;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    align-items: center;
 }
-.contactUsRow h3{
- text-align: center;
+.contactUsRowIconContainer {
+    width: 100px;
+    height: 100px;
+    background-color: #00c853;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color:aliceblue;
 }
-.contactUsRow div div{
+.contactUsRow h3 {
+    text-align: center;
+    font-family: secondFont;
+    color: white;
+    font-size: 1.5rem;
+}
+.contactUsRow div div {
     width: 80%;
     height: auto;
-    background-color: green;
+    font-family: thirdFont;
+   color: white;
     text-align: center;
     margin: 10px auto;
     padding: 10px;
 }
 /* From ContactUs */
-.contactUsFormContainer .container .row  {
+.contactUsFormContainer .container .row {
     direction: rtl;
     margin-top: 100px;
 }
-.contactUsFormContainer .container .row  div:first-child section{
-    background-color: blueviolet;
+.contactUsFormContainer .container .row div:first-child section {
     padding: 10px;
+}
+.contactUsFormContainer .container .row div:first-child section h1 {
+    font-family: secondFont;
+    font-size: 1.9rem;
+    margin-bottom: 50px;
+    color: var(--seventhColor);
+}
+.contactUsFormContainer .container .row div:first-child section p {
+    font-family: thirdFont;
+    font-size: 1.3rem;
 }
 .contactUsForm input {
     border: 3px solid;
@@ -38,6 +67,7 @@
     border-left: 0;
     width: 300px;
     padding: 10px;
+    background-color: rgb(241, 241, 241);
     margin-bottom: 20px;
     border-right: 0;
     border-radius: 5px;
@@ -45,13 +75,40 @@
 }
 .contactUsForm label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    font-family: secondFont;
+    font-size: 1.4rem;
 }
+
+        
+.contactUsForm button {
+    background-image: linear-gradient(to right, #348F50 0%, #56B4D3  51%, #348F50  100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-family: secondFont;
+    font-size: 1.5rem;
+    background-color: red;
+    margin-bottom: 20px;
+    border: none;
+  }
+
+  .contactUsForm button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
 .contactUsForm textarea {
     border: 3px solid;
     border-image-slice: 1;
     border-top: 0;
     border-left: 0;
+    background-color: rgb(241, 241, 241);
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -65,10 +122,9 @@
     position: relative;
     width: 100%;
     height: 500px;
-
 }
 .mainIntroContactUs section {
- background-color: blue;
+    background-color: blue;
     width: 30%;
     height: 300px;
     position: absolute;
@@ -92,7 +148,7 @@
     z-index: 1;
 }
 /* Work with us */
-.workWithUsMiniIntro .container .row section{
+.workWithUsMiniIntro .container .row section {
     color: white;
     background-color: green;
     width: 100%;
@@ -136,4 +192,61 @@
     border-right: 0;
     border-radius: 5px;
     border-image-source: linear-gradient(to left, #00c853, #b2ff59);
+}
+/* People */
+.peopleContainer .container .row:first-child h2 {
+    text-align: center;
+    margin: 10px;
+}
+.peopleContainer .container .row:nth-child(2) section {
+    padding: 20px;
+    background-color: red;
+    margin: 10px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 350px;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    padding-top: 40%;
+    color: white;
+    transform: rotateY(180deg);
+}
+.flip-card-front img {
+    width: 100%;
+    height: auto;
 }

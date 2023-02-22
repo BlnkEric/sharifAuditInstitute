@@ -38,6 +38,10 @@ Route::get('/work', function () {
     return view('workwithus');
 });
 
+Route::get('/adamha', function () {
+    return view('people');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard')->middleware('is_admin');

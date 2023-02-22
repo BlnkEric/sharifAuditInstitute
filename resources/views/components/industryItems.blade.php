@@ -4,9 +4,9 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <section data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.1">
                     <div>
-                        <h1>Salam</h1><span>Icon</span>
+                        <span>Icon</span><h1>حسين لفت داد اييي</h1>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio enim dolorem dignissimos molestiae! Asperiores, labore. Illo nam quia beatae saepe.</p>
+                    <p>حسين براي اينكه ناراحتت كردم.خودم رو مجبور ميكنم همه اينو رو كيبورد بدون هيچي تايپ كنم.پ لامصب 1 دقيقه طول كشيد پيدا كنم.بي پدر رو.اينم تنبيه من :)</p>
                 </section>
             </div>
             <div class="col-12 col-md-6 col-lg-4">

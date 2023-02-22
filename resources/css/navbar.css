@@ -1,22 +1,24 @@
 @charset "UTF-8";
 
 .navigation {
-    height: 70px;
-    background: #262626;
+    height: var(--navbarHeight);
+    background: black;
+    z-index: 1000;
+    position: relative;
 }
 
 .brand {
     position: absolute;
     padding-left: 20px;
     float: left;
-    line-height: 70px;
+    line-height: var(--navbarHeight);
     text-transform: uppercase;
     font-size: 1.4em;
 }
 
 .brand a,
 .brand a:visited {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
 }
 
@@ -33,27 +35,33 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    transition: 0.4s linear;
 }
 
 nav ul li {
     float: left;
     position: relative;
+    transition: 0.4s linear;
 }
 
 nav ul li a,
 nav ul li a:visited {
     display: block;
     padding: 0 20px;
-    line-height: 70px;
-    background: #262626;
-    color: #ffffff;
+    line-height: var(--navbarHeight);
+    background: black;
+    color: white;
+    transition: 0.4s linear;
+    font-family: secondFont;
+    font-weight: 500;
+    font-size: 1.3rem;
     text-decoration: none;
 }
 
 nav ul li a:hover,
 nav ul li a:visited:hover {
-    background: #2581dc;
-    color: #ffffff;
+    color: var(--secondColor);
+    border-bottom: 3px solid var(--secondColor);
 }
 
 nav ul li a:not(:only-child):after,
@@ -74,7 +82,7 @@ nav ul li ul li a {
 .nav-dropdown {
     position: absolute;
     display: none;
-    z-index: 1;
+    z-index: 1000;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -84,10 +92,10 @@ nav ul li ul li a {
     position: absolute;
     top: 0;
     right: 0;
-    background: #262626;
-    height: 70px;
-    width: 70px;
-    z-index: 10;
+    background: inherit;
+    height: var(--navbarHeight);
+    width: var(--navbarHeight);
+    z-index: 1000;
 }
 
 @media only screen and (max-width: 800px) {
@@ -97,7 +105,8 @@ nav ul li ul li a {
 
     nav {
         width: 100%;
-        padding: 70px 0 15px;
+        padding: var(--navbarHeight) 0 15px;
+        z-index: 1000;
     }
 
     nav ul {
@@ -131,10 +140,10 @@ nav ul li ul li a {
 #nav-toggle {
     position: absolute;
     background-color: inherit;
-    left: 18px;
-    top: 22px;
+    left: 30%;
+    top: 50%;
     cursor: pointer;
-    padding: 10px 35px 16px 0px;
+    transform: translate(-50%,-50%);
 }
 
 #nav-toggle span,

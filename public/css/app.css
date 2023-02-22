@@ -10953,16 +10953,79 @@ a:active {
 }
 :root {
     /* Colors */
-    --firstColor: #A2FA00;
-    --secondColor: #10D90B;
-    --thirdColor: #0BD9D6;
-    --forthColor: #00F074;
-    --fifthColor: #0F91FF;
+    --firstColor: #a2fa00;
+    --secondColor: #10d90b;
+    --thirdColor: #0b80d9;
+    --forthColor: #00f074;
+    --fifthColor: #0f91ff;
     --seventhColor: #227048;
-    --eigthColor: #A3106F;
+    --ninthColor: #5a36ff;
+    --eigthColor: #a3106f;
+    --tenthColor : #005153;
+    --navbarHeight : 70px;
+    --eachSliderLoopWidth: 250px;
+}
+@font-face {
+    font-family: firstFont;
+    /* src: url('/public/fonts/B\ Nazanin_p30download.com.ttf'); */
+    src: url("/fonts/B\ Nazanin_p30download.com.ttf");
+}
+@font-face {
+    font-family: secondFont;
+    src: url("/fonts/B\ Koodak\ Bold_p30download.com.ttf");
+}
+@font-face {
+    font-family: thirdFont;
+    src: url("/fonts/B\ Roya_p30download.com.ttf");
+}
+body {
+    font-family: firstFont;
+    background-color: white;
+}
 
-    /* Fonts */
-    --firstFont: ;
-    --eachSliderLoopWidth : 250px
+.buttonVersion1 {
+    background-color: var(--secondColor);
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 20px;
+    min-width: 200px;
+    font-family: thirdFont;
+    font-weight: 600;
+    font-size: 1.8rem;
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+    direction: ltr;
+    box-shadow: 9px 9px 7.5px 5.5px #1d5237;
+    border: none;
+}
+
+.buttonVersion1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.buttonVersion1:hover {
+    background-color: var(--forthColor);
+    box-shadow: 13.5px 13.5px 7.5px 5.5px #1d5237;
+}
+.buttonVersion1 span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.buttonVersion1:hover span {
+    padding-right: 25px;
+
+}
+
+.buttonVersion1:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 

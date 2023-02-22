@@ -54,8 +54,11 @@
                                     <div class="row">
                                         <div class="col-12 col-lg-5 d-none d-lg-block">abc</div>
                                         <div class="col-12 col-lg-7">
-                                            <h1>Arash</h1>
-                                            <p>arashArashaasharash</p>
+                                            <h1>حسين رو دوس داريم</h1>
+                                            <p>حسين ميخواي منم لفت بدم؟بعد يه گروه باهم بزنيم از دست اين شاهين خلاص شيم؟:)
+                                            {{-- INJA RO FAGHAT TEDAD MAHDOD NASHON BEDID BA
+                                                ... --}}
+                                            </p>
                                         </div>
                                     </div>
                                 </section>

@@ -4,6 +4,9 @@
         background-color: blue;
         margin: 0 auto;
     }
+    .workWithUsHomeContainer .container section{
+     width: 100% !important;
+    }
 }
 .faqContainer .container .row:first-child {
     display: flex;
@@ -16,49 +19,61 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    font-family: secondFont;
+    font-weight: 500;
+    font-size: 3rem;
+    margin: 30px;
 }
 .faqContainer .container .row:nth-child(3) section {
     width: 70%;
-    background-color: blue;
     margin: 0 auto;
 }
 /* Accordion */
 .accordion {
-    background-color: #eee;
-    color: #444;
+    color: black;
     cursor: pointer;
-    padding: 18px;
+    padding: 30px;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: right;
+    direction: rtl;
+    background-color: white;
     outline: none;
-    font-size: 15px;
+    border-bottom: 2px solid var(--seventhColor);
+    font-family: secondFont;
+    font-size: 1.8rem;
+    font-weight: 400;
     transition: 0.4s;
 }
 .accordion span{
-    float: right;
+    float: left;
     transition: 0.3s linear;
 }
 .active,
 .accordion:hover {
-    background-color: #ccc;
+    background-color: var(--seventhColor);
+    color: white;
 }
 .panel {
     background-color: white;
     max-height: 0;
     padding: 0 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    direction: rtl;
+    font: firstFont;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
 .rotateTheAccordionArrow {
-    rotate: 90deg;
+    rotate: -90deg;
 }
 
 /* SliderLOOP */
 .slider {
-    height: 250px;
+
     width: 100%;
     position: relative;
     margin: auto;
@@ -71,7 +86,8 @@
     display: flex;
     /* slide track width = total number of slides 9*2 = 18 * individual width (250px) */
     width: calc(var(--eachSliderLoopWidth) * 18);
-    background-color: red;
+    background-color: var(--forthColor);
+    font-family: firstFont;
     animation: scroll 20S linear infinite;
 }
 
@@ -104,4 +120,66 @@
     height:500px;
     background-color: green;
 }
-
+/* WorkWithUS */
+.workWithUsHomeContainer {
+    background-image: url('/images/WorkWithUS.jpg');
+    background-size: cover;
+}
+.workWithUsHomeContainer .container {
+    direction: rtl;
+    min-height: 800px;
+    color: rgb(0, 0, 0);
+}
+.workWithUsHomeContainer .container h3{
+    font-family: secondFont;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.workWithUsHomeContainer .container h1{
+    font-family: secondFont;
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+}
+.workWithUsHomeContainer .container {
+    padding: 40px;
+}
+.workWithUsHomeContainer .container section{
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    width: 50%;
+    border-radius: 10px;
+}
+.workWithUsHomeContainer .container .row{
+    margin-top: 50px;
+    padding: 20px;
+}
+.workWithUsHomeContainer .container .row .col{
+    padding: 20px;
+}
+.workWithUsHomeContainer .container .row div section{
+    background-color: azure;
+    width: 100%;
+    margin: 10px;
+    height: 200px;
+}
+.introTemplate .container .row {
+    direction: rtl;
+}
+.introTemplate .container .row div section{
+   background-color: red;
+   padding: 10px;
+   height: 300px;
+}
+.introTemplate .container .row div section div div{
+   display: inline-block !important;
+ }
+ .introTemplateImageContainer div{
+    background-color: blue;
+    padding: 10px;
+    height: 300px;
+    /* Barabar ba Samt Rast */
+ }
+ .workWithUsHomeContainer .container .row:first-child {
+    margin-top: 200px;
+ }
