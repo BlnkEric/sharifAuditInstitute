@@ -82,6 +82,9 @@
                         <li class="nav-item">
                             <a href="{{ route('articles.index') }}" class="nav-link">مقالات</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('reports.index') }}" class="nav-link">گزارشات</a>
+                        </li>
                     </ul>
                 </div>
             </div>

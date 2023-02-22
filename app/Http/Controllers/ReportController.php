@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Report;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreReportRequest;
 use App\Http\Requests\UpdateReportRequest;
 
@@ -15,7 +16,15 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        $reports = Report::where('user_id',  Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(10);
+        return view('front.reports.index', compact('reports'));
+    }
+
+    public function download($uuid)
+    {
+        $report = Report::where('uuid', $uuid)->firstOrFail();
+        $pathToFile = storage_path('app/reports/' . $report->file_path);
+        return response()->download($pathToFile);
     }
 
     /**

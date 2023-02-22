@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class StoreReportRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StoreReportRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,14 @@ class StoreReportRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:60',
+            'description' => 'required',
+            'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+            // 'file' => [
+            //     'required',
+            //     File::types(['pdf', 'csv'])
+            //         ->max(1024),
+            // ]
         ];
     }
 }

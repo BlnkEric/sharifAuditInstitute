@@ -25,6 +25,10 @@ Route::resource('services', App\Http\Controllers\ServiceController::class)->only
 Route::resource('articles', App\Http\Controllers\ArticleController::class)->only(['index', 'show']);
 Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
 
+Route::resource('reports',  App\Http\Controllers\ReportController::class)->only(['index', 'show'])->middleware('auth');
+Route::get('reports/{uuid}/download', [ App\Http\Controllers\ReportController::class, 'download'])->name('reports.download');
+
+
 Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
     Route::resource('industries', App\Http\Controllers\Admin\IndustryController::class, [
@@ -37,6 +41,9 @@ Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
         'as' => 'admin'
     ])->only(['index', 'show', 'destroy']);
     Route::resource('articles', App\Http\Controllers\Admin\ArticleController::class, [
+        'as' => 'admin'
+    ]);
+    Route::resource('reports', App\Http\Controllers\Admin\ReportController::class, [
         'as' => 'admin'
     ]);
     Route::post('/service-image-create', [App\Http\Controllers\Admin\ServiceController::class, 'uploadImageOnCreate'])
