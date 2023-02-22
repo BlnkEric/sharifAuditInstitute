@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label for="name">نام:</label>
                     <input type="text" id="name" name="name"
-                           class="form-control @error('name') is-invalid @enderror" value="{{$service->name}}">
+                           class="form-control @error('name') is-invalid @enderror" value="{{old('name', $service->name)}}">
                     <span class="invalid-feedback" role="alert">
                         @error('name')
                             <strong>{{ $message }}</strong>
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label for="slug">Slug:</label>
                     <input type="text" id="slug" name="slug"
-                           class="form-control @error('slug') is-invalid @enderror" value="{{$service->slug}}">
+                           class="form-control @error('slug') is-invalid @enderror" value="{{old('slug', $service->slug)}}">
                     <span class="invalid-feedback" role="alert">
                         @error('slug')
                             <strong>{{ $message }}</strong>
@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <label for="description">توضیحات:</label>
                     <textarea id="editor" name="description" cols="30" rows="10"
-                        class="text-dark @error('description') is-invalid @enderror">{{$service->description}}</textarea>
+                        class="text-dark @error('description') is-invalid @enderror">{{old('description', $service->description)}}</textarea>
                     <span class="invalid-feedback" role="alert">
                         @error('description')
                             <strong>{{ $message }}</strong>

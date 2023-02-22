@@ -22,6 +22,10 @@ class ReportController extends Controller
 
     public function download($uuid)
     {
+        
+        if (!auth()->check()) {
+            return abort(404);
+        }
         $report = Report::where('uuid', $uuid)->firstOrFail();
         $pathToFile = storage_path('app/reports/' . $report->file_path);
         return response()->download($pathToFile);

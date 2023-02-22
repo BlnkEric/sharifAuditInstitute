@@ -13,7 +13,7 @@ class UpdateReportRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,19 @@ class UpdateReportRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:60',
+            'user_id' => 'required|exists:users,id',
+            'description' => 'required',
+            'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'user_id.required' => 'انتخاب بخش مشتریان الزامی است.',
+            'user_id.exists' => 'لطفاً یک کاربر معتبر را انتخاب نمایید.',
         ];
     }
 }

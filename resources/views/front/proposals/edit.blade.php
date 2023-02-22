@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label for="name">نام:</label>
                     <input type="text" id="name" name="name"
-                           class="form-control @error('name') is-invalid @enderror" value="{{$proposal->name}}">
+                           class="form-control @error('name') is-invalid @enderror" value="{{old('name', $proposal->name)}}">
                     <span class="invalid-feedback" role="alert">
                         @error('name')
                             <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <label for="slug">Slug:</label>
                     <input type="text" id="slug" name="slug"
-                           class="form-control @error('slug') is-invalid @enderror" value="{{$proposal->slug}}">
+                           class="form-control @error('slug') is-invalid @enderror" value="{{old('slug', $proposal->slug)}}">
                     <span class="invalid-feedback" role="alert">
                         @error('slug')
                             <strong>{{ $message }}</strong>
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="company_name">نام شرکت:</label>
                     <input type="text" id="company_name" name="company_name"
-                           class="form-control @error('company_name') is-invalid @enderror" value="{{$proposal->company_name}}">
+                           class="form-control @error('company_name') is-invalid @enderror" value="{{old('company_name', $proposal->company_name)}}">
                     <span class="invalid-feedback" role="alert">
                         @error('company_name')
                             <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label for="email">email:</label>
                     <input type="text" id="email" name="email"
-                           class="form-control @error('email') is-invalid @enderror" value="{{$proposal->email}}">
+                           class="form-control @error('email') is-invalid @enderror" value="{{old('email', $proposal->email)}}">
                     <span class="invalid-feedback" role="alert">
                         @error('email')
                             <strong>{{ $message }}</strong>
@@ -61,7 +61,7 @@
                     <select name="industry_id" class="form-control @error('industry_id') is-invalid @enderror">
                         <option value="">انتخاب کنید</option>
                         @foreach ($industries as $key => $industry)
-                            <option value="{{ $industry->id }}" {{ $proposal->industry->id == $industry->id ? 'selected' : '' }}>
+                            <option value="{{ $industry->id }}" {{ old('industry_id', $proposal->industry_id) == $industry->id ? 'selected' : '' }}>
                                 {{ $industry->name }}
                             </option>
                         @endforeach
@@ -77,7 +77,7 @@
                     <select name="service_id" class="form-control @error('service_id') is-invalid @enderror">
                         <option value="">انتخاب کنید</option>
                         @foreach ($services as $key => $service)
-                            <option value="{{ $service->id }}" {{ $proposal->service->id == $service->id  ? 'selected' : '' }}>
+                            <option value="{{ $service->id }}" {{ old('service_id', $proposal->service_id) == $service->id  ? 'selected' : '' }}>
                                 {{ $service->name }}
                             </option>
                         @endforeach
@@ -91,7 +91,7 @@
                 <div class="form-group">
                     <label for="description">توضیحات:</label>
                     <textarea  name="description" cols="30" rows="10"
-                        class="text-dark @error('description') is-invalid @enderror">{{$proposal->description}}</textarea>
+                        class="text-dark @error('description') is-invalid @enderror">{{old('description', $proposal->description)}}</textarea>
                     <span class="invalid-feedback" role="alert">
                         @error('description')
                             <strong>{{ $message }}</strong>

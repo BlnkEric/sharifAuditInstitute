@@ -27,12 +27,21 @@ class StoreReportRequest extends FormRequest
         return [
             'name' => 'required|max:60',
             'description' => 'required',
+            'user_id' => 'required|exists:users,id',
             'file' => 'required|mimes:pdf,xlx,csv|max:2048',
             // 'file' => [
             //     'required',
             //     File::types(['pdf', 'csv'])
             //         ->max(1024),
             // ]
+        ];
+    }    
+    
+    public function messages()
+    {
+        return [
+            'user_id.required' => 'انتخاب بخش مشتریان الزامی است.',
+            'user_id.exists' => 'لطفاً یک کاربر معتبر را انتخاب نمایید.',
         ];
     }
 }

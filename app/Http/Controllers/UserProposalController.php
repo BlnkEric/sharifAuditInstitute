@@ -87,9 +87,25 @@ class UserProposalController extends Controller
      */
     public function update(UpdateProposalRequest $request, Proposal $proposal)
     {
+        // dd($proposal);
         $request->merge([
-            'slug' => $this->make_slug($request)
+            'slug' => $this->make_slug($request),
+            'user_id' => Auth::user()->id,
         ]);
+        // $this->validate(
+        //     $request,
+        //     [
+        //         // 'email' => [
+        //         //     'required',
+        //         //     Rule::unique('users')->ignore($request->user_id)
+        //         // ],
+        //         // 'email' => "unique:users,email,$this->id,id",
+        //     ],
+        //     [
+        //         "user_id" => 'ویژگی با این وزن قبلا ثبت شده است'
+        //     ]
+        //     );
+
         $proposal->update($request->all());
         return redirect(route('proposals.index'))->with('success', "درخواست خدمات شما با نام: $proposal->name با موفقیت ویرایش شد");
     }

@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use App\Rules\CustomSlug;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule; //import Rule class 
 
 class UpdateProposalRequest extends FormRequest
 {
@@ -24,11 +26,18 @@ class UpdateProposalRequest extends FormRequest
      */
     public function rules()
     {
+
+        // dd(Auth::user()->id);
         return [
             'name' => 'required|max:60',
             'slug' => new CustomSlug('proposals', $this->proposal->id),
             'company_name' => 'nullable',
-            'email' => 'required',
+            'email' => [
+                'required',
+                'email:rfc,dns',
+                Rule::unique('proposals')->ignore(Auth::user()->id, 'user_id')
+                
+            ],
             'industry_id' => 'required|exists:industries,id',
             'service_id' => 'required|exists:services,id',
             'description' => 'required',
