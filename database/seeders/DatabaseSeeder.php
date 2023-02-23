@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ServicesTableSeeder::class,
             ProposalsTableSeeder::class,
             ArticlesTableSeeder::class,
+            StaffCategoriesTableSeeder::class,
             StaffsTableSeeder::class,
         ]);
     }

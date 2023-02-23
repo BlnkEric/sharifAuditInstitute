@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CustomSlug;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreStaffRequest extends FormRequest
@@ -13,7 +14,7 @@ class StoreStaffRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,15 @@ class StoreStaffRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:60',
+            'role' => 'required|max:60',
+            'industry_id' => 'nullable|exists:industries,id',
+            'slug' => new CustomSlug('staffs'),
+            'description' => 'required',
+            'image' => 'required|image|mimes:png,jpeg,gif,png,svg',
+            'phone' => 'required|numeric',
+            'email' => 'required',
+            'staff_category_id' => 'required|exists:staff_categories,id'
         ];
     }
 }

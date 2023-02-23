@@ -32,6 +32,10 @@ class Industry extends Model
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    public function staffs() {
+        return $this->hasMany(Staff::class);
+    }
+
     protected static function boot() {
         parent::boot();
 

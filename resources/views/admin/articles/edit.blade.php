@@ -97,6 +97,6 @@
     </div>
     
     <input type="hidden" value="{{ route('upload.article.image.update', ['_token' => csrf_token(), 'article' => $article->slug]) }}" id="upload_url">
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/super-build/ckeditor.js"></script>
+    <script type="module" src="{{ asset('js/ckeditorcdn.js') }}"></script>
     <script type="module" src="{{ asset('js/ckeditor.js') }}"></script>
 @endsection

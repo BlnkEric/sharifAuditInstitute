@@ -15,6 +15,7 @@ class StaffFactory extends Factory
     {
         return [
             'email' => $this->faker->email(),
+            'description' => $this->faker->text(),
             'phone' => random_int(100000000, 900000000)
         ];
     }

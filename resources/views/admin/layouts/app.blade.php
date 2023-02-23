@@ -81,6 +81,9 @@
                             <li class="nav-item">
                                 <a href="{{ route('admin.articles.index') }}" class="nav-link">مدیریت مقالات</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.staffs.index') }}" class="nav-link">مدیریت کارمندان</a>
+                            </li>
                         @endguest
                     </ul>
                 </div>

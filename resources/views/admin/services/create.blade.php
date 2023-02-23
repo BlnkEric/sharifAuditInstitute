@@ -63,6 +63,7 @@
     </div>
     
     <input type="hidden" value="{{ route('upload.service.image.create', ['_token' => csrf_token()]) }}" id="upload_url">
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/super-build/ckeditor.js"></script>
+    {{--     <script type="module" src="{{ asset('js/ckeditor.js') }}"></script> --}}
+    <script type="module" src="{{ asset('js/ckeditorcdn.js') }}"></script>
     <script type="module" src="{{ asset('js/ckeditor.js') }}"></script>
 @endsection

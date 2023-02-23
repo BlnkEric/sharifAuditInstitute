@@ -178,7 +178,10 @@ return [
         "time" => "زمان",
         "available" => "موجود",
         "notavailable" => "موجود نیست",
-        "size" => "اندازه"
+        "size" => "اندازه",
+        "image" => "تصویر",
+        "role" => "سمت",
+        "staff_category_id" => "دسته بندی کارمند"
     ],
 
 ];

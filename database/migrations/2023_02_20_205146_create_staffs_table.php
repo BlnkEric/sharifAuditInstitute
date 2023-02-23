@@ -16,10 +16,13 @@ class CreateStaffsTable extends Migration
         Schema::create('staffs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('slug')->unique();
             $table->string('phone');
             $table->string('email')->unique();
             $table->string('role');
-            $table->foreignId('service_id')->nullable()->constrained()->onDelete('CASCADE');
+            $table->text('description');
+            $table->foreignId('industry_id')->nullable()->constrained()->onDelete('CASCADE');
+            $table->foreignId('staff_category_id')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

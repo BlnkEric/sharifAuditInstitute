@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/industries', [App\Http\Controllers\IndustryController::class, 'index'])->name('industries.index');
 Route::resource('services', App\Http\Controllers\ServiceController::class)->only(['index', 'show']);
 Route::resource('articles', App\Http\Controllers\ArticleController::class)->only(['index', 'show']);
+Route::resource('staffs', App\Http\Controllers\StaffController::class)->only(['index', 'show']);
 Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
 
 Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
@@ -37,6 +38,9 @@ Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
         'as' => 'admin'
     ])->only(['index', 'show', 'destroy']);
     Route::resource('articles', App\Http\Controllers\Admin\ArticleController::class, [
+        'as' => 'admin'
+    ]);
+    Route::resource('staffs', App\Http\Controllers\Admin\StaffController::class, [
         'as' => 'admin'
     ]);
     Route::post('/service-image-create', [App\Http\Controllers\Admin\ServiceController::class, 'uploadImageOnCreate'])
