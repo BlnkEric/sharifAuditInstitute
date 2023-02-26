@@ -34,6 +34,9 @@ Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class, [
         'as' => 'admin'
     ]);
+    Route::resource('clients', App\Http\Controllers\Admin\ClientsController::class, [
+        'as' => 'admin'
+    ]);
     Route::resource('proposals', App\Http\Controllers\Admin\ProposalController::class, [
         'as' => 'admin'
     ])->only(['index', 'show', 'destroy']);

@@ -55,9 +55,7 @@ class User extends Authenticatable
         return $this->hasMany(Report::class);
     }
 
-    public function services() {
-        return $this->belongsToMany(Service::class)->as('contracted')->withPivot(['contract_path']);
-    }
+
 
     public function image() {
         return $this->morphOne(Image::class, 'imageable');

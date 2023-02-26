@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiceUserTable extends Migration
+class CreateClientServiceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateServiceUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_user', function (Blueprint $table) {
+        Schema::create('client_service', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreignId('client_id')->constrained()->onDelete('CASCADE');
             $table->foreignId('service_id')->constrained()->onDelete('CASCADE');
-            $table->foreignId('user_id')->constrained()->onDelete('CASCADE');
 
-            $table->string('contract_path');
+            $table->string('service_name');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateServiceUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_user');
+        Schema::dropIfExists('client_service');
     }
 }

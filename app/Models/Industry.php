@@ -36,6 +36,10 @@ class Industry extends Model
         return $this->hasMany(Staff::class);
     }
 
+    public function clients() {
+        return $this->hasMany(Client::class);
+    }
+
     protected static function boot() {
         parent::boot();
 

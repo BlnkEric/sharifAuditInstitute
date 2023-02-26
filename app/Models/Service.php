@@ -18,8 +18,8 @@ class Service extends Model
         return 'slug';
     }
 
-    public function users() {
-        return $this->belongsToMany(User::class)->as('contracted')->withPivot(['contract_path']);
+    public function clients() {
+        return $this->belongsToMany(Client::class)->as('contracted')->withPivot(['service_name'])->withTimestamps();
     }
     
     public function articles() {
