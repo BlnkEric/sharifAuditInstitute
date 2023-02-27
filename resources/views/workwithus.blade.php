@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('front.layouts.app')
+
 @include('components.navbar')
 
 {{-- Css -> contactAbout.css --}}

@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('front.main');
 
-Route::get('/', function () {
-    return view('realHome');
-});
-
 Route::get('/account', function () {
     return view('account');
 });

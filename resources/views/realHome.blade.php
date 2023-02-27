@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('front.layouts.app')
 
-@include('components.navbar')
+
+@include('components.navbar', ['services' => $services])
 
 <div class="container-fluid workWithUsHomeContainer">
     <div class="container">

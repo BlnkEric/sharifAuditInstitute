@@ -17,6 +17,6 @@ class HomeController extends Controller
         $services = Service::get();
         $services->load(['specialServices']);
 
-        return view('welcome', compact('services'));
+        return view('realHome', compact('services'));
     }
 }
