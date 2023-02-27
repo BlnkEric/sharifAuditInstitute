@@ -16,6 +16,34 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('front.main');
 
+Route::get('/', function () {
+    return view('realHome');
+});
+
+Route::get('/account', function () {
+    return view('account');
+});
+
+Route::get('/industry', function () {
+    return view('industry');
+});
+
+Route::get('/article', function () {
+    return view('article');
+});
+
+Route::get('/contactus', function () {
+    return view('contactus');
+});
+
+Route::get('/work', function () {
+    return view('workwithus');
+});
+
+Route::get('/adamha', function () {
+    return view('people');
+});
+
 Auth::routes();
 
 Route::get('/industries', [App\Http\Controllers\IndustryController::class, 'index'])->name('industries.index');

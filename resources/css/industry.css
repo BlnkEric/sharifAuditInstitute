@@ -1,0 +1,35 @@
+.industryItemsContainer {
+    position: relative;
+    top: -10%;
+}
+.industryItemsContainer .container {
+    background-color: white;
+    padding: 35px;
+}
+.industryItemsContainer .container .row {
+    direction: rtl;
+}
+/* Important */
+.industryItemsContainer .container .row div section {
+    padding: 20px;
+    margin: 20px;
+    background: var(--seventhColor);
+    transition: 1s linear;
+    color: white;
+    background-size: cover;
+}
+.industryItemsContainer .container .row div section:hover {
+    border: 2px solid var(--forthColor);
+}
+.industryItemsContainer .container .row div div h1 {
+    margin-right: 10px;
+    display: inline;
+    font-family: secondFont;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.industryItemsContainer .container .row div section p {
+    margin-top: 35px;
+    font-family: firstFont;
+    font-size: 1.2rem;
+}

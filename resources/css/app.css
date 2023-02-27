@@ -1,1 +1,215 @@
 @import "~select2/dist/css/select2.css";
+/* Css Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: none;
+}
+:root {
+    /* Colors */
+    --firstColor: #a2fa00;
+    --secondColor: #10d90b;
+    --thirdColor: #0b80d9;
+    --forthColor: #00f074;
+    --fifthColor: #0f91ff;
+    --seventhColor: #227048;
+    --ninthColor: #5a36ff;
+    --eigthColor: #a3106f;
+    --tenthColor : #005153;
+    --navbarHeight : 70px;
+    --eachSliderLoopWidth: 250px;
+}
+@font-face {
+    font-family: firstFont;
+    /* src: url('/public/fonts/B\ Nazanin_p30download.com.ttf'); */
+    src: url("/fonts/B\ Nazanin_p30download.com.ttf");
+}
+@font-face {
+    font-family: secondFont;
+    src: url("/fonts/B\ Koodak\ Bold_p30download.com.ttf");
+}
+@font-face {
+    font-family: thirdFont;
+    src: url("/fonts/B\ Roya_p30download.com.ttf");
+}
+body {
+    font-family: firstFont;
+    background-color: white;
+}
+
+.buttonVersion1 {
+    background-color: var(--secondColor);
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 20px;
+    min-width: 200px;
+    font-family: thirdFont;
+    font-weight: 600;
+    font-size: 1.8rem;
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+    direction: ltr;
+    -webkit-box-shadow: 9px 9px 7.5px 5.5px #1d5237;
+    -moz-box-shadow: 9px 9px 7.5px 5.5px #1d5237;
+    box-shadow: 9px 9px 7.5px 5.5px #1d5237;
+    border: none;
+}
+
+.buttonVersion1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.buttonVersion1:hover {
+    background-color: var(--forthColor);
+    -webkit-box-shadow: 15.5px 15px 7.5px 5.5px #1d5237;
+    -webkit-box-shadow: 13.5px 13.5px 7.5px 5.5px #1d5237;
+    -moz-box-shadow: 13.5px 13.5px 7.5px 5.5px #1d5237;
+    box-shadow: 13.5px 13.5px 7.5px 5.5px #1d5237;
+}
+.buttonVersion1 span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.buttonVersion1:hover span {
+    padding-right: 25px;
+
+}
+
+.buttonVersion1:hover span:after {
+    opacity: 1;
+    right: 0;
+}

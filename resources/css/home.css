@@ -1,0 +1,185 @@
+@media screen and (max-width: 753px) {
+    .faqContainer .container .row:nth-child(3) section {
+        width: 100% !important;
+        background-color: blue;
+        margin: 0 auto;
+    }
+    .workWithUsHomeContainer .container section{
+     width: 100% !important;
+    }
+}
+.faqContainer .container .row:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.faqContainer .container .row:nth-child(2) h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: secondFont;
+    font-weight: 500;
+    font-size: 3rem;
+    margin: 30px;
+}
+.faqContainer .container .row:nth-child(3) section {
+    width: 70%;
+    margin: 0 auto;
+}
+/* Accordion */
+.accordion {
+    color: black;
+    cursor: pointer;
+    padding: 30px;
+    width: 100%;
+    border: none;
+    text-align: right;
+    direction: rtl;
+    background-color: white;
+    outline: none;
+    border-bottom: 2px solid var(--seventhColor);
+    font-family: secondFont;
+    font-size: 1.8rem;
+    font-weight: 400;
+    transition: 0.4s;
+}
+.accordion span{
+    float: left;
+    transition: 0.3s linear;
+}
+.active,
+.accordion:hover {
+    background-color: var(--seventhColor);
+    color: white;
+}
+.panel {
+    background-color: white;
+    max-height: 0;
+    padding: 0 18px;
+    direction: rtl;
+    font: firstFont;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.rotateTheAccordionArrow {
+    rotate: -90deg;
+}
+
+/* SliderLOOP */
+.slider {
+
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.slide-track {
+    display: flex;
+    /* slide track width = total number of slides 9*2 = 18 * individual width (250px) */
+    width: calc(var(--eachSliderLoopWidth) * 18);
+    background-color: var(--forthColor);
+    font-family: firstFont;
+    animation: scroll 20S linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(calc(var(--eachSliderLoopWidth) *9 * -1))
+    }
+}
+.slide {
+    height: auto;
+    width: var(--eachSliderLoopWidth);
+    display: flex;
+    align-items: center;
+    padding: 35px;
+    perspective: 100px;
+    font-size: 2rem;
+}
+
+/* HeroBoxMain */
+.mainHeroBoxContainer {
+    width: 100%;
+    height:500px;
+    background-color: green;
+}
+/* WorkWithUS */
+.workWithUsHomeContainer {
+    background-image: url('/images/WorkWithUS.jpg');
+    background-size: cover;
+}
+.workWithUsHomeContainer .container {
+    direction: rtl;
+    min-height: 800px;
+    color: rgb(0, 0, 0);
+}
+.workWithUsHomeContainer .container h3{
+    font-family: secondFont;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.workWithUsHomeContainer .container h1{
+    font-family: secondFont;
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+}
+.workWithUsHomeContainer .container {
+    padding: 40px;
+}
+.workWithUsHomeContainer .container section{
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    width: 50%;
+    border-radius: 10px;
+}
+.workWithUsHomeContainer .container .row{
+    margin-top: 50px;
+    padding: 20px;
+}
+.workWithUsHomeContainer .container .row .col{
+    padding: 20px;
+}
+.workWithUsHomeContainer .container .row div section{
+    background-color: azure;
+    width: 100%;
+    margin: 10px;
+    height: 200px;
+}
+.introTemplate .container .row {
+    direction: rtl;
+}
+.introTemplate .container .row div section{
+   background-color: red;
+   padding: 10px;
+   height: 300px;
+}
+.introTemplate .container .row div section div div{
+   display: inline-block !important;
+ }
+ .introTemplateImageContainer div{
+    background-color: blue;
+    padding: 10px;
+    height: 300px;
+    /* Barabar ba Samt Rast */
+ }
+ .workWithUsHomeContainer .container .row:first-child {
+    margin-top: 200px;
+ }

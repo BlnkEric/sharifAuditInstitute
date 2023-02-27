@@ -1,0 +1,66 @@
+.footerContainer .container .row {
+    direction: rtl;
+    font-family: firstFont;
+}
+.footerContainer .container .row:first-child {
+    padding-top: 150px;
+}
+.footerContainer {
+    background-color: black;
+    color: white;
+}
+.footerContainer .container .row div:first-child section h1 {
+    padding: 0.3rem 0rem 0.3rem 0.3rem;
+    font-family: secondFont;
+    font-size: 3rem;
+    line-height: 130%;
+}
+
+.footerContainer .container .row div:first-child section ul {
+    overflow: hidden;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 10px; /* Remove margins */
+}
+.footerContainer .container .row div:first-child section ul li {
+    float: right;
+    margin-right: 1.7rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.footerContainer .container .row div:first-child section ul li:first-child {
+    margin-right: 0 !important;
+}
+.footerContainer .container .row div:first-child section ul li div:first-child {
+    background-color: var(--firstColor);
+    display: inline-block;
+    border-radius: 50%;
+    color: black;
+    padding: 4px;
+    font-size: 0.7rem;
+}
+.footerContainer .container .row:nth-child(2) div:last-child section ul li {
+    margin-top: 10px;
+}
+.footerContainer .container .row:nth-child(2) {
+    margin-top: 70px;
+}
+.footerContainer .container .row:nth-child(2) div h3 {
+    font-family: secondFont;
+    font-size: 1.5rem;
+}
+.footerPageLinks section ul {
+    font-family: secondFont;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.footerContainer section ul li {
+    transition: 0.5s linear;
+}
+.footerPageLinks section ul li:hover {
+    cursor: pointer;
+    color: var(--secondColor);
+}
+.footerPageLinks section ul:nth-child(1) {
+   margin-left: 100px;
+}
