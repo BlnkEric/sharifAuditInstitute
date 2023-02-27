@@ -9,7 +9,7 @@ class StaffCategory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'priority', 'staff_category_id'];
+    protected $fillable = ['name', 'priority'];
 
     public function staffs() {
         return $this->hasMany(Staff::class);

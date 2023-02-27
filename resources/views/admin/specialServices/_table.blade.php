@@ -4,7 +4,7 @@
         <th>#</th>
         <th>Slug</th>
         <th>نام</th>
-        {{-- <th>توضیحات</th> --}}
+        <th>متعلق به خدمت اصلی</th>
         <th>Actions</th>
         <th></th>
         <th>ایجاد شده</th>
@@ -13,20 +13,18 @@
     </thead>
     <tbody style="vertical-align: middle;">
 
-    @forelse ($services as $key => $service)
+    @forelse ($special_services as $key => $service)
     <tr onclick="window.location='{{ route('services.show', $service->slug) }}'" style="cursor: pointer;">
-        <th scope="row">{{ $services->firstItem() + $key }}</th>
+        <th scope="row">{{ $special_services->firstItem() + $key }}</th>
         <td>{{ $service->slug }}</td>
         <td>{{ $service->name }}</td>
+        <td>{{ $service->service->name }}</td>
         {{-- <td>{{ Str::limit($service->description, 40, $end='...') }}</td> --}}
         <td>
-            <a href="{{ route('admin.specialServices.create', $service->slug) }}" class="btn btn-success">افزودن خدمات خاص</a>
+            <a href="{{ route('admin.specialServices.edit', ['service' => $service->service->slug, 'specialService' => $service->slug]) }}" class="btn btn-warning">ویرایش</a>
         </td>
         <td>
-            <a href="{{ route('admin.services.edit', $service->slug) }}" class="btn btn-warning">ویرایش</a>
-        </td>
-        <td>
-            <form action="{{ route('admin.services.destroy', $service->slug) }}" method="POST">
+            <form action="{{ route('admin.specialServices.destroy', $service->slug) }}" method="POST">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>حذف</button>
@@ -44,4 +42,4 @@
     </tbody>
 </table>
 
-{{ $services->links() }}
+{{ $special_services->links() }}

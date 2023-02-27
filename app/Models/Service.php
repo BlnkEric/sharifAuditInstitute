@@ -18,6 +18,10 @@ class Service extends Model
         return 'slug';
     }
 
+    public function specialServices() {
+        return $this->hasMany(SpecialService::class);
+    }
+
     public function clients() {
         return $this->belongsToMany(Client::class)->as('contracted')->withPivot(['service_name'])->withTimestamps();
     }

@@ -14,7 +14,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::paginate(10);
-        $services->load('staffs');
+        $services->load(['specialServices']);
         return view('front.services.index', compact('services'));
     }
 
@@ -26,6 +26,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
+        $service->load('specialServices');
         return view('front.services.show', compact('service'));
     }
 }

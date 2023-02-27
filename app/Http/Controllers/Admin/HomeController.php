@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,6 @@ class HomeController extends Controller
         $services = Service::get();
         $services->load(['specialServices']);
 
-        return view('welcome', compact('services'));
+        return view('admin.home', compact('services'));
     }
 }

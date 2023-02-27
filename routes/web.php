@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('front.main');
 
 Auth::routes();
 
@@ -27,13 +25,36 @@ Route::resource('staffs', App\Http\Controllers\StaffController::class)->only(['i
 Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
 
 Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
+    Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.dashboard');
     Route::resource('industries', App\Http\Controllers\Admin\IndustryController::class, [
         'as' => 'admin'
     ]);
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class, [
         'as' => 'admin'
     ]);
+
+
+    Route::resource('special-services', App\Http\Controllers\Admin\SpecialServiceController::class, [
+        'as' => 'admin',
+        'names' => [
+            'index' => 'admin.specialServices.index',
+            'destroy' => 'admin.specialServices.destroy',
+        ]
+    ])->only(['index', 'destroy']);;
+
+    Route::get('/service/{service}/special-services/create', [App\Http\Controllers\Admin\SpecialServiceController::class, 'create'])
+    ->name("admin.specialServices.create");
+
+    Route::post('/service/{service}/special-services', [App\Http\Controllers\Admin\SpecialServiceController::class, 'store'])
+    ->name("admin.specialServices.store");
+
+    Route::get('/service/{service}/special-services/edit/{specialService}', [App\Http\Controllers\Admin\SpecialServiceController::class, 'edit'])
+    ->name("admin.specialServices.edit");
+
+    Route::put('/service/{service}/special-services/{specialService}', [App\Http\Controllers\Admin\SpecialServiceController::class, 'update'])
+    ->name("admin.specialServices.update");
+
+
     Route::resource('clients', App\Http\Controllers\Admin\ClientsController::class, [
         'as' => 'admin'
     ]);
@@ -53,6 +74,12 @@ Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
     Route::get('/service-image-delete', [App\Http\Controllers\Admin\ServiceController::class, 'deleteImage'])
         ->name('delete.service.description.photo');
 
+    Route::post('/special-service-image-create', [App\Http\Controllers\Admin\SpecialServiceController::class, 'uploadImageOnCreate'])
+        ->name("upload.specialService.image.create");
+    Route::post('/special-service-image-update/{specialService}', [App\Http\Controllers\Admin\SpecialServiceController::class, 'uploadImageOnUpdate'])
+        ->name("upload.specialService.image.update");
+    Route::get('/special-service-image-delete', [App\Http\Controllers\Admin\SpecialServiceController::class, 'deleteImage'])
+        ->name('delete.specialService.description.photo');
 
     Route::post('/article-image-create', [App\Http\Controllers\Admin\ArticleController::class, 'uploadImageOnCreate'])
     ->name("upload.article.image.create");
