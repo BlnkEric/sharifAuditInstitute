@@ -10819,6 +10819,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.badge-lg {
+  font-size: 1rem;
+}
 .select2-container {
   box-sizing: border-box;
   display: inline-block;

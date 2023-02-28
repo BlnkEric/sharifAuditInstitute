@@ -48,6 +48,14 @@ Route::resource('articles', App\Http\Controllers\ArticleController::class)->only
 Route::resource('staffs', App\Http\Controllers\StaffController::class)->only(['index', 'show']);
 Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');
 
+Route::resource('jobRequests', App\Http\Controllers\JobRequestController::class)->except(['store']);
+Route::post('/job-offer/{jobOffer}/job-request', [App\Http\Controllers\JobRequestController::class, 'store'])
+->name("jobRequests.store");
+
+Route::resource('jobOffers', App\Http\Controllers\JobOfferController::class)->only(['index', 'show']);
+Route::get('/download-resume-form', [ App\Http\Controllers\JobOfferController::class, 'downloadForm'])->name('resumeForm.download');
+
+
 Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
     Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.dashboard');
     Route::resource('industries', App\Http\Controllers\Admin\IndustryController::class, [
@@ -56,7 +64,10 @@ Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class, [
         'as' => 'admin'
     ]);
-
+    Route::resource('jobOffers', App\Http\Controllers\Admin\JobOfferController::class, [
+        'as' => 'admin'
+    ]);
+    Route::get('job-request/{uuid}/download/', [ App\Http\Controllers\Admin\JobOfferController::class, 'download'])->name('admin.jobRequests.download');
 
     Route::resource('special-services', App\Http\Controllers\Admin\SpecialServiceController::class, [
         'as' => 'admin',

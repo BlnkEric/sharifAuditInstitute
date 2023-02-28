@@ -100,10 +100,12 @@
                 </div>
             </div>
         </nav> --}}
+        {{-- @include('components.navbar', ['services' => $services]) --}}
+        @include('components.navbar')
 
-        {{-- <main class="py-4">
+        <main class="py-4">
             @yield('content')
-        </main> --}}
+        </main>
     </div>
 </body>
 

@@ -24,13 +24,22 @@ class UpdateClientRequest extends FormRequest
      */
     public function rules()
     {
-        // dd($this->industry);
         return [
             'name' => 'required|max:60',
             'industry_id' => 'exists:industries,id',
-            'ser[]' => 'exists:services,id',
-
-            // 'image' => 'image|mimes:png,jpeg,gif,png,svg',
+            'services' => 'required|exists:services,id',
+            'image' => 'image|mimes:png,jpeg,gif,png,svg',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'services.required' => 'انتخاب بخش خدمات الزامی است. خدمات پیشین جایگذاری شدند',
+            'services.exists' => 'لطفاً خدمات معتبر را انتخاب نمایید.',
+            'industry_id.required' => 'انتخاب بخش صنعت الزامی است.',
+            'industry_id.exists' => 'لطفاً یک صنعت معتبر را انتخاب نمایید.',
+        ];
+    }
+
 }

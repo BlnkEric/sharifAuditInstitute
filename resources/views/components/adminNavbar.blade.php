@@ -7,9 +7,19 @@
                 <a href="#!">Logo</a>
             </div>
             <nav>
-                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                <ul class="nav-list">
+                {{-- <div class="container"> --}}
 
+                <ul class="nav-list">
+                    {{-- <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button> --}}
+    
+
+
+                    <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
                             <li>
@@ -30,8 +40,8 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -40,59 +50,32 @@
                                 </form>
                             </div>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.services.index') }}" class="nav-link">مدیریت خدمات</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.proposals.index') }}" class="nav-link">مدیریت پروپوزال‌ها</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.industries.index') }}" class="nav-link">مدیریت صنایع</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.articles.index') }}" class="nav-link">مدیریت مقالات</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.staffs.index') }}" class="nav-link">مدیریت کارمندان</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.clients.index') }}" class="nav-link">مدیریت مشتریان</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.jobOffers.index') }}" class="nav-link">مدیریت موقعیت های شغلی</a>
+                        </li>
                     @endguest
 
-                    <li>
-                        <a href="#!">خانه</a>
-                    </li>
-                    <li>
-                        <a href="#!">درباره ما</a>
-                    </li>
 
-                    {{-- MOHEMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM --}}
-                    {{-- <li>
-                        <a href="#!">خدمات</a>
-                        <ul class="nav-dropdown">
-
-                            @foreach ($services as $service)
-                                <li>
-                                    <a href="#!">{{ $service->name }}</a>
-                                    @if(count($service->specialServices))
-                                    <ul class="nav-dropdown">
-                                        @foreach($service->specialServices as $sp_ser)
-                                            <li>
-                                                <a class="dropdown-item" href="#" style="border:1px solid #ccc;">
-                                                    {{ $sp_ser->name }}
-                                                </a>                                        
-                                            </li>                                        
-                                        @endforeach
-                                    </ul>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li> --}}
-                    <li>
-                        <a href="#!">Pricing</a>
-                    </li>
-                    <li>
-                        <a href="#!">Portfolio</a>
-                        <ul class="nav-dropdown">
-                            <li>
-                                <a href="#!">Web Design</a>
-                            </li>
-                            <li>
-                                <a href="#!">Web Development</a>
-                            </li>
-                            <li>
-                                <a href="#!">Graphic Design</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#!">ارتباط با ما</a>
-                    </li>
                 </ul>
+                {{-- </div> --}}
             </nav>
         </div>
     </section>

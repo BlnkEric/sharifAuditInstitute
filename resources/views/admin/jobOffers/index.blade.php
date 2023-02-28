@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'مدیریت مشتریان')
+@section('title', 'مدیریت موقعیت های شغلی')
 
 @section('content')
     <div class="container">
@@ -8,9 +8,9 @@
             @include('messages')
             <div class="row">
                 <div class="col-md-4">
-                    <a class="btn btn-primary w-50" href="{{ route('admin.clients.create') }}">ایجاد مشتری جدید</a>
+                    <a class="btn btn-primary w-50" href="{{ route('admin.jobOffers.create') }}">ایجاد موقعیت شغلی جدید</a>
                 </div>
-                @include('admin.clients._table')
+                @include('admin.jobOffers._table')
             </div>
         </div>
     </div>

@@ -5,6 +5,7 @@
         <th>Slug</th>
         <th>نام</th>
         {{-- <th>توضیحات</th> --}}
+        <th></th>
         <th>Actions</th>
         <th></th>
         <th>ایجاد شده</th>

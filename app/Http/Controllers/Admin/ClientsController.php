@@ -52,12 +52,9 @@ class ClientsController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        // dd($request->all(), count($request->ser));
         
         $client = Client::create($request->except('services'));
-
         foreach ($request->services as $key => $value) {
-            // dd($value);
             $client->services()->syncWithoutDetaching([
                 $value => [
                     'service_name' => Service::findOrFail($value)->name
@@ -65,12 +62,10 @@ class ClientsController extends Controller
             ]);
         }
 
-
         $imagePath = $request->file('image')->store('public/client_images');
         $client->image()->save(Image::make([
             'path' => $imagePath
         ]));
-        // dd($client->image);
         return redirect(route('admin.clients.index'))->with('success', 'مشتری جدید با موفقیت ساخته شد!');
     }
 
@@ -94,7 +89,6 @@ class ClientsController extends Controller
     public function edit(Client $client)
     {
         $client->load('industry', 'services');
-        // dd($client);
         return view('admin.clients.edit', [
             'industries' => Industry::get(),
             'services' => Service::get(),
@@ -112,15 +106,19 @@ class ClientsController extends Controller
     public function update(UpdateClientRequest $request, Client $client)
     {
         // dd($request->all());
-        $client->update($request->all());
-        if (!$request->hasFile('image')) {
-            $request->merge([
-                'image' => null
+        $client->update($request->except('services'));
+        $client->services()->detach();
+
+        foreach ($request->services as $key => $value) {
+            // dd($value);
+            $client->services()->syncWithoutDetaching([
+                $value => [
+                    'service_name' => Service::findOrFail($value)->name
+                ]
             ]);
-            $request->validate([
-                'image' => new UpdateIfNull('images', $client),
-            ]);
-        }else{
+        }
+
+        if ($request->hasFile('image')) {
             Storage::delete($client->image->path);
             $imagePath = $request->file('image')->store('public/client_images');
             $client->image()->update([
@@ -139,7 +137,6 @@ class ClientsController extends Controller
     public function destroy($id)
     {
         $client = Client::findOrFail($id);
-        // dd($client->image);
         $client->delete();
         return redirect(route('admin.clients.index'))->with('success', "مشتری $client->name با موفقیت حذف شد.");
 

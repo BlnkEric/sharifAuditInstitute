@@ -21,15 +21,22 @@
                 </div>
                 <div class="form-group">
                     <label for="service_id">خدمت مورد نظر برای این مشتری:</label>
-                    <select multiple data-live-search="true" name="ser[]" class="form-control @error('service_id') is-invalid @enderror">
+                    <select multiple data-live-search="true" name="services[]" class="form-control @error('services') is-invalid @enderror">
                         @foreach ($services as $service)
                             <option value="{{ $service->id }}"
-                                {{ (collect(old('ser'))->contains($service->id)) ? 'selected':'' }}>
+                                {{ 
+                                    (old('services') == null 
+                                            ? collect($client->services->pluck('id'))->contains($service->id) 
+                                            : collect(old('services'))->contains($service->id))
+                                    ? 'selected'
+                                    : '' 
+                                }}
+                            >
                                 {{ $service->name }}
                             </option>
                         @endforeach
                     </select>
-                    @error('service_id')
+                    @error('services')
                         <span class="invalid-feedback" role="alert">
                             <strong> {{ $message }}</strong>
                         </span>
@@ -38,7 +45,7 @@
                 <div class="form-group">
                     <label for="industry_id">صنعت:</label>
                     <select name="industry_id" id="industry_id" class="form-control @error('industry_id') is-invalid @enderror">
-                        <option value="">انتخاب کنید</option>
+                        <option value="" disabled>انتخاب کنید</option>
                         @foreach ($industries as $industry)
                             <option value="{{ $industry->id }}"
                                 {{ $industry->id == old('industry_id', $client->industry_id) ? 'selected' : '' }}>

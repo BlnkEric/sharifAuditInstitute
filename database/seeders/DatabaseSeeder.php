@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             ArticlesTableSeeder::class,
             StaffCategoriesTableSeeder::class,
             StaffsTableSeeder::class,
+            TagsTableSeeder::class,
+            JobOfferTableSeeder::class,
         ]);
     }
 }
