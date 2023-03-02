@@ -6,10 +6,10 @@
             {{-- Image Holder --}}
             <div class="col-12 col-md-6">
                 <section>
-                    <span class="me-3">Logo picture</span><span>LogoName</span>
+                    <span>LogoName</span> <span class="me-3">عموی شاهین</span>
                 </section>
                 <section>
-                    <h1>Arash</h1>
+                    <h1>به سایت ارش خوش امدید</h1>
                 </section>
                 <section>
                     <p>www.arash.com</p>

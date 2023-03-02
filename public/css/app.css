@@ -11507,6 +11507,10 @@ a:active {
     src: url("/fonts/B\ Nazanin_p30download.com.ttf");
 }
 @font-face {
+    font-family: forthFont;
+     src: url('/fonts/B\ Titr\ Bold_p30download.com.ttf'); 
+}
+@font-face {
     font-family: secondFont;
     src: url("/fonts/B\ Koodak\ Bold_p30download.com.ttf");
 }
@@ -11528,12 +11532,13 @@ body {
     min-width: 200px;
     font-family: thirdFont;
     font-weight: 600;
+    box-sizing: content-box;
     font-size: 1.8rem;
     border-radius: 15px;
     transition: 0.5s ease-in-out;
     direction: ltr;
     box-shadow: 9px 9px 7.5px 5.5px #1d5237;
-    border: none;
+    border: 1px solid var(--secondColor);
 }
 
 .buttonVersion1 span {

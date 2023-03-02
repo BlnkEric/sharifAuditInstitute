@@ -33,7 +33,6 @@
 }
 /* Artilces */
 .articleContainer .container .row {
-    background-color: red;
     direction: rtl;
 }
 .articleContainer .container .row div {
@@ -61,7 +60,6 @@
 }
 .overTheArticle {
     width: 80%;
-    background-color: blue;
     display: flex;
     position: absolute;
     top: 55%;
@@ -70,12 +68,10 @@
 }
 /* Secion 2 */
 .articleSection2 .container .row div section{
-    background-color: blue;
     padding: 10px;
 }
 .bigArticleSection2Item {
-    background-color: green;
-    height: 500px;
+    direction: rtl;
 }
 .bigArticleSection2Item section:first-child {
     width: 100%;
@@ -85,12 +81,33 @@
     height: 300px;
 }
 .articelFilterRowSection2 {
-   padding: 10px 20px;
+height: 41px;
+   border-bottom: 2px solid var(--secondColor);
+   margin-bottom: 30px;
+}
+.articelFilterRowSection2 span:first-child{
+    font-family: secondFont;
+    background-color: var(--secondColor);
+    color: white;
+    padding: 10px 20px;
+}
+.articelFilterRowSection2 span{
+    font-family: secondFont;
+    padding: 10px 20px;
+    transition: 0.3s linear;
+    font-size: 1.3rem;
+    color: var(--secondColor);
+
+}
+.articelFilterRowSection2 span:hover{
+    background-color: var(--secondColor);
+    color: white;
+    cursor: pointer;
+
 }
 .articleSection2AllArticels {
     width: 100%;
     padding: 10px;
-    background-color: purple;
     direction: rtl;
     height: 500px;
     overflow-y: scroll
@@ -106,7 +123,7 @@
     padding: 10px;
 }
 .articleSection2AllArticels section .row div:first-child {
-    height: 100px;
+    height: 130px;
     background-image: url("/images/LightHouseImage.png");
     background-size: cover;
     background-position: 50% 50%;
@@ -114,9 +131,17 @@
 .articleSection2AllArticels section .row h1 {
     margin-bottom: 10px;
     font-family: secondFont;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
-.articleSection2AllArticels section .row p {
-   font-family: firstFont;
-   font-size: 1.1rem;
+.bigArticleSection2Item section:nth-child(2) h1 {
+    font-family: secondFont;
+    font-size: 1.6rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.bigArticleSection2Item section:nth-child(3) {
+    font-family: thirdFont;
+    font-size: 1.1rem;
+    height: 100px;
+    overflow: hidden;
 }

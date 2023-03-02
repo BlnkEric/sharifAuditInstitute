@@ -11,13 +11,12 @@
     padding-bottom: 5rem;
     width: 100%;
     height: auto;
-    background-color: blue;
+
     background-image: url("/images/AccountBG.jpg");
     background-repeat: no-repeat;
     background-position: 100% 100%;
 }
 .accountContainer .container .row {
-    background-color: blue;
     border-radius: 15px;
     width: 100%;
     height: auto;
@@ -36,26 +35,39 @@
 .accountContainer .container .row div:first-child section:first-child {
     margin-top: 50px;
     margin-left: 20px;
-    background-color: red;
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-family: secondFont;
+    direction: rtl;
+}
+.accountContainer .container .row div:first-child {
+    background-image: url("/images/accountBG2.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
 }
 .accountContainer .container .row div:first-child section:nth-child(2) {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
+   text-align: center;
     padding: 20px;
-    justify-content: center;
-    background-color: yellow;
+ 
+    font-family: secondFont;
+    font-size: 2rem;
+    backdrop-filter: blur(10px);
+    color: rgb(2, 82, 8);
 }
 .accountContainer .container .row div:first-child section:nth-child(3) {
     position: absolute;
     left: 20px;
-    top: 80%;
+    top: 85%;
     display: flex;
     padding: 20px;
     justify-content: start;
-    background-color: yellow;
+    font-size: 1.4rem;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .accountContainer .container .row div {
     position: relative;
