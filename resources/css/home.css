@@ -127,27 +127,23 @@
 }
 .workWithUsHomeContainer .container {
     direction: rtl;
+    font-family: forthFont;
     min-height: 800px;
-    color: rgb(0, 0, 0);
+    padding: 40px;
+    color: rgb(255, 255, 255);
 }
 .workWithUsHomeContainer .container h3{
-    font-family: secondFont;
     margin-bottom: 40px;
     font-weight: 400;
     font-size: 1.4rem;
 }
 .workWithUsHomeContainer .container h1{
-    font-family: secondFont;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     margin-bottom: 40px;
 }
-.workWithUsHomeContainer .container {
-    padding: 40px;
-}
 .workWithUsHomeContainer .container section{
-    backdrop-filter: blur(10px);
     padding: 15px;
-    width: 50%;
+    width: 90%;
     border-radius: 10px;
 }
 .workWithUsHomeContainer .container .row{

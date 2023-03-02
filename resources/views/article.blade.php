@@ -30,21 +30,26 @@
     </div>
 </div>
 
-<div class="container-fluid articleSection2">
+<div class="container-fluid articleSection2 mt-5">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-9">
                 <section>
-                    <div class="row articelFilterRowSection2">
-                        Filters
+                    <div class="articelFilterRowSection2">
+                        <span class="float-start">فیلتر</span>
+                        <span class="float-end">Arash</span>
+                        <span class="float-end">Arash2</span>
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="bigArticleSection2Item">
                                 <section></section>
                                 <section>
-                                    <h1>Arash</h1>
-                                    <p>ArashArasharasharash</p>
+                                    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, sit?</h1>
+                                    <p><span>Tarikh</span><span class="ms-2">Nevinsande</span></p>
+                                </section>
+                                <section>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cumque nam, iure magnam sit inventore eaque libero doloribus aspernatur recusandae voluptates molestias corrupti quo. Beatae?</p>
                                 </section>
                             </div>
                         </div>
@@ -54,11 +59,7 @@
                                     <div class="row">
                                         <div class="col-12 col-lg-5 d-none d-lg-block">abc</div>
                                         <div class="col-12 col-lg-7">
-                                            <h1>حسين رو دوس داريم</h1>
-                                            <p>حسين ميخواي منم لفت بدم؟بعد يه گروه باهم بزنيم از دست اين شاهين خلاص شيم؟:)
-                                            {{-- INJA RO FAGHAT TEDAD MAHDOD NASHON BEDID BA
-                                                ... --}}
-                                            </p>
+                                            <h1>Lorem ipsum dolor sit amet. حسين رو دوس داريم</h1>
                                         </div>
                                     </div>
                                 </section>
@@ -76,7 +77,7 @@
                     </div>
                 </section>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-3">
                 <section class="rightOfArticleSection2">
                     a
                 </section>
