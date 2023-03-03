@@ -114,12 +114,6 @@
     font-size: 2rem;
 }
 
-/* HeroBoxMain */
-.mainHeroBoxContainer {
-    width: 100%;
-    height:500px;
-    background-color: green;
-}
 /* WorkWithUS */
 .workWithUsHomeContainer {
     background-image: url('/images/WorkWithUS.jpg');
