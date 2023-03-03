@@ -1,36 +1,43 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     .accountContainer {
-        height: 100% !important;
+        padding-bottom: 5rem;
+        padding-top: 5rem;
     }
     .accountContainer .container .row div:last-child {
         border-radius: 0 15px 15px 0 !important;
     }
 }
 .accountContainer {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    height: 100%;
+    padding: 0;
+    padding-top: 3rem;
     width: 100%;
-    height: auto;
-
-    background-image: url("/images/AccountBG.jpg");
+    background-color: rgb(33, 33, 33);
     background-repeat: no-repeat;
     background-position: 100% 100%;
 }
 .accountContainer .container .row {
     border-radius: 15px;
+    margin: 0 auto;
+    padding: 0;
     width: 100%;
-    height: auto;
+}
+.accountContainer .container  {
+
+    padding: 0;
+ 
 }
 .accountContainer .container .row div:last-child {
     background-color: white;
-    height: 500px;
+    height: 630px;
     position: relative;
     overflow: hidden;
     direction: rtl;
-    border-radius: 0 0 15px 15px;
+    border-radius: 15px
 }
 .accountContainer .container .row div {
-    height: 500px;
+    height: 630px;
+    position: relative;
 }
 .accountContainer .container .row div:first-child section:first-child {
     margin-top: 50px;
@@ -50,9 +57,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-   text-align: center;
+    text-align: center;
     padding: 20px;
- 
+
     font-family: secondFont;
     font-size: 2rem;
     backdrop-filter: blur(10px);
@@ -67,10 +74,7 @@
     justify-content: start;
     font-size: 1.4rem;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.accountContainer .container .row div {
-    position: relative;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 #loginTab {
     right: 20%;
@@ -91,7 +95,7 @@
     margin-bottom: 40px;
     font-family: secondFont;
     color: var(--seventhColor);
-    font-size: 1.8rem;
+    font-size: 2.5rem;
 }
 .accountContainer .container .row div:last-child section input {
     border: 3px solid;
@@ -100,28 +104,25 @@
     border-left: 0;
     width: 100%;
     padding: 10px;
+    background-color: #e8f0fe;
     margin-bottom: 20px;
     border-right: 0;
     display: block;
     border-image-source: linear-gradient(to left, #00c853, #b2ff59);
 }
 #loginTab button {
-    position: absolute;
-    left: 48%;
+    position: relative;
+    left: 10px;
     width: 100%;
     padding: 10px;
     margin-top: 30px;
-    top: 45%;
-    transform: translate(-50%, -50%);
 }
 #registerTab button {
-    position: absolute;
-    left: 48%;
+    position: relative;
+    left: 10px;
     width: 100%;
     padding: 10px;
     margin-top: 30px;
-    top: 76%;
-    transform: translate(-50%, -50%);
 }
 #LoginChangeBtn {
     border-radius: 10px;

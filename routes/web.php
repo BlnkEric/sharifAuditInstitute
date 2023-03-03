@@ -19,6 +19,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/account', function () {
     return view('account');
 });
+Route::get('/', function () {
+    return view('realHome');
+});
 
 Route::get('/industry', function () {
     return view('industry');

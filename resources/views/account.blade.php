@@ -1,10 +1,9 @@
 @extends('front.layouts.app')
-
-<div class="container-fluid accountContainer">
+<div class="accountContainer">
     <div class="container">
         <div class="row">
             {{-- Image Holder --}}
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6 d-none d-lg-block">
                 <section>
                     <span>LogoName</span> <span class="me-3">عموی شاهین</span>
                 </section>
@@ -15,7 +14,7 @@
                     <p>www.arash.com</p>
                 </section>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <section id="loginTab">
                     <h2>ورود</h2>
 

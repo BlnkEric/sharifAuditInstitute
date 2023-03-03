@@ -1,8 +1,8 @@
 @extends('front.layouts.app')
 
 
-@include('components.navbar', ['services' => $services])
-
+{{-- @include('components.navbar', ['services' => $services]) --}}
+@include('components.navbar')
 
 <div class="container-fluid introTemplate">
     <div class="container">
