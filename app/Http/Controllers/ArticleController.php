@@ -16,7 +16,12 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::get();
-        return view('front.articles.index', compact('articles'));
+        $sliderArticles = Article::inRandomOrder()->take(5)->get();
+        // dd($sliderArticles);
+        return view('front.articles.index', [
+            'articles' => $articles,
+            'sliderArticles' => $sliderArticles,
+        ]);
     }
 
 

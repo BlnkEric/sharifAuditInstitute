@@ -1,4 +1,4 @@
-<table class="table table-striped mt-3 text-center table-hover" style="border-color: black;" border="1px;">
+<table class="table table-striped mt-3 text-center table-hover" style="border-color: rgb(255, 255, 255);" border="2px;">
     <thead>
         <tr>
             <th>#</th>
@@ -39,4 +39,6 @@
     </tbody>
 </table>
 
-{{ $articles->links() }}
+<div>
+    {{ $articles->links() }}
+</div>

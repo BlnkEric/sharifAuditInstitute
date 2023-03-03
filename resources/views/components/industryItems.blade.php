@@ -1,39 +1,32 @@
 <div class="container-fluid industryItemsContainer">
     <div class="container">
         <div class="row">
+            @foreach ($industries as $industry)
             <div class="col-12 col-md-6 col-lg-4">
                 <section data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.1">
                     <div>
-                        <span>Icon</span><h1>حسين لفت داد اييي</h1>
+                        <span>
+                            <img src="{{ $industry->image->path == 'seed' ? 'https://picsum.photos/200/300' : $industry->image->url() }}"
+                            class="card-img-top" alt="{{ $industry->name }}">
+                        </span>
+                        <h1>{{ $industry->name }}</h1>
                     </div>
-                    <p>حسين براي اينكه ناراحتت كردم.خودم رو مجبور ميكنم همه اينو رو كيبورد بدون هيچي تايپ كنم.پ لامصب 1 دقيقه طول كشيد پيدا كنم.بي پدر رو.اينم تنبيه من :)</p>
+                    <p>
+                        {{ $industry->description }}
+                    </p>
+                    
+                    {{-- <ul>
+                        @foreach($industry->proposals as $proposal)
+                            @if($proposal->user)
+                                <li>
+                                    {{ $proposal->user->name }}
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul> --}}
                 </section>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <section>
-                    salamazizam
-                </section>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <section>
-                    salamazizam
-                </section>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <section>
-                    salamazizam
-                </section>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <section>
-                    salamazizam
-                </section>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <section>
-                    salamazizam
-                </section>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

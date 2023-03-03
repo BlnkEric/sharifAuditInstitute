@@ -13,25 +13,19 @@
                     @guest
                         @if (Route::has('login'))
                             <li>
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                            <li>
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a href="{{ route('login') }}">حساب کاربری</a>
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <li class="dropdown">
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -100,28 +94,4 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 </div>
-<script>
-    (function($) { // Begin jQuery
-        $(function() { // DOM ready
-            // If a link has a dropdown, add sub menu toggle.
-            $('nav ul li a:not(:only-child)').click(function(e) {
-                $(this).siblings('.nav-dropdown').toggle();
-                // Close one dropdown when selecting another
-                $('.nav-dropdown').not($(this).siblings()).hide();
-                e.stopPropagation();
-            });
-            // Clicking away from dropdown will remove the dropdown class
-            $('html').click(function() {
-                $('.nav-dropdown').hide();
-            });
-            // Toggle open and close nav styles on click
-            $('#nav-toggle').click(function() {
-                $('nav ul').slideToggle();
-            });
-            // Hamburger to X toggle
-            $('#nav-toggle').on('click', function() {
-                this.classList.toggle('active');
-            });
-        }); // end DOM ready
-    })(jQuery); // end jQuery
-</script>
+
