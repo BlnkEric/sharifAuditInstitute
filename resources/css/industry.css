@@ -58,5 +58,107 @@
     font-size: 2rem;
 }
 .industryLinkToOtherContainer {
-    background-color: red;
+    direction: rtl;
+}
+.industryLinkToOtherContainer .row div {
+    background: #00ac53;
+    background: -webkit-linear-gradient(0deg, #00ac53 0%, #116c17 100%);
+    background: linear-gradient(0deg, #00ac53 0%, #116c17 100%);
+    padding: 50px;
+    color: rgb(255, 255, 255);
+    border-left: 3px solid white;
+    height: 300px;
+    position: relative;
+}
+.industryLinkToOtherContainer .row div button {
+    position: absolute;
+    right: -3%;
+    color: white;
+    width: 130px;
+    transition: 0.4s linear;
+    height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: var(--thirdColor);
+    background-color: transparent;
+    border: 1px solid white;
+    font-family: firstFont;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+.industryLinkToOtherContainer .row div button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.industryLinkToOtherContainer .row div:first-child {
+    background: #227048;
+    background: -webkit-linear-gradient(360deg, #227048 0%, #558e67 100%);
+    background: linear-gradient(360deg, #227048 0%, #558e67 100%);
+}
+.industryLinkToOtherContainer .row div:nth-child(2) {
+    background: #026c35;
+    background: -webkit-linear-gradient(0deg, #026c35 0%, #005153 100%);
+    background: linear-gradient(0deg, #026c35 0%, #005153 100%);
+}
+.industryLinkToOtherContainer .row div h1 {
+    font-family: thirdFont;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.industryLinkToOtherContainer ~ hr {
+    opacity: 1;
+    background-color: var(--seventhColor);
+    height: 10px;
+    margin: 0;
+}
+.industryLinkToOtherContainer + hr {
+    background-color: rgb(255, 255, 255);
+    height: 10px;
+    opacity: 1;
+    margin: 0;
+}
+.industryBigImageContainer .container {
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto;
+    position: relative;
+    height: 500px;
+
+    overflow: hidden !important;
+}
+.industryBigImageContainer .container img {
+    position: absolute;
+    transition: 0.6s linear;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.industryBigImageContainer .container img:hover {
+    transform: scale(1.2);
+}
+.industryBigImageContainer .container .row {
+    position: absolute;
+    overflow: hidden !important;
+    align-items: center;
+    right: 10%;
+    top: 45%;
+
+    z-index: 2;
+    color: white;
+}
+.industryBigImageContainer .container .row section{
+   direction: rtl;
+}
+.industryBigImageContainer .container .row section h1{
+    font-size: 1.6rem;
+ }
+ .industryBigImageContainer .container .row section h3{
+   font-size: 1.3rem;
+ }
+.industryBigImageContainer {
+    margin-top: 20px;
+    overflow: hidden !important;
+    margin-bottom: 20px;
 }

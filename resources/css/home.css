@@ -4,8 +4,8 @@
         background-color: blue;
         margin: 0 auto;
     }
-    .workWithUsHomeContainer .container section{
-     width: 100% !important;
+    .workWithUsHomeContainer .container section {
+        width: 100% !important;
     }
 }
 .faqContainer .container .row:first-child {
@@ -45,7 +45,7 @@
     font-weight: 400;
     transition: 0.4s;
 }
-.accordion span{
+.accordion span {
     float: left;
     transition: 0.3s linear;
 }
@@ -73,7 +73,6 @@
 
 /* SliderLOOP */
 .slider {
-
     width: 100%;
     position: relative;
     margin: auto;
@@ -88,7 +87,7 @@
     width: calc(var(--eachSliderLoopWidth) * 18);
     background-color: var(--forthColor);
     font-family: firstFont;
-    animation: scroll 20S linear infinite;
+    animation: scroll 20s linear infinite;
 }
 
 .slide-track:hover {
@@ -97,11 +96,11 @@
 
 @keyframes scroll {
     0% {
-        transform: translateX(0)
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateX(calc(var(--eachSliderLoopWidth) *9 * -1))
+        transform: translateX(calc(var(--eachSliderLoopWidth) * 9 * -1));
     }
 }
 .slide {
@@ -116,7 +115,7 @@
 
 /* WorkWithUS */
 .workWithUsHomeContainer {
-    background-image: url('/images/WorkWithUS.jpg');
+    background-image: url("/images/WorkWithUS.jpg");
     background-size: cover;
 }
 .workWithUsHomeContainer .container {
@@ -126,28 +125,28 @@
     padding: 40px;
     color: rgb(255, 255, 255);
 }
-.workWithUsHomeContainer .container h3{
+.workWithUsHomeContainer .container h3 {
     margin-bottom: 40px;
     font-weight: 400;
     font-size: 1.4rem;
 }
-.workWithUsHomeContainer .container h1{
+.workWithUsHomeContainer .container h1 {
     font-size: 4.5rem;
     margin-bottom: 40px;
 }
-.workWithUsHomeContainer .container section{
+.workWithUsHomeContainer .container section {
     padding: 15px;
     width: 90%;
     border-radius: 10px;
 }
-.workWithUsHomeContainer .container .row{
+.workWithUsHomeContainer .container .row {
     margin-top: 50px;
     padding: 20px;
 }
-.workWithUsHomeContainer .container .row .col{
+.workWithUsHomeContainer .container .row .col {
     padding: 20px;
 }
-.workWithUsHomeContainer .container .row div section{
+.workWithUsHomeContainer .container .row div section {
     background-color: azure;
     width: 100%;
     margin: 10px;
@@ -155,21 +154,55 @@
 }
 .introTemplate .container .row {
     direction: rtl;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
-.introTemplate .container .row div section{
-   background-color: red;
-   padding: 10px;
-   height: 300px;
+.introTemplate .container .row div section {
+    padding: 10px;
+    height: auto;
 }
-.introTemplate .container .row div section div div{
-   display: inline-block !important;
- }
- .introTemplateImageContainer div{
+.introTemplate .container .row div section h2 {
+    font-family: firstFont;
+    font-size: 2.2rem;
+    margin-top: 10px;
+}
+.introTemplate .container .row div section button {
+    background-color: var(--seventhColor);
+    width: 150px;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+    transition: 0.2s linear;
+    font-family: secondFont;
+    border: 1px solid var(--seventhColor);
+    margin-bottom: 30px;
+    margin-top: 25px;
+    text-align: center;
+    -webkit-box-shadow: 10.5px 9px 10px 3px #3e5b42;
+    -moz-box-shadow: 10.5px 9px 10px 3px #3e5b42;
+    box-shadow: 10.5px 9px 10px 3px #3e5b42;
+}
+.introTemplate .container .row div section button:hover {
+    -webkit-box-shadow: 13px 13px 7.5px 2px #3e5b42;
+    -moz-box-shadow: 13px 13px 7.5px 2px #3e5b42;
+    margin-right: 1px;
+    box-shadow: 13px 13px 7.5px 2px #3e5b42;
+}
+.introTemplate .container .row div section h5 {
+    font-family: firstFont;
+    font-size: 1.3rem;
+}
+.introTemplate .container .row div section div div {
+    display: inline-block !important;
+    font-family: secondFont;
+    font-size: 1.1rem;
+}
+.introTemplateImageContainer div {
     background-color: blue;
     padding: 10px;
     height: 300px;
     /* Barabar ba Samt Rast */
- }
- .workWithUsHomeContainer .container .row:first-child {
+}
+.workWithUsHomeContainer .container .row:first-child {
     margin-top: 200px;
- }
+}

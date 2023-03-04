@@ -5,6 +5,10 @@
     background: black;
     z-index: 1000;
     position: relative;
+    -webkit-box-shadow: 3.5px 3.5px 7.5px 6px #b5b5b5;
+-moz-box-shadow: 3.5px 3.5px 7.5px 6px #b5b5b5;
+box-shadow: 3.5px 3.5px 7.5px 6px #b5b5b5;
+margin-bottom: 10px;
 }
 
 .brand {
