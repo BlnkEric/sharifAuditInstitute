@@ -1,9 +1,10 @@
-<table class="table table-striped mt-3 text-center table-hover" style="border-color: black;" border="1px;">
+<table class="table table-striped mt-3 text-center table-hover" style="border-color: rgb(255, 255, 255);" border="2px;">
     <thead>
         <tr>
             <th>#</th>
             <th>Slug</th>
             <th>عنوان</th>
+            <th>نمایش در اسلایدر</th>
             <th>Actions</th>
             <th></th>
             <th>ایجاد شده</th>
@@ -17,6 +18,11 @@
                 <th scope="row">{{ $articles->firstItem() + $key }}</th>
                 <td>{{ $article->slug }}</td>
                 <td>{{ $article->name }}</td>
+                @if ($article->show_slider)
+                    <td><i class="fa fa-check" style="font-size:24px; color:green"></i></td>
+                @else
+                    <td><i class="fa fa-close" style="font-size:24px; color:red"></i></td>                    
+                @endif
                 <td>
                     <a href="{{ route('admin.articles.edit', $article->slug) }}" class="btn btn-warning">ویرایش</a>
                 </td>
@@ -24,7 +30,7 @@
                     <form action="{{ route('admin.articles.destroy', $article->slug) }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>حذف</button>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                     </form>
                 </td>
                 <td> {{ $article->created_at }}</td>
@@ -39,4 +45,6 @@
     </tbody>
 </table>
 
-{{ $articles->links() }}
+<div>
+    {{ $articles->links() }}
+</div>

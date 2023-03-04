@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <form class="bg-dark text-white" action="{{ route('admin.clients.update', $client->id) }}" method="POST"
+            <form action="{{ route('admin.clients.update', $client->id) }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -13,11 +13,11 @@
                     <label for="name">نام:</label>
                     <input type="text" id="name" name="name"
                         class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $client->name) }}">
-                    <span class="invalid-feedback" role="alert">
-                        @error('name')
-                            <strong>{{ $message }}</strong>
-                        @enderror
+                    @error('name')
+                    <span class="invalid-feedback badge bg-danger" role="alert">
+                        <strong>{{ $message }}</strong>
                     </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="service_id">خدمت مورد نظر برای این مشتری:</label>
@@ -37,9 +37,9 @@
                         @endforeach
                     </select>
                     @error('services')
-                        <span class="invalid-feedback" role="alert">
-                            <strong> {{ $message }}</strong>
-                        </span>
+                    <span class="invalid-feedback badge bg-danger" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                 </div>
                 <div class="form-group">
@@ -54,40 +54,44 @@
                         @endforeach
                     </select>
                     @error('industry_id')
-                        <span class="invalid-feedback" role="alert">
-                            <strong> {{ $message }}</strong>
-                        </span>
+                    <span class="invalid-feedback badge bg-danger" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="file">یک لوگو اصلی برای مشتری خود انتخاب کنید:</label>
-                    <input type="file" name="image" class="form-control  @error('image') is-invalid @enderror"
-                        id="file" value="{{ old('image') }}">
-                    
-                    @if($client->image)
-                            
-                        @if ($client->image->path == 'seed')
-                            <img src="https://picsum.photos/200/300"
-                            style="max-width: 200px;
-                            max-height: 200px;">
-                        @else
-                            <img src="{{ $client->image->url() }}"
-                            style="max-width: 200px;
-                            max-height: 200px;">
-                        @endif
-
-                    @endif
-                    
-                    <span class="invalid-feedback" role="alert">
-                        @error('image')
-                            <strong>{{ $message }}</strong>
-                        @enderror
-                    </span>
+                    <div class="row">
+                        <div class="col-12 col-md 6">
+                            <section>
+                                <label for="file">یک لوگو اصلی برای مشتری خود انتخاب کنید:</label>
+                                <input type="file" name="image" class="form-control  @error('image') is-invalid @enderror"
+                                    id="file" value="{{ old('image') }}">
+                                @error('image')
+                                <span class="invalid-feedback badge bg-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </section>
+                        </div>
+                        <div class="col-12 col-md 6 introTemplateImageContainer">
+                            <div>
+                                @if($client->image)
+                                    @if ($client->image->path == 'seed')
+                                        <img src="https://picsum.photos/200/300"
+                                        style=" width: 100%; max-height:100%;">
+                                    @else
+                                        <img src="{{ $client->image->url() }}"
+                                        style=" width: 100%; max-height:100%;">
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-warning mt-3 mb-2">ویرایش</button>
+                <div class="form-group mt-3 mb-2">
+                    <button type="submit" class="btn btn-warning">ویرایش</button>
+                    <a href="{{ route('admin.clients.index') }}" class="btn btn-secondary">بازگشت</a>
                 </div>
-                <a href="{{ route('admin.clients.index') }}" class="btn btn-secondary">بازگشت</a>
             </form>
         </div>
     </div>

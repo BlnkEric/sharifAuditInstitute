@@ -16,18 +16,18 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <form class="bg-dark text-white" action="{{ route('admin.clients.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.clients.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
                     <label for="name">نام:</label>
                     <input type="text" id="name" name="name"
                            class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}">
-                    <span class="invalid-feedback" role="alert">
-                        @error('name')
-                            <strong>{{ $message }}</strong>
-                        @enderror
+                    @error('name')
+                    <span class="invalid-feedback badge bg-danger" role="alert">
+                        <strong>{{ $message }}</strong>
                     </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="service_id">خدمت مورد نظر برای این مشتری:</label>
@@ -40,11 +40,11 @@
                             </option>
                         @endforeach
                     </select>
-                    <span class="invalid-feedback" role="alert">
-                        @error('services')
-                            <strong>{{ $message }}</strong>
-                        @enderror
+                    @error('services')
+                    <span class="invalid-feedback badge bg-danger" role="alert">
+                        <strong>{{ $message }}</strong>
                     </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="industry_id">صنعت:</label>
@@ -56,26 +56,27 @@
                             </option>
                         @endforeach
                     </select>
-                    <span class="invalid-feedback" role="alert">
-                        @error('industry_id')
-                            <strong>{{ $message }}</strong>
-                        @enderror
+                    @error('industry_id')
+                    <span class="invalid-feedback badge bg-danger" role="alert">
+                        <strong>{{ $message }}</strong>
                     </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="file">یک لوگو اصلی برای مشتری خود انتخاب کنید:</label>
                     <input type="file" name="image" class="form-control  @error('image') is-invalid @enderror" id="file"
                            value="{{old('image')}}">
-                    <span class="invalid-feedback" role="alert">
-                        @error('image')
-                            <strong>{{ $message }}</strong>
-                        @enderror
+                    @error('image')
+                    <span class="invalid-feedback badge bg-danger" role="alert">
+                        <strong>{{ $message }}</strong>
                     </span>
+                    @enderror
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary mt-3 mb-2">ایجاد</button>
+                
+                <div class="form-group mt-3 mb-2">
+                    <button type="submit" class="btn btn-primary">ایجاد</button>
+                    <a href="{{ route('admin.services.index') }}" class="btn btn-secondary">بازگشت</a>
                 </div>
-                <a href="{{ route('admin.services.index') }}" class="btn btn-secondary">بازگشت</a>
             </form>
         </div>
     </div>

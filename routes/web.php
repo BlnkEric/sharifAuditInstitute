@@ -16,20 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('front.main');
 
-Route::get('/account', function () {
-    return view('account');
-});
-Route::get('/', function () {
-    return view('realHome');
-});
+// Route::get('/account', function () {
+//     return view('account');
+// });
 
-Route::get('/industry', function () {
-    return view('industry');
-});
+// Route::get('/industry', function () {
+//     return view('industry');
+// });
 
-Route::get('/article', function () {
-    return view('article');
-});
+// Route::get('/article', function () {
+//     return view('article');
+// });
 
 Route::get('/contactus', function () {
     return view('contactus');
@@ -39,14 +36,19 @@ Route::get('/work', function () {
     return view('workwithus');
 });
 
-Route::get('/adamha', function () {
-    return view('people');
-});
+// Route::get('/adamha', function () {
+//     return view('people');
+// });
 
 Auth::routes();
 
-Route::get('/industries', [App\Http\Controllers\IndustryController::class, 'index'])->name('industries.index');
+Route::resource('industries', App\Http\Controllers\IndustryController::class)->only(['index', 'show']);
+Route::get('/industry/{industry}/articles', [ App\Http\Controllers\IndustryController::class, 'industryArticles'])->name('industry.articles');
+
 Route::resource('services', App\Http\Controllers\ServiceController::class)->only(['index', 'show']);
+Route::resource('specialServices', App\Http\Controllers\SpecialServiceController::class)->only(['show']);
+
+
 Route::resource('articles', App\Http\Controllers\ArticleController::class)->only(['index', 'show']);
 Route::resource('staffs', App\Http\Controllers\StaffController::class)->only(['index', 'show']);
 Route::resource('proposals', App\Http\Controllers\UserProposalController::class)->middleware('auth');

@@ -150,8 +150,15 @@
     background-color: azure;
     width: 100%;
     margin: 10px;
+    margin-top: 300px;
     height: 200px;
 }
+
+.workWithUsHomeContainer .container .row div a{
+    text-decoration: none;
+    color: white;
+}
+
 .introTemplate .container .row {
     direction: rtl;
     margin-top: 100px;

@@ -11566,3 +11566,8 @@ body {
     right: 0;
 }
 
+.form-group label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold
+}

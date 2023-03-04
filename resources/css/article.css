@@ -8,7 +8,7 @@
 
 .carousel-cell {
     width: 100%; /* full width */
-    height: auto; /* height of carousel */
+    height: 100%; /* height of carousel */
     max-height: 600px;
     margin-right: 10px;
     background: #8c8;
@@ -19,6 +19,7 @@
 }
 .carousel-cell img {
     width: 100%;
+    height: 100%; /* height of carousel */
 }
 /* cell number */
 .carousel-cell:before {
@@ -75,7 +76,7 @@
 }
 .bigArticleSection2Item section:first-child {
     width: 100%;
-    background-image: url("/images/LightHouseImage.png");
+    /* background-image: url("/images/LightHouseImage.png"); */
     background-size: cover;
     background-position: 50% 50%;
     height: 300px;

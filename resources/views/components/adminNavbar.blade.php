@@ -23,23 +23,23 @@
                     @guest
                         @if (Route::has('login'))
                             <li>
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li>
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <li class="dropdown">
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -51,25 +51,22 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{ route('admin.services.index') }}" class="nav-link">مدیریت خدمات</a>
+                            <a href="{{ route('admin.services.index') }}">مدیریت خدمات</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.proposals.index') }}" class="nav-link">مدیریت پروپوزال‌ها</a>
+                            <a href="{{ route('admin.industries.index') }}">مدیریت صنایع</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.industries.index') }}" class="nav-link">مدیریت صنایع</a>
+                            <a href="{{ route('admin.articles.index') }}">مدیریت مقالات</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.articles.index') }}" class="nav-link">مدیریت مقالات</a>
+                            <a href="{{ route('admin.staffs.index') }}">مدیریت کارمندان</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.staffs.index') }}" class="nav-link">مدیریت کارمندان</a>
+                            <a href="{{ route('admin.clients.index') }}">مدیریت مشتریان</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.clients.index') }}" class="nav-link">مدیریت مشتریان</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.jobOffers.index') }}" class="nav-link">مدیریت موقعیت های شغلی</a>
+                            <a href="{{ route('admin.jobOffers.index') }}">مدیریت موقعیت های شغلی</a>
                         </li>
                     @endguest
 
@@ -79,32 +76,4 @@
             </nav>
         </div>
     </section>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
 </div>
-<script>
-    (function($) { // Begin jQuery
-        $(function() { // DOM ready
-            // If a link has a dropdown, add sub menu toggle.
-            $('nav ul li a:not(:only-child)').click(function(e) {
-                $(this).siblings('.nav-dropdown').toggle();
-                // Close one dropdown when selecting another
-                $('.nav-dropdown').not($(this).siblings()).hide();
-                e.stopPropagation();
-            });
-            // Clicking away from dropdown will remove the dropdown class
-            $('html').click(function() {
-                $('.nav-dropdown').hide();
-            });
-            // Toggle open and close nav styles on click
-            $('#nav-toggle').click(function() {
-                $('nav ul').slideToggle();
-            });
-            // Hamburger to X toggle
-            $('#nav-toggle').on('click', function() {
-                this.classList.toggle('active');
-            });
-        }); // end DOM ready
-    })(jQuery); // end jQuery
-</script>

@@ -12,7 +12,11 @@ class Article extends Model
     use HasFactory;
     use AttachDescriptionImage;
 
-    protected $fillable = ["name", "slug", "description", "industry_id", "service_id"];
+    protected $casts = [
+        'show_slider' => 'boolean',
+    ];
+
+    protected $fillable = ["name", "slug", "description", "show_slider", "industry_id", "service_id"];
 
     public function getRouteKeyName()
     {

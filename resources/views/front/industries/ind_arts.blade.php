@@ -1,16 +1,28 @@
+{{-- @extends('front.layouts.app')
+@include('components.navbar')
+
+@include('components.mainHeroBox')
+@include('components.industryItems', ['industries' => $industry_articles])
+
+@include('components.footer') --}}
+
+
+
+
+
 @extends('front.layouts.app')
 
 @include('components.navbar')
 
-@include('components.slideshow')
-
-
 <div class="container-fluid articleContainer">
     <div class="container">
+        @foreach ($industry_articles as $item)
+            JUSES
+        @endforeach
         <div class="row">
             <div class="col-12 col-md-6">
                 <section class="underTheArticle">
-                    <div class="overTheArticle">a</div>
+                    <div class="overTheArticle">aww</div>
                 </section>
             </div>
             <div class="col-12 col-md-6 p-0 m-0">
@@ -79,7 +91,7 @@
                 </section>
             </div>
             <div class="col-12 col-md-3">
-                <section class="rightOfArticleSection2">
+                <section class="rightOfArticleSection2" style="background-color:aqua">
                     a
                 </section>
             </div>
@@ -88,3 +100,4 @@
 </div>
 
 @include('components.footer')
+

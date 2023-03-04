@@ -1,25 +1,35 @@
 @extends('front.layouts.app')
 
-@section('title','موقعیت های شغلی')
-@section('content')
-    <div class="container">
-        <h1>موقعیت های شغلی</h1>
+@include('components.navbar')
 
-        <div class="row">
-            @foreach ($jobOffers as $jobOffer)
-                <div class="col-md-4 mb-4">
-                    <a href="{{ route('jobOffers.show', $jobOffer->slug) }}" class="card-link text-decoration-none text-dark">
-                        <div class="card">
-                            <img src="{{ $jobOffer->image->path == 'seed' ? 'https://picsum.photos/200/300' : $jobOffer->image->url() }}"
-                                class="card-img-top" alt="{{ $jobOffer->name }}">
+<div class="container">
+    <div class="row">
+        @foreach ($jobOffers as $jobOffer)
+            <a style="margin-bottom: 15px" href="{{ route('jobOffers.show', $jobOffer->slug) }}" class="card-link text-decoration-none text-dark">
+                <div class="card" style="width: 100%;">
+                    <div class="row no-gutters">
+                        
+                        <div class="col-sm-5">
+                            <img src="{{ $jobOffer->image->path == 'seed' ? 'https://picsum.photos/800/400' : $jobOffer->image->url() }}"
+                            class="card-img-top" alt="{{ $jobOffer->name }}">
+                        </div>
+                        <div class="col-sm-7">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $jobOffer->name }}</h5>
-                                <p class="card-text">{{ $jobOffer->description }}</p>
+                                <h3 class="card-title">{{ $jobOffer->role }}</h3>
+                                <p class="card-text">
+                                    {{ $jobOffer->description }}
+                                </p>
                             </div>
                         </div>
-                    </a>
+                        
+                    </div>
                 </div>
-            @endforeach
-        </div>
+            </a>
+            <hr/>
+        @endforeach
     </div>
-@endsection
+</div>
+
+
+@include('components.footer')

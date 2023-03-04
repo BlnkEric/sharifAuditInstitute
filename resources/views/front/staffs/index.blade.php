@@ -1,32 +1,45 @@
 @extends('front.layouts.app')
 
-@section('title', 'شرکا، مدیران و حسابداران')
 
-@section('content')
+@include('components.navbar')
+
+<div class="container-fluid peopleContainer">
     <div class="container">
-        <h1>شرکا، مدیران و حسابداران</h1>
-        @foreach($staffCategories as $staffCategory)
-            <h2 style="text-align: center; background-color: blue;">{{ $staffCategory->name }}</h2>
-            <div class="row">
-                @forelse ($staffCategory->staffs as $staff)
-                    <div class="col-md-4 mb-4">
-                        <a href="{{ route('staffs.show', $staff->slug) }}" class="card-link text-decoration-none text-dark">
-                            <div class="card">
-                                <img src="{{ $staff->image->path == 'seed' ? 'https://picsum.photos/200/300' : $staff->image->url() }}"
-                                    class="card-img-top" alt="{{ $staff->name }}">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $staff->name }}</h5>
-                                    <h5 class="card-title">{{ $staff->role }}</h5>
-                                </div>
+        @foreach ($staffCategories as $stf_cat)
+        <div class="row">
+            <h2>{{ $stf_cat->name }}</h2>
+        </div>
+        <div class="row">
+            @foreach ($stf_cat->staffs as $staff)
+            <div class="col-12 col-md-4">
+                <section>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <h3>{{ $staff->name }}</h3>
+                            <div class="flip-card-front">
+                                @if ($staff->image->path == 'seed')
+                                    <img src="https://picsum.photos/200/300" alt="Avatar">
+                                @else
+                                    <img src="{{ $staff->image->url() }}" alt="Avatar">
+                                @endif
                             </div>
-                        </a>
+                            <div class="flip-card-back">
+                                <h1>{{ $staff->name }}</h1>
+                                <p>{{ $staff->role }}</p>
+                                <p>{{ $staff->email }}</p>
+                                <a href="{{ route('staffs.show', $staff->slug) }}">
+                                    صفحه شخصی
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                @empty
-                    <div class="row">
-                        <p style="text-align: center;">یافت نشد!</p>
-                    </div>
-                @endforelse
+                </section>
             </div>
+            @endforeach
+        </div>
         @endforeach
+
     </div>
-@endsection
+</div>
+
+@include('components.footer')
