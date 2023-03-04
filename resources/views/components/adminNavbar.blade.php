@@ -54,9 +54,6 @@
                             <a href="{{ route('admin.services.index') }}">مدیریت خدمات</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.proposals.index') }}">مدیریت پروپوزال‌ها</a>
-                        </li>
-                        <li>
                             <a href="{{ route('admin.industries.index') }}">مدیریت صنایع</a>
                         </li>
                         <li>

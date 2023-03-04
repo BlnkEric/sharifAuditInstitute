@@ -76,7 +76,7 @@
 }
 .bigArticleSection2Item section:first-child {
     width: 100%;
-    background-image: url("/images/LightHouseImage.png");
+    /* background-image: url("/images/LightHouseImage.png"); */
     background-size: cover;
     background-position: 50% 50%;
     height: 300px;

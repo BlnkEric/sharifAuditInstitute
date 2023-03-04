@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description');
+            $table->boolean('show_slider')->default(false);
             $table->foreignId('industry_id')->nullable()->constrained()->onDelete('CASCADE');
             $table->foreignId('service_id')->nullable()->constrained()->onDelete('CASCADE');
             $table->timestamps();

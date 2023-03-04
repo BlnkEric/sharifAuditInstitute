@@ -2,7 +2,8 @@
 
 .navigation {
     height: var(--navbarHeight);
-    background: black;
+    /* background: rgb(194, 152, 152); */
+    margin-bottom: 15px;
     z-index: 1000;
     position: relative;
 }
@@ -27,64 +28,97 @@
     margin: 0 auto;
 }
 
+
 nav:not(.paginator) {
-    float: right;
-}
-
-nav:not(.paginator) ul {
-    list-style: none;
-    margin: 0;
+    text-align:center;
+    width: 100%;
+    background: #bebebe;
     padding: 0;
-    transition: 0.4s linear;
-}
-
-nav:not(.paginator) ul li {
+    margin: 0;
+    height: 75px;
+    position:relative;
+  }
+  
+  nav:not(.paginator) ul {
+    background: #9d4f4f;
+    list-style:none;
+    margin: 0;
+    height: 75px;
+  
+  }
+  
+  
+  nav:not(.paginator) ul li {
+    display: inline-block;
+  }
+  
+  
+  nav:not(.paginator) ul li a {
+    color:#333333;
+    display:block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding:0px 50px;
+    text-decoration:none;
     float: left;
-    position: relative;
-    transition: 0.4s linear;
-}
-
-nav:not(.paginator) ul li a,
-nav:not(.paginator) ul li a:visited {
-    display: block;
-    padding: 0 20px;
-    line-height: var(--navbarHeight);
-    background: black;
-    color: white;
-    transition: 0.4s linear;
-    font-family: secondFont;
-    font-weight: 500;
-    font-size: 1.3rem;
-    text-decoration: none;
-}
-
-nav:not(.paginator) ul li a:hover,
-nav:not(.paginator) ul li a:visited:hover {
-    color: var(--secondColor);
-    border-bottom: 3px solid var(--secondColor);
-}
-
-nav:not(.paginator) ul li a:not(:only-child):after,
-nav:not(.paginator) ul li a:visited:not(:only-child):after {
-    padding-left: 4px;
-    content: " ▾";
-}
-
-nav:not(.paginator) ul li ul li {
-    min-width: 190px;
-}
-
-nav:not(.paginator) ul li ul li a {
-    padding: 15px;
-    line-height: 20px;
-}
-
-.nav-dropdown {
+    height: max-content;
+    line-height: 75px;
+  }
+  
+  nav:not(.paginator) ul li:hover {
+    background: #333333;
+  }
+  
+  
+  nav:not(.paginator) ul li:hover > a{
+      color:#FFFFFF;
+  }
+  
+  nav:not(.paginator) ul li ul li:hover > ul {
+    display:block;
+    width: 100%;
+    height: max-content;
     position: absolute;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
+    top: 75px;
+  }
+  
+  nav:not(.paginator) ul ul {
+    background: #9c9b9b;
+    padding:0;
+    text-align: center;
+    display:none;
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+  }
+
+  .articlesNav .row{
+    display: flex;
+  }
+
+  .articlesNav .row .industryList{
+    width: 450px; 
+    height:max-content; 
+    background-color:rgb(87, 87, 87);
+  }
+
+  .articlesNav .row .industryArticles{
+    display:flex; 
+    margin: auto; 
+    width:800px; 
+    height:max-content;
+  }
+
+  .articlesNav .row .industryArticles div{
+    width: 400px;
+    margin-inline: 15px;
+    /* left: 50%; */
+    height: max-content; 
+    background-color:rgb(39, 142, 107);
+  }
+  
 
 /* Mobile navigation */
 .nav-mobile {

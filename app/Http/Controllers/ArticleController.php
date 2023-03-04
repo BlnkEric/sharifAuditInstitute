@@ -16,8 +16,9 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::get();
-        $sliderArticles = Article::inRandomOrder()->take(5)->get();
-        // dd($sliderArticles);
+        $sliderArticles = Article::where('show_slider', 1)->inRandomOrder()->take(5)->get();
+
+        // dd($mostRecentArticle);
         return view('front.articles.index', [
             'articles' => $articles,
             'sliderArticles' => $sliderArticles,

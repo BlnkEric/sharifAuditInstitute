@@ -42,6 +42,13 @@
                             <section>
                                 <label for="file">یک تصویر اصلی برای مقاله خود انتخاب کنید:</label>
                                 <input type="file" name="image" class="form-control  @error('image') is-invalid @enderror" id="file">
+                                <label for="checkbox">
+                                    در صورت تمایل برای نمایش مقاله در اسلایدر علامت بزنید
+                                </label>
+                                <input type="hidden" name="show_slider" class="switch-input" value="0"/>
+                                <input type="checkbox" name="show_slider" class="switch-input" value="1" {{ old('show_slider', $article->show_slider) ? 'checked="checked"' : '' }}/>
+                                     
+                                
                                 @error('image')
                                 <span class="invalid-feedback badge bg-danger" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -109,4 +116,6 @@
     <input type="hidden" value="{{ route('upload.article.image.update', ['_token' => csrf_token(), 'article' => $article->slug]) }}" id="upload_url">
     <script type="module" src="{{ asset('js/ckeditorcdn.js') }}"></script>
     <script type="module" src="{{ asset('js/ckeditor.js') }}"></script>
+
+
 @endsection

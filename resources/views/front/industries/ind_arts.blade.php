@@ -1,39 +1,48 @@
+{{-- @extends('front.layouts.app')
+@include('components.navbar')
+
+@include('components.mainHeroBox')
+@include('components.industryItems', ['industries' => $industry_articles])
+
+@include('components.footer') --}}
+
+
+
+
+
 @extends('front.layouts.app')
 
-
 @include('components.navbar')
-@include('components.sliderLoop')
 
-
-<div class="container-fluid workWithUsHomeContainer">
+<div class="container-fluid articleContainer">
     <div class="container">
+        @foreach ($industry_articles as $item)
+            JUSES
+        @endforeach
         <div class="row">
-            <section>
-                <h3>ارش خیلی دوست خوبی است</h3>
-                <h1>ارش خیلی دوست خوبی است</h1>
-            </section> 
-        </div>
-        <div class="header">
-                <h1>خدمات اصلی موسسه حقوقی شریف</h1>
-        </div>
-        <div class="row">
-            @foreach ($NavServices as $service)
-                
-            <div class="col-6 col-md-3">
-                <a href="{{ route('services.show', $service->slug) }}">
-                    <section style="background-image: url({{ ($service->image->path) == 'seed' 
-                        ? "https://picsum.photos/200/300" 
-                        : ($service->image->url()) }})">
-
-                            {!! Str::limit($service->name, 30, $end='...') !!}
-                    </section>
-                </a>
+            <div class="col-12 col-md-6">
+                <section class="underTheArticle">
+                    <div class="overTheArticle">aww</div>
+                </section>
             </div>
-            
-            @endforeach
+            <div class="col-12 col-md-6 p-0 m-0">
+                <div class="row m-0 p-0">
+                    <div class="col-6 col-md-12">
+                        <section class="underTheArticleV2">
+                            <div class="overTheArticle">a</div>
+                        </section>
+                    </div>
+                    <div class="col-6 col-md-12">
+                        <section class="underTheArticleV2">
+                            <div class="overTheArticle">a</div>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <div class="container-fluid articleSection2 mt-5">
     <div class="container">
         <div class="row">
@@ -47,19 +56,13 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="bigArticleSection2Item">
-                                <section style="background-image: url({{ ($mostRecentArticle->image->path) == 'seed' 
-                                    ? "https://picsum.photos/200/300" 
-                                    : ($mostRecentArticle->image->url()) }})">
+                                <section></section>
+                                <section>
+                                    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, sit?</h1>
+                                    <p><span>Tarikh</span><span class="ms-2">Nevinsande</span></p>
                                 </section>
                                 <section>
-                                    <h1>{{ $mostRecentArticle->name }}</h1>
-                                    <p>
-                                        <span>{{ $mostRecentArticle->created_at }}</span>
-                                        <span class="ms-2 fa fa-clock text-muted"></span>
-                                    </p>
-                                </section>
-                                <section>
-                                        {!! Str::limit($mostRecentArticle->description, 200, $end='...') !!}
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cumque nam, iure magnam sit inventore eaque libero doloribus aspernatur recusandae voluptates molestias corrupti quo. Beatae?</p>
                                 </section>
                             </div>
                         </div>
@@ -96,8 +99,5 @@
     </div>
 </div>
 
-@include('components.faq')
-<br>
-
-<br>
 @include('components.footer')
+

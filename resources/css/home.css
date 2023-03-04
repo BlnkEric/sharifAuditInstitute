@@ -132,27 +132,29 @@
     font-size: 1.4rem;
 }
 .workWithUsHomeContainer .container h1{
-    font-size: 4.5rem;
-    margin-bottom: 40px;
+    font-size: 3rem;
+
 }
 .workWithUsHomeContainer .container section{
     padding: 15px;
     width: 90%;
     border-radius: 10px;
 }
-.workWithUsHomeContainer .container .row{
-    margin-top: 50px;
-    padding: 20px;
-}
-.workWithUsHomeContainer .container .row .col{
-    padding: 20px;
-}
+
 .workWithUsHomeContainer .container .row div section{
-    background-color: azure;
+    text-align: center;
+    background-size: cover; 
     width: 100%;
     margin: 10px;
+    margin-top: 300px;
     height: 200px;
 }
+
+.workWithUsHomeContainer .container .row div a{
+    text-decoration: none;
+    color: white;
+}
+
 .introTemplate .container .row {
     direction: rtl;
 }
@@ -170,5 +172,19 @@
     /* Barabar ba Samt Rast */
  }
  .workWithUsHomeContainer .container .row:first-child {
-    margin-top: 200px;
+    margin-top: 100px;
  }
+
+ .workWithUsHomeContainer .container .header {
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    transform: translate(-50%, 0);
+    text-align: center;
+    padding: 50px;
+    margin-top: 50px;
+
+    font-family: secondFont;
+    backdrop-filter: blur(10px);
+    color: rgb(179, 183, 179);
+}

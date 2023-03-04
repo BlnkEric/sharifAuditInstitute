@@ -28,7 +28,7 @@ class UpdateArticleRequest extends FormRequest
             'name' => 'required|max:60',
             'slug' => new CustomSlug('articles', $this->article->id),
             'description' => 'required',
-            'image' => 'image|mimes:png,jpeg,gif,png,svg'
+            'image' => 'image|mimes:png,jpeg,gif,png,svg|dimensions:min_width=1920,min_height=1080'
         ];
     }
 }
