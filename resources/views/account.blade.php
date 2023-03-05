@@ -67,7 +67,7 @@
                 <section id="registerTab">
                     <h2>ثبت نام</h2>
 
-                    <form style="overflow: auto; width: 100 px; height:200px" method="POST" action="{{ route('register') }}">
+                    <form style="" method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus  placeholder="نام کاربری">

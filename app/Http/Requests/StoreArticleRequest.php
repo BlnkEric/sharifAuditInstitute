@@ -28,7 +28,7 @@ class StoreArticleRequest extends FormRequest
             'name' => 'required|max:60',
             'slug' => new CustomSlug('articles'),
             'description' => 'required',
-            'image' => 'required|image|mimes:png,jpeg,gif,png,svg|dimensions:min_width=1920,min_height=200'
+            'image' => 'required|image|mimes:png,jpeg,gif,png,svg|dimensions:min_width=1920,min_height=1080'
         ];
     }
 }

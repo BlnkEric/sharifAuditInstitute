@@ -2,7 +2,7 @@
 
 @include('components.navbar')
 
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         @foreach ($jobOffers as $jobOffer)
             <a style="margin-bottom: 15px" href="{{ route('jobOffers.show', $jobOffer->slug) }}" class="card-link text-decoration-none text-dark">

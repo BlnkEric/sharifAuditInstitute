@@ -2,7 +2,7 @@
 
 @include('components.navbar')
 
-<div class="container">
+<div class="container mt-5">
     <div class="card mb-3">
         <img src="{{ $service->image->path == 'seed' ? 'https://picsum.photos/800/400' : $service->image->url() }}"
             class="card-img-top" alt="{{ $service->name }}">

@@ -124,7 +124,7 @@
     height: 500px;
 }
 .mainIntroContactUs section {
-    background-color: blue;
+    background-color: white;
     width: 30%;
     height: 300px;
     position: absolute;
@@ -140,9 +140,9 @@
     height: 100%;
     left: 0;
     background-color: aqua;
-    clip-path: polygon(0% 0%, 100.1% 100.3%, 0% 100%);
+    clip-path: polygon(0% 1%, 100% 100%, 0% 100%);
     top: 0;
-    background-image: url("/images/LightHouseImage.png");
+    background-image: url("/images/WorkWithUs2.jpg");
     background-size: cover;
     background-position: 50% 50%;
     z-index: 1;

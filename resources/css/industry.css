@@ -18,6 +18,12 @@
     color: white;
     background-size: cover;
 }
+
+.industryItemsContainer .container .row div section a{
+    text-decoration: none;
+    color: white;
+}
+
 .industryItemsContainer .container .row div section:hover {
     border: 2px solid var(--forthColor);
 }

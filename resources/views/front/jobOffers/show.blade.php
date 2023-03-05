@@ -4,7 +4,7 @@
 
 @include('components.navbar')
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     @include('messages')
 
     <div class="card mb-3">
@@ -17,11 +17,11 @@
                     <span href="#" class="badge bg-dark badge-lg">{{ $tag->name }}</span>
                 @endforeach
             </p>
-            <div class="card-text mb-4">{!! $jobOffer->description !!}</div>
+            <div class="card-text m-5">{!! $jobOffer->description !!}</div>
 
             <p class="card-text"><small class="text-muted">{{ $jobOffer->created_at->format('Y-m-d H:i:s') }}</small></p>
         </div>
-        <a href="{{ route('resumeForm.download') }}" class="badge bg-dark badge-lg text-decoration-none">دانلود قالب رزومه مورد تایید موسسه</a>
+        <a href="{{ route('resumeForm.download') }}" class="badge bg-dark badge-lg text-decoration-none" style="padding: 10px; font-size: larger;">دانلود قالب رزومه مورد تایید موسسه</a>
     
         <form action="{{ route('jobRequests.store', $jobOffer->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -41,23 +41,3 @@
 </div>
 
 @include('components.footer')
-
-<style>
-    .card-img-top {
-        height: 400px;
-        object-fit: cover;
-    }
-
-    .card-text {
-        line-height: 1.8;
-    }
-
-    .card-title {
-        font-weight: bold;
-        font-size: 2rem;
-    }
-
-    .container {
-        max-width: 800px;
-    }
-</style>

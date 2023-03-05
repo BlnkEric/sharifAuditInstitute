@@ -30,7 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/contactus', function () {
     return view('contactus');
-});
+})->name('contactus');
 
 Route::get('/work', function () {
     return view('workwithus');

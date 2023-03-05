@@ -31,6 +31,7 @@ class IndustryController extends Controller
      */
     public function show(Industry $industry)
     {
+        $industry->load('clients');
         return view('front.industries.show', compact('industry'));
     }
 

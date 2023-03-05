@@ -30,7 +30,7 @@
             <form action="{{ route('admin.services.destroy', $service->slug) }}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>حذف</button>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
             </form>
         </td>
         <td> {{ $service->created_at }}</td>

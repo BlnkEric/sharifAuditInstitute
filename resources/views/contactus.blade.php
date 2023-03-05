@@ -6,8 +6,10 @@
     <div class="container">
         <div class="row">
             <section>
-                <h1 class="mb-2 mt-5">Arash</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, tenetur?</p>
+                <h1 class="mb-2 mt-5">ایمیل های موسسه</h1>
+                <p>Lorem ipsum dolor sit amet tenetur?</p>
+                <p>Lorem ipsum dolor sit amet tenetur?</p>
+                <p>Lorem ipsum dolor sit amet tenetur?</p>
             </section>
             <div id="mainIntroContactUsClippath"></div>
         </div>

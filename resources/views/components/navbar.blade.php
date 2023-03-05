@@ -2,7 +2,7 @@
 </style>
 <div>
     <section class="navigation">
-        <div class="nav-container">
+        <div class="nav-container" id="navbar">
             <div class="brand">
                 <a href="#!">Logo</a>
             </div>
@@ -81,7 +81,7 @@
                         </ul>
                     </li>
                     <li><a href="#">همکاری با ما</a>
-                        <ul>
+                        <ul class="nav-dropdown">
                             <li><a href="#">Photoshop</a></li>
                             <li><a href="#">Illustrator</a></li>
                             <li><a href="#">Web Design</a>
@@ -129,6 +129,7 @@
                             <li><a href="{{ route('staffs.index') }}">اعضای هیئت مدیره و شرکا</a></li>
                             <li><a href="#">کمیته های تخصصی</a></li>
                             <li><a href="{{ route('jobOffers.index') }}">فرصت های شغلی</a></li>
+                            <li><a href="{{ route('contactus') }}">راه های ارتباطی</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -137,7 +138,20 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+            } else {
+            navbar.classList.remove("sticky");
+            }
+        }
+    </script>
     <script>
         // var ind_default = document.getElementById('industry_1');
         // var ind_arts2 = document.getElementById('industry_2');

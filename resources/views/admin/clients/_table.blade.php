@@ -52,7 +52,7 @@
             <form action="{{ route('admin.clients.destroy', $client->id) }}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>حذف</button>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
             </form>
         </td>
 

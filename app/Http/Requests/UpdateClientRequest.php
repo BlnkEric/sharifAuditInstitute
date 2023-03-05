@@ -28,7 +28,7 @@ class UpdateClientRequest extends FormRequest
             'name' => 'required|max:60',
             'industry_id' => 'exists:industries,id',
             'services' => 'required|exists:services,id',
-            'image' => 'image|mimes:png,jpeg,gif,png,svg',
+            'image' => 'image|mimes:png,jpeg,gif,png,svg|dimensions:max_width=640,max_height=640',
         ];
     }
 
@@ -39,6 +39,7 @@ class UpdateClientRequest extends FormRequest
             'services.exists' => 'لطفاً خدمات معتبر را انتخاب نمایید.',
             'industry_id.required' => 'انتخاب بخش صنعت الزامی است.',
             'industry_id.exists' => 'لطفاً یک صنعت معتبر را انتخاب نمایید.',
+            'image.dimensions' => 'لوگو باید حداکثر در ابعاد 640 در 640 پیکسل باشد'
         ];
     }
 

@@ -1,7 +1,10 @@
-<div class="container-fluid faqContainer">
+<div class="container-fluid faqContainer mt-5">
+    <div style="background-image:url('/images/audit.jpg'); width: 100%; height: 500px; background-size: cover;">
+
+    </div>
     <div class="container">
         <div class="row">
-            IMAGE
+
         </div>
         <div class="row">
             <h1>ارش سوال داری؟</h1>
