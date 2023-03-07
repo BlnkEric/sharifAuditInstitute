@@ -1,7 +1,5 @@
 @extends('front.layouts.app')
-
-@include('components.navbar')
-
+@section('content')
 <div class="container-fluid">
     <div class="card mb-3">
         <img src="{{ $specialService->image->path == 'seed' ? 'https://picsum.photos/800/400' : $specialService->image->url() }}"
@@ -14,6 +12,5 @@
         </div>
     </div>
 </div>
-
-
 @include('components.footer')
+@endsection

@@ -1,6 +1,6 @@
 @extends('front.layouts.app')
 
-@include('components.navbar')
+@section('content')
 
 {{-- Css -> contactAbout.css --}}
 
@@ -54,3 +54,5 @@
 </div>
 
 @include('components.footer')
+
+@endsection

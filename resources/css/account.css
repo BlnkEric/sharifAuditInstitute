@@ -9,8 +9,7 @@
 }
 .accountContainer {
     height: 100%;
-    padding: 0;
-    padding-top: 3rem;
+    padding: 3rem;
     width: 100%;
     background-color: rgb(33, 33, 33);
     background-repeat: no-repeat;
@@ -105,7 +104,8 @@
     width: 100%;
     padding: 10px;
     background-color: #e8f0fe;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-right: 0;
     display: block;
     border-image-source: linear-gradient(to left, #00c853, #b2ff59);
@@ -126,9 +126,7 @@
 }
 #LoginChangeBtn {
     border-radius: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    position: absolute;
+    margin-top: 15px;
     width: 80px;
     height: 35px;
     top: 85%;
@@ -146,9 +144,7 @@
 }
 #RegisterChangeBtn {
     border-radius: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    position: absolute;
+    margin-top: 15px;
     width: 80px;
     height: 35px;
     top: 85%;

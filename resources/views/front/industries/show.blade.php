@@ -1,6 +1,5 @@
 @extends('front.layouts.app')
-
-@include('components.navbar')
+@section('content')
 
 <div class="container mt-5">
     <div class="card mb-3">
@@ -46,4 +45,5 @@
 </div>
 
 @include('components.footer')
+@endsection
 

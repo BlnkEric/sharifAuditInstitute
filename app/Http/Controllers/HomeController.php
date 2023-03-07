@@ -17,10 +17,7 @@ class HomeController extends Controller
     {
         // $services = Service::get();
         // $services->load(['specialServices']);
-        $mostRecentArticle = Article::orderBy('created_at')->first();
 
-        return view('realHome', [
-            'mostRecentArticle' => $mostRecentArticle,
-        ]);
+        return view('realHome');
     }
 }

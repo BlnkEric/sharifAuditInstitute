@@ -84,6 +84,7 @@
 
 .slide-track {
     display: flex;
+    height: 75px;
     /* slide track width = total number of slides 9*2 = 18 * individual width (250px) */
     width: calc(var(--eachSliderLoopWidth) * 18);
     background-color: green;
@@ -131,7 +132,7 @@
     /* slide track width = total number of slides 9*2 = 18 * individual width (250px) */
     width: calc(var(--eachSliderLoopWidth) * 18);
     font-family: firstFont;
-    /* animation: logo-scroll 5S linear infinite; */
+    animation: logo-scroll 25S linear infinite;
 }
 
 .logo-slide-track:hover {
@@ -207,6 +208,8 @@
     /* position: absolute; */
     width: 85%;
     height: 50%;
+    padding: 15px;
+    color: black;
     /* background-color: rgb(48, 110, 131); */
     background: white;
     /* height: 50 vh; */

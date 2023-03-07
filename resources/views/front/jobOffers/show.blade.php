@@ -1,8 +1,5 @@
 @extends('front.layouts.app')
-
-{{-- @section('title', $jobOffer->name) --}}
-
-@include('components.navbar')
+@section('content')
 
 <div class="container-fluid mt-5">
     @include('messages')
@@ -41,3 +38,4 @@
 </div>
 
 @include('components.footer')
+@endsection

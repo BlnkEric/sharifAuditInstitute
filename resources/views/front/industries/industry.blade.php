@@ -1,6 +1,5 @@
 @extends('front.layouts.app')
-
-@include('components.navbar')
+@section('content')
 @include('components.mainHeroBox')
 @include('components.industryItems')
 
@@ -13,3 +12,4 @@
 </div>
 
 @include('components.footer')
+@endsection

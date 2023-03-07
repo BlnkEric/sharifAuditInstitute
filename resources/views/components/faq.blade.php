@@ -7,11 +7,11 @@
 
         </div>
         <div class="row">
-            <h1>ارش سوال داری؟</h1>
+            <h1>سوالات متداول</h1>
         </div>
         <div class="row">
             <section>
-                <button class="accordion" onclick="toggleTheAccordiob(1)">سوال دارم این اولی<span class="accordionArrow"><i
+                <button class="accordion" onclick="toggleTheAccordiob(1)">سوال اول<span class="accordionArrow"><i
                             class="fa-solid fa-arrow-left"></i></span></button>
                 <div class="panel">
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
@@ -24,7 +24,7 @@
                         اساسا مورد استفاده قرار گیرد.</p>
                 </div>
 
-                <button class="accordion" onclick="toggleTheAccordiob(2)">سوال دارم این اولی<span
+                <button class="accordion" onclick="toggleTheAccordiob(2)">سوال دوم<span
                         class="accordionArrow"><i class="fa-solid fa-arrow-left"></i></span></button>
                 <div class="panel">
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
@@ -36,7 +36,7 @@
                         زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی
                         اساسا مورد استفاده قرار گیرد.</p>
                 </div>
-                <button class="accordion" onclick="toggleTheAccordiob(3)">سوال دارم این اولی<span
+                <button class="accordion" onclick="toggleTheAccordiob(3)">سوال سوم<span
                         class="accordionArrow"><i class="fa-solid fa-arrow-left"></i></span></button>
                 <div class="panel">
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،

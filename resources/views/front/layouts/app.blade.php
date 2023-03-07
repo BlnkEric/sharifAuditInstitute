@@ -32,10 +32,71 @@
 
 <body>
             {{-- @include('components.navbar', ['services' => $services]) --}}
-        {{-- @include('components.navbar') --}}
-    {{-- @yield('content') --}}
+    @include('components.navbar')
+    @yield('content')
 
-</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+</script>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+    } else {
+    navbar.classList.remove("sticky");
+    }
+}
+</script>
+
+
+<script>
+    window.onload = function () {
+      var isLoginSubmit = localStorage.getItem('LoginSubmit') === 'true';
+      if (isLoginSubmit) {
+        document.querySelectorAll('.registerErrors').forEach(function(el) {
+            el.style.display = 'none';
+        });
+      }
+      else {
+        registerTab.style.right = '20%';
+        loginTab.style.right = '-500px';
+        document.querySelectorAll('.loginErrors').forEach(function(el) {
+            el.style.display = 'none';
+        });
+      }
+    };
+  
+    function disableError(btn) {
+        if(btn.id === 'loginFormButt'){
+            localStorage.setItem('LoginSubmit', 'true');
+        }
+        else {
+            localStorage.setItem('LoginSubmit', 'false');
+        }
+    }
+  </script>
+
+<script>
+    var loginTab = document.getElementById('loginTab');
+    var registerTab = document.getElementById('registerTab');
+
+    function changeLoginPosition() {
+        registerTab.style.right = '20%';
+        loginTab.style.right = '-500px';
+    }
+
+    function changeRegisterPosition() {
+        registerTab.style.right = '120%';
+        loginTab.style.right = '20%';
+    }
+</script>
 
 <script>
     (function($) { // Begin jQuery
@@ -62,5 +123,9 @@
         }); // end DOM ready
     })(jQuery); // end jQuery
 </script>
+
+
+</body>
+
 
 </html>

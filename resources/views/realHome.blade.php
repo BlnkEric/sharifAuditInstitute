@@ -1,16 +1,15 @@
 @extends('front.layouts.app')
 
+@section('content')
 
-@include('components.navbar')
 @include('components.sliderLoop')
-
 
 <div class="container-fluid workWithUsHomeContainer">
     <div class="container">
         <div class="row">
             <section>
-                <h3>ارش خیلی دوست خوبی است</h3>
-                <h1>ارش خیلی دوست خوبی است</h1>
+                <h3>تیتر اصلی</h3>
+                <h1>تیتر اصلی یا مهم ترین مطلب دلخواه</h1>
             </section> 
         </div>
         <div class="header">
@@ -29,6 +28,7 @@
                     </section>
                 </a>
                 <div>
+                    {!! Str::limit($service->description, 200, $end='...') !!}
                 </div>
             </div>
             
@@ -87,7 +87,7 @@
                                                 {!! Str::limit($industry->description, 200, $end='...') !!}
                                             </p>
                                             <button class="btn">
-                                                رفتن به صفحه مربوطه
+                                                <a style="text-decoration: none; color: white;" href="{{ route('industries.show', $industry->slug) }}">رفتن به صفحه مربوطه</a>
                                             </button>
                                         </div>
                                     </div>
@@ -143,3 +143,5 @@
 
 <br>
 @include('components.footer')
+
+@endsection

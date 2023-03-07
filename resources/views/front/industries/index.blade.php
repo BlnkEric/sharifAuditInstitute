@@ -1,7 +1,8 @@
 @extends('front.layouts.app')
-@include('components.navbar')
+@section('content')
 
 {{-- @include('components.mainHeroBox') --}}
 @include('components.industryItems')
 
 @include('components.footer')
+@endsection

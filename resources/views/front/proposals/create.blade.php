@@ -7,8 +7,6 @@
     }
 </style>
 
-@section('title', 'ایجاد درخواست خدمت')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -107,4 +105,5 @@
         </div>
     </div>
 
+@include('components.footer')
 @endsection

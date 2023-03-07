@@ -1,7 +1,5 @@
 @extends('front.layouts.app')
-
-{{-- @include('components.navbar', ['services' => $services]) --}}
-@include('components.navbar')
+@section('content')
 
 <div class="container-fluid accountContainer">
     <div class="container">
@@ -9,124 +7,98 @@
             {{-- Image Holder --}}
             <div class="col-12 col-lg-6 d-none d-lg-block">
                 <section>
-                    <span>LogoName</span> <span class="me-3">عموی شاهین</span>
+                    <span>Logo Goes Here</span> <span class="me-3"></span>
                 </section>
                 <section>
-                    <h1>به سایت ارش خوش امدید</h1>
+                    <h1>به وبسایت موسسه شریف خوش آمدید</h1>
                 </section>
                 <section>
-                    <p>www.arash.com</p>
+                    <p>www.sharifmohaseb.com</p>
                 </section>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="text-center col-12 col-lg-6">
                 <section id="loginTab">
                     <h2>ورود</h2>
 
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form id="loginForm" method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="ایمیل">
-
                         @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="loginErrors invalid-feedback badge bg-danger badge-lg" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
 
 
                         <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" autocomplete="current-password" placeholder="رمز عبور">
-
                         @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="loginErrors invalid-feedback badge bg-danger badge-lg" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
 
-                        {{-- <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
-                        </div> --}}
-
-                        <button type="submit" class="accountSubmitBtn">
+                        <button type="submit" form="loginForm" id="loginFormButt" class="accountSubmitBtn" onclick="disableError(this)">
                             ورود
                         </button>
 
-                        {{-- @if (Route::has('password.request'))
+                        @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
+                                {{ __('رمز عبور خود را فراموش کرده اید؟') }}
                             </a>
-                        @endif --}}
+                        @endif
                     </form>
 
 
                 </section>
-                <section id="registerTab">
+                <section class="text-center" id="registerTab">
                     <h2>ثبت نام</h2>
 
-                    <form style="" method="POST" action="{{ route('register') }}">
+                    <form method="POST" id="registerForm" action="{{ route('register') }}">
                         @csrf
 
                         <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus  placeholder="نام کاربری">
-
                         @error('name')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="registerErrors invalid-feedback badge bg-danger badge-lg" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
 
                         <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="ایمیل">
-
                         @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="registerErrors invalid-feedback badge bg-danger badge-lg" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
 
                         <input id="phone" type="phone" class="@error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autofocus placeholder="تلفن همراه">
-
                         @error('phone')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="registerErrors invalid-feedback badge bg-danger badge-lg" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
 
                         <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" autocomplete="new-password" placeholder="رمز عبور">
-
                         @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="registerErrors invalid-feedback badge bg-danger badge-lg" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
 
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" placeholder="تکرار رمز عبور">
 
-                        <button type="submit" class="accountSubmitBtn">
+                        <button type="submit" form="registerForm" id="registerFormButt" class="accountSubmitBtn" onclick="disableError(this)">
                             ثبت نام
                         </button>
                     </form>
 
                 </section>
-                <button onclick="changeLoginPosition()" id="LoginChangeBtn">ثبت نام</button>
                 <button onclick="changeRegisterPosition()" id="RegisterChangeBtn">ورود</button>
+                <button onclick="changeLoginPosition()" id="LoginChangeBtn">ثبت نام</button>
             </div>
         </div>
     </div>
 </div>
-<script>
-    var loginTab = document.getElementById('loginTab');
-    var registerTab = document.getElementById('registerTab');
 
-    function changeLoginPosition() {
-        registerTab.style.right = '20%'
-        loginTab.style.right = '-500px';
-    }
-
-    function changeRegisterPosition() {
-        registerTab.style.right = '120%'
-        loginTab.style.right = '20%';
-    }
-</script>
+@include('components.footer')
+@endsection

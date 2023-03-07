@@ -1,8 +1,5 @@
 @extends('front.layouts.app')
-
-
-@include('components.navbar')
-
+@section('content')
 
 <div class="container">
     {{-- <div class="card mb-3">
@@ -15,7 +12,6 @@
             <p>{{ $staff->email }}</p>
         </div>
     </div> --}}
-
     <hr />
     <div class="card" style="width: 100%;">
         <div class="row no-gutters">
@@ -35,8 +31,7 @@
         </div>
     </div>
     <hr />
-
 </div>
 
-
 @include('components.footer')
+@endsection

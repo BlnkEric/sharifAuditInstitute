@@ -1,6 +1,6 @@
 @extends('front.layouts.app')
 
-@include('components.navbar')
+@section('content')
 
 <div class="container-fluid mainIntroContactUs">
     <div class="container">
@@ -95,3 +95,5 @@
 </div>
 
 @include('components.footer')
+
+@endsection

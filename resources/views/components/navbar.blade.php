@@ -1,5 +1,3 @@
-<style>
-</style>
 <div>
     <section class="navigation">
         <div class="nav-container" id="navbar">
@@ -53,7 +51,7 @@
                                     <ul>
                                         @foreach($service->specialServices as $sp_ser)
                                             <li>
-                                                <a href="{{ route('specialServices.show', $sp_ser->slug) }}" style="border:1px solid #ccc;">
+                                                <a href="{{ route('specialServices.show', $sp_ser->slug) }}">
                                                     {!! Str::limit($sp_ser->name, 30, $end='...') !!}
                                                 </a>                                        
                                             </li>                                        
@@ -112,10 +110,12 @@
                                 <div class="industryArticles">
                                     @foreach ($NavArticles->random(2) as $article)
                                         <div>
-                                            <img src="{{ $article->image->path == 'seed' ? 'https://picsum.photos/800/400' : $article->image->url() }}"
-                                                class="card-img-top" alt="{{ $article->name }}">
-                                            <h1>{{ $article->name }}</h1>
-                                            {!! Str::limit($industry->description, 27, $end='...') !!}
+                                            <a href="{{ route('articles.show', $article->slug) }}">
+                                                <img src="{{ $article->image->path == 'seed' ? 'https://picsum.photos/800/400' : $article->image->url() }}"
+                                                    class="navArticleImage card-img-top" alt="{{ $article->name }}">
+                                                <h1>{{ $article->name }}</h1>
+                                                {!! Str::limit($industry->description, 27, $end='...') !!}
+                                            </a>
                                         </div>
                                     @endforeach
                                     
@@ -136,56 +136,5 @@
             </nav>
         </div>
     </section>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script>
-        window.onscroll = function() {myFunction()};
-        
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
-        
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-            } else {
-            navbar.classList.remove("sticky");
-            }
-        }
-    </script>
-    <script>
-        // var ind_default = document.getElementById('industry_1');
-        // var ind_arts2 = document.getElementById('industry_2');
-        // var ind_arts3 = document.getElementById('industry_3');
-    
-        // function changeLocation (clicked_id){
-        //     var ind_arts = document.getElementById(clicked_id).style.backgroundColor= "#00FF00";
-        //     if (ind_arts == "industry_2") {
-        //         ind_arts.style.right = '20%'
-        //         ind_default.style.right = '-500px';
-        //     } else if(ind_arts == "industry_3") {
-        //         ind_arts.style.right = '20%'
-        //         ind_default.style.right = '-500px';
-        //     }
-        // }
-
-        // function myFunction() {
-        // var x = document.getElementById("myDIV");
-        // if (x.style.display === "none") {
-        //     x.style.display = "block";
-        // } else {
-        //     x.style.display = "none";
-        // }
-        // }
-        // function changeLoginPosition() {
-        //     registerTab.style.right = '20%'
-        //     loginTab.style.right = '-500px';
-        // }
-    
-        // function changeRegisterPosition() {
-        //     registerTab.style.right = '120%'
-        //     loginTab.style.right = '20%';
-        // }
-    </script>
-
 </div>
 

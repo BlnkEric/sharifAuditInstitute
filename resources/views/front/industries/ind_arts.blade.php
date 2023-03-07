@@ -1,20 +1,7 @@
-{{-- @extends('front.layouts.app')
-@include('components.navbar')
-
-@include('components.mainHeroBox')
-@include('components.industryItems', ['industries' => $industry_articles])
-
-@include('components.footer') --}}
-
-
-
-
-
 @extends('front.layouts.app')
+@section('content')
 
-@include('components.navbar')
-
-<div class="container-fluid articleContainer">
+<div class="container-fluid articleContainer mt-5">
     <div class="container">
         @foreach ($industry_articles as $item)
             JUSES
@@ -100,4 +87,5 @@
 </div>
 
 @include('components.footer')
+@endsection
 

@@ -1,11 +1,6 @@
 @extends('front.layouts.app')
-
-@include('components.navbar')
-
-@section('title', 'خدمات و حوزه فعالیت')
-
+@section('content')
 <div class="container">
-
     <div class="row">
         @foreach ($NavServices as $service)
             <div class="col-md-4 mb-4">
@@ -24,3 +19,5 @@
         @endforeach
     </div>
 </div>
+@include('components.footer')
+@endsection

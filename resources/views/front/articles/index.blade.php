@@ -1,6 +1,5 @@
 @extends('front.layouts.app')
-
-@include('components.navbar')
+@section('content')
 
 @include('components.slideshow', ['sliderArticles' => $sliderArticles])
 
@@ -31,56 +30,103 @@
     </div>
 </div>
 
+
 <div class="container-fluid articleSection2 mt-5">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-9">
                 <section>
                     <div class="articelFilterRowSection2">
-                        <span class="float-start">فیلتر</span>
-                        <span class="float-end">Arash</span>
-                        <span class="float-end">Arash2</span>
+                        <span class="float-start">دسته بندی ها</span>
+                        <span class="float-end">تازه ها</span>
+                        <span class="float-end">اخبار و مقالات</span>
+                        <span class="float-end">مقالات پربازدید</span>
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="bigArticleSection2Item">
-                                <section></section>
-                                <section>
-                                    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, sit?</h1>
-                                    <p><span>Tarikh</span><span class="ms-2">Nevinsande</span></p>
+                                <section style="background-image: url({{ ($mostRecentArticle->image->path) == 'seed' 
+                                    ? "https://picsum.photos/200/300" 
+                                    : ($mostRecentArticle->image->url()) }})">
                                 </section>
                                 <section>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cumque nam, iure magnam sit inventore eaque libero doloribus aspernatur recusandae voluptates molestias corrupti quo. Beatae?</p>
+                                    <h1>{{ $mostRecentArticle->name }}</h1>
+                                    <p>
+                                        <span>{{ $mostRecentArticle->created_at }}</span>
+                                        <span class="ms-2 fa fa-clock text-muted"></span>
+                                    </p>
+                                </section>
+                                <section class="mt-3">
+                                        {!! Str::limit($mostRecentArticle->description, 200, $end='...') !!}
                                 </section>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
+                            <div class="indTitle">
+                                <div><p>همه مقالات</p></div>
+                            </div>
                             <div class="articleSection2AllArticels">
+                                @foreach ($NavArticles->random(5) as $article)
                                 <section>
                                     <div class="row">
-                                        <div class="col-12 col-lg-5 d-none d-lg-block">abc</div>
+                                        <div class="col-12 col-lg-5 d-none d-lg-block"
+                                        style="background-image: url({{ ($article->image->path) == 'seed' 
+                                                ? "https://picsum.photos/200" 
+                                                : ($article->image->url()) }})"
+                                        ></div>
                                         <div class="col-12 col-lg-7">
-                                            <h1>Lorem ipsum dolor sit amet. حسين رو دوس داريم</h1>
+                                            <h1>
+                                                {{ $article->name }}
+                                            </h1>
+                                            <p>
+                                                {!! Str::limit($article->description, 200, $end='...') !!}
+                                            </p>
+                                            <button class="btn">
+                                                <a style="text-decoration: none; color: white;" href="{{ route('articles.show', $article->slug) }}">رفتن به صفحه مربوطه</a>
+                                            </button>
                                         </div>
                                     </div>
                                 </section>
-                                <section>
-                                    a
-                                </section>
-                                <section>
-                                    a
-                                </section>
-                                <section>
-                                    aadadadawd
-                                </section>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
             <div class="col-12 col-md-3">
-                <section class="rightOfArticleSection2" style="background-color:aqua">
-                    a
+                <section class="rightOfArticleSection2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">لورم</h5>
+                            <p class="card-text">ایپسومسسسسسسسسسسسسسسسسسسسسسسسسسسسسسس</p>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <h5 class="card-title">لورم</h5>
+                            <p class="card-text">ایپسومسسسسسسسسسسسسسسسسسسسسسسسسسسسسسس</p>
+                        </div>
+                        <hr>
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Cras justo odio</li>
+                              <li class="list-group-item">Dapibus ac facilisis in</li>
+                              <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                          </div>
+                        <hr>
+                        <div>
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary mt-2">Go somewhere</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <h5 class="card-title">لورم</h5>
+                            <p class="card-text">ایپسومسسسسسسسسسسسسسسسسسسسسسسسسسسسسسس</p>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
@@ -88,3 +134,4 @@
 </div>
 
 @include('components.footer')
+@endsection
