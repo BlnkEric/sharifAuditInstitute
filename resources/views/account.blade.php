@@ -38,7 +38,7 @@
                             </span>
                         @enderror
 
-                        <button type="submit" form="loginForm" id="loginFormButt" class="accountSubmitBtn" onclick="disableError(this)">
+                        <button type="submit" form="loginForm" id="loginFormButt" class="accountSubmitBtn" onclick="disableError(this.id)">
                             ورود
                         </button>
 
@@ -87,7 +87,7 @@
 
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" placeholder="تکرار رمز عبور">
 
-                        <button type="submit" form="registerForm" id="registerFormButt" class="accountSubmitBtn" onclick="disableError(this)">
+                        <button type="submit" form="registerForm" id="registerFormButt" class="accountSubmitBtn" onclick="disableError(this.id)">
                             ثبت نام
                         </button>
                     </form>
@@ -95,6 +95,10 @@
                 </section>
                 <button onclick="changeRegisterPosition()" id="RegisterChangeBtn">ورود</button>
                 <button onclick="changeLoginPosition()" id="LoginChangeBtn">ثبت نام</button>
+
+                <a class="btn btn-dark" href="{{ route('redirect.provider', 'github') }}" onclick="disableError('loginFormButt')">sign in with github</a>
+                <a class="btn btn-dark" href="{{ route('redirect.provider', 'google') }}" onclick="disableError('loginFormButt')">sign in with google</a>
+                
             </div>
         </div>
     </div>

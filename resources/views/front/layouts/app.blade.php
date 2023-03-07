@@ -74,7 +74,7 @@ function myFunction() {
     };
   
     function disableError(btn) {
-        if(btn.id === 'loginFormButt'){
+        if(btn === 'loginFormButt'){
             localStorage.setItem('LoginSubmit', 'true');
         }
         else {

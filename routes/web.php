@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/auth/{provider}/redirect', [\App\Http\Controllers\Auth\ProviderController::class, 'redirect'])->name('redirect.provider');
+ 
+Route::get('/auth/{provider}/callback',  [\App\Http\Controllers\Auth\ProviderController::class, 'callback'])->name('callback.provider');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('front.main');
 
