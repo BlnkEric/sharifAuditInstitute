@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="row">
         @foreach ($jobOffers as $jobOffer)
-            <a style="margin-bottom: 15px" href="{{ route('jobOffers.show', $jobOffer->slug) }}" class="card-link text-decoration-none text-dark">
+            <a style="flex: 0 0 50%; margin-bottom: 15px" href="{{ route('jobOffers.show', $jobOffer->slug) }}" class="card-link text-decoration-none text-dark">
                 <div class="card" style="width: 100%;">
                     <div class="row no-gutters">
                         
@@ -25,7 +25,6 @@
                     </div>
                 </div>
             </a>
-            <hr/>
         @endforeach
     </div>
 </div>

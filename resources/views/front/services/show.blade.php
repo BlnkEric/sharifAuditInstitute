@@ -16,7 +16,7 @@
             <h2>خدمات خاص</h2>
         </div>
         <div style="display: flex;  flex-wrap: wrap;">
-            @foreach ($service->specialServices as $key => $sp_ser)
+            @forelse ($service->specialServices as $key => $sp_ser)
                 <div class="flip-card" style="flex: 0 0 50%; padding: 15px; margin-bottom: 15px;">
                     <div class="flip-card-inner">
                         <h3 style="background-color: rgb(43, 43, 43); color:white; padding: 10px">{{ $sp_ser->name }}</h3>
@@ -34,7 +34,15 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            در حال حاضر خدمات بخصوصی در این بخش ثبت نشده است
+                        </h1>
+                    </div>
+                </div>
+            @endforelse
         </div>
     </div>
 </div>

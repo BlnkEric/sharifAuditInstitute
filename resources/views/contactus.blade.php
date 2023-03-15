@@ -6,10 +6,7 @@
     <div class="container">
         <div class="row">
             <section>
-                <h1 class="mb-2 mt-5">ایمیل های موسسه</h1>
-                <p>Lorem ipsum dolor sit amet tenetur?</p>
-                <p>Lorem ipsum dolor sit amet tenetur?</p>
-                <p>Lorem ipsum dolor sit amet tenetur?</p>
+
             </section>
             <div id="mainIntroContactUsClippath"></div>
         </div>
@@ -17,7 +14,7 @@
 </div>
 
 <div class="container-fluid contactContainer">
-    <div class="container">
+    <div class="container" id="scrolltoContactus">
         <div class="row">
             <h1>با ما در ارتباط باشيد</h1>
         </div>
@@ -28,10 +25,10 @@
                         <i class="fa-solid fa-map-location-dot"></i>
                     </section>
                 </div>
-                <h3>خونه ارش بابل جون</h3>
+                <h3>آدرس دفتر</h3>
                 <div>
-                    <h4>ARASHTItle</h4>
-                    <p class="mt-2">ArashLorem Lorem, ipsum dolor.</p>
+                    <h4>موسسه حقوقی شریف محاسب مانا</h4>
+                    <p class="mt-2"> مشهد، بلوار دانش آموز, دانش آموز 19, جنب ساختمان بانک مسکن، طبقه اول و دوم</p>
                 </div>
             </div>
             <div class="col-12 col-md-4">
@@ -40,10 +37,12 @@
                         <i class="fa-solid fa-phone"></i>
                     </section>
                 </div>
-                <h3>خونه ارش بابل جون</h3>
+                <h3>تلفن های ثابت دفتر</h3>
                 <div>
-                    <h4>ARASHTItle</h4>
-                    <p class="mt-2">ArashLorem Lorem, ipsum dolor.</p>
+                    <h4>موسسه حقوقی شریف محاسب مانا</h4>
+                    <p class="mt-2">0513-2419292</p>
+                    <p class="mt-2">0513-2419292</p>
+                    <p class="mt-2">0513-2419292</p>
                 </div>
             </div>
             <div class="col-12 col-md-4">
@@ -52,10 +51,12 @@
                         <i class="fa-solid fa-message"></i>
                     </section>
                 </div>
-                <h3>خونه ارش بابل جون</h3>
+                <h3>ایمیل های سازمانی</h3>
                 <div>
-                    <h4>ARASHTItle</h4>
-                    <p class="mt-2">ArashLorem Lorem, ipsum dolor.</p>
+                    <h4>موسسه حقوقی شریف محاسب مانا</h4>
+                    <p class="mt-2">sharifmohasemana@info.com</p>
+                    <p class="mt-2">sharifmohasemana@info.com</p>
+                    <p class="mt-2">sharifmohasemana@info.com</p>
                 </div>
             </div>
         </div>
@@ -63,14 +64,14 @@
 </div>
 {{-- Form --}}
 <div class="container-fluid contactUsFormContainer">
-    <div class="container">
+    <div class="container" id="scrolltoCommentForm">
         <div class="row">
             <div class="col-12 col-md-6">
                 <section>
-                    <h1>سلام اسمت چيه؟ ارش هستم به نام خدا</h1>
-                    <p>امروز روز خوبي بود.خب خشتع شدم بقيش لورم . lore,20
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate illum quisquam odio sapiente tenetur iusto ex atque animi eligendi quia!
-                        lorem bishtar mikhamm. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam autem aliquid, ipsum beatae suscipit nobis aut incidunt enim facere eum assumenda sequi rem odio illo vitae earum commodi est delectus.
+                    <h1>نظرات و پیشنهادات</h1>
+                    <p>
+                        شما میتوانید هر گونه انتقاد , پیشنهاد و یا تجربیات کاربری خود را از طریق این فرم به گوش ما برسانید...
+                        تمام تلاش ما این است که بهترین تجربه کاربری را برای شما فراهم کنیم. بدین منظور نظر شما در پیشبرد و بهبود خدماتی که ارائه میدهیم بسیار حائز اهمیت خواهد بود. 
                     </p>
                 </section>
             </div>

@@ -32,12 +32,83 @@
 
 <body>
             {{-- @include('components.navbar', ['services' => $services]) --}}
+            {{-- <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                 <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                     <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>           
+                         <span class="icon-bar"></span>
+              
+                     </button>
+              
+                    </div>
+                    <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li class="dropdown">
+                        <a href="#" class ="dropdown-toggle" data-toggle="dropdown">Things to do<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                            <li><a href="#">Leisure</a></li>
+                            <li><a href="#">Groups & Activities </a></li>
+                            <li></li>    
+                            </ul>      
+              
+                        </li>
+                         <li class="dropdown">
+                        <a href="#" class ="dropdown-toggle" data-toggle="dropdown">Services<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                            <li><a href="#">Education & Learning</a></li>
+                            <li><a href="#">Personal Care</a></li>
+                            <li><a href="#">Police</a></li>
+                            <li></li>    
+                            </ul>      
+              
+                        </li>
+                        <li><a href="#">Businesses</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Discussion Forum</a></li>
+              
+              
+              
+                        </ul>
+              
+                    </div>
+                 </div>
+            </div> --}}
     @include('components.navbar')
     @yield('content')
 
-
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+</script>
+
+<script>
+    function toggleNavFunction() {
+        console.log("HEHE");
+      var x = document.getElementById("mainTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    function toggleNavFunctionStyle(parent) {
+    //   var x = document.getElementById(parent);
+    //   if (x.parentNode.parentNode.className === "topnav") {
+    //       console.log("responsive nadare");
+    //         x.style.display= "inline-block";
+
+    //   } else {
+    //     console.log("responsive daaaaaaaaaaaaaaare");
+    //     x.style.display= "block";
+
+    //   }
+    //   this.toggleNavFunction();
+    }
 </script>
 
 <script>

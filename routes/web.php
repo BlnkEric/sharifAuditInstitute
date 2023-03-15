@@ -36,6 +36,10 @@ Route::get('/contactus', function () {
     return view('contactus');
 })->name('contactus');
 
+Route::get('/rules', function () {
+    return view('rules');
+})->name('rules');
+
 Route::get('/work', function () {
     return view('workwithus');
 });

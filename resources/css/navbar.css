@@ -8,14 +8,29 @@
     position: relative;
 }
 
+.topnav .icon {
+  display: none;
+}
+
 .brand {
     position: absolute;
     padding-left: 20px;
+    z-index: 1000;
     float: left;
     line-height: var(--navbarHeight);
     text-transform: uppercase;
     font-size: 1.4em;
 }
+
+/* .toggleNav {
+  position: absolute;
+  padding-right: 20px;
+  z-index: 1000;
+  float: left;
+  line-height: var(--navbarHeight);
+  text-transform: uppercase;
+  font-size: 1.4em;
+} */
 
 .brand a,
 .brand a:visited {
@@ -29,7 +44,7 @@
 }
 
 
-nav:not(.paginator) {
+.topnav {
     text-align:center;
     width: 100%;
     background: #bebebe;
@@ -39,22 +54,26 @@ nav:not(.paginator) {
     position:relative;
   }
   
-  nav:not(.paginator) ul {
-    background: gold;
+  .topnav ul {
+    background: black;
     list-style:none;
     margin: 0;
-    height: 75px;
-  
+    /* height: 75px; */
+    overflow: unset;
   }
   
-  
-  nav:not(.paginator) ul li {
+  .articlesNav .row .industryList li{
+      /* padding-left: calc(var(--bs-gutter-x) * -0.5); */
+      padding: inherit;
+      width: inherit;
+    }
+    
+  .topnav ul li{
     display: inline-block;
   }
-  
-  
-  nav:not(.paginator) ul li a {
-    color:#333333;
+
+  .topnav ul li a {
+    color:#c0c0c0;
     display:block;
     font-weight: bold;
     font-size: 1.2rem;
@@ -63,25 +82,24 @@ nav:not(.paginator) {
     line-height: 75px;
   }
   
-  nav:not(.paginator) ul li:hover {
-    background: #333333;
+  .topnav ul li:hover {
+    background: #811414;
   }
   
   
-  nav:not(.paginator) ul li:hover > a{
+  .topnav ul li:hover > a{
       color:#FFFFFF;
   }
   
-  nav:not(.paginator) ul li ul li:hover > ul {
+  .topnav ul li ul li:hover > ul {
     display:block;
     width: 100%;
     height: max-content;
     position: absolute;
-    top: 75px;
   }
   
-  nav:not(.paginator) ul ul {
-    background: #949393;
+  .topnav ul ul {
+    background: #292929;
     text-align: center;
     display:none;
     width: 100%;
@@ -93,19 +111,23 @@ nav:not(.paginator) {
 
   .articlesNav .row{
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .articlesNav .row .industryList{
-    width: 450px; 
-    height: auto;
-    background-color:rgb(87, 87, 87);
+    width: 450px;
+    height: inherit;
+    margin: 25px 0 25px 0;
+    padding: 0px;
   }
 
   .articlesNav .row .industryArticles{
     display:flex; 
-    margin: auto; 
+    margin: auto 50px;
     width:800px; 
     height:max-content;
+    justify-content: center;
   }
 
   .articlesNav .row .industryArticles div a{
@@ -119,106 +141,6 @@ nav:not(.paginator) {
     max-height: 500px;
   }
   
-
-/* Mobile navigation */
-.nav-mobile {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: inherit;
-    height: var(--navbarHeight);
-    width: var(--navbarHeight);
-    z-index: 1000;
-}
-
-@media only screen and (max-width: 800px) {
-    .nav-mobile {
-        display: block;
-    }
-
-    nav {
-        width: 100%;
-        padding: var(--navbarHeight) 0 15px;
-        z-index: 1000;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul li {
-        float: none;
-    }
-
-    nav ul li a {
-        padding: 15px;
-        line-height: 20px;
-    }
-
-    nav ul li ul li a {
-        padding-left: 30px;
-    }
-
-    .nav-dropdown {
-        position: static;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    .nav-list {
-        display: block !important;
-    }
-}
-
-#nav-toggle {
-    position: absolute;
-    background-color: inherit;
-    left: 30%;
-    top: 50%;
-    cursor: pointer;
-    transform: translate(-50%,-50%);
-}
-
-#nav-toggle span,
-#nav-toggle span:before,
-#nav-toggle span:after {
-    cursor: pointer;
-    border-radius: 1px;
-    height: 5px;
-    width: 35px;
-    background: #ffffff;
-    position: absolute;
-    display: block;
-    content: "";
-    transition: all 300ms ease-in-out;
-}
-
-#nav-toggle span:before {
-    top: -10px;
-}
-
-#nav-toggle span:after {
-    bottom: -10px;
-}
-
-#nav-toggle.active span {
-    background-color: transparent;
-}
-
-#nav-toggle.active span:before,
-#nav-toggle.active span:after {
-    top: 0;
-}
-
-#nav-toggle.active span:before {
-    transform: rotate(45deg);
-}
-
-#nav-toggle.active span:after {
-    transform: rotate(-45deg);
-}
-
 .sticky {
     position: fixed;
     top: 0;
@@ -228,3 +150,113 @@ nav:not(.paginator) {
   .sticky + .content {
     padding-top: 60px;
   }
+
+
+
+
+
+
+  
+@media screen and (max-width: 1320px) {
+  .topnav ul li:nth-last-child(1) {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1320px) {
+
+  .topnav.responsive ul {
+    position: relative;
+    overflow-y: scroll;
+    height: 300px;
+    /* height: max-content; */
+  }
+
+  .topnav.responsive ul li:nth-last-child(1) {
+    float: none;
+    display: block;
+  }
+
+  .topnav.responsive ul ul {
+    background: #34529f;
+    display: none;
+    position: inherit;
+  }
+
+}
+
+@media screen and (max-width: 1165px) {
+  .topnav ul li:nth-last-child(2) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1165px) {
+
+  .topnav.responsive ul {position: relative;}
+  .topnav.responsive ul li:nth-last-child(2) {
+    float: none;
+    display: block;
+  }
+
+}
+@media screen and (max-width: 1025px) {
+  .topnav ul li:nth-last-child(3) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1025px) {
+
+  .topnav.responsive ul {position: relative;}
+  .topnav.responsive ul li:nth-last-child(3) {
+    float: none;
+    display: block;
+  }
+
+}
+@media screen and (max-width: 705px) {
+  .topnav ul li:nth-last-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 705px) {
+
+  .topnav.responsive ul {position: relative;}
+  .topnav.responsive ul li:nth-last-child(4) {
+    float: none;
+    display: block;
+  }
+
+}
+@media screen and (max-width: 580px) {
+  .topnav ul li:nth-last-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 580px) {
+
+  .topnav.responsive ul {position: relative;}
+  .topnav.responsive ul li:nth-last-child(5) {
+    float: none;
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 540px) {
+  .topnav ul li:nth-last-child(6) {
+    display: none;
+  }
+  .topnav ul li:nth-last-child(7) {
+    display: block;
+  }
+}
+@media screen and (max-width: 540px) {
+
+  .topnav.responsive ul {position: relative;}
+  .topnav.responsive ul li:nth-last-child(6) {
+    float: none;
+    display: block;
+  }
+
+}

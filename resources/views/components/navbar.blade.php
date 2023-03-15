@@ -1,12 +1,20 @@
 <div>
     <section class="navigation">
         <div class="nav-container" id="navbar">
-            <div class="brand">
+            {{-- <div class="brand">
                 <a href="#!">Logo</a>
-            </div>
+            </div> --}}
 
-            <nav>
+            <nav class="topnav" id="mainTopnav">
+                {{-- <ul class="brand">
+                    <li>
+                        <a href="{{ route('login') }}">LOGO</a>
+                    </li>
+                </ul> --}}
                 <ul>
+                    <li>
+                        <a onclick="toggleNavFunction()">LOGO <i class="fa fa-bars"></i></a>
+                    </li>
                     @guest
                         @if (Route::has('login'))
                             <li>
@@ -33,15 +41,27 @@
                         </li>
                     @endguest
                     <li>
-                        <a href="{{ route('front.main') }}">خانه</a></li>
-                    <li>
-                        <a href="#!">خدمات</a>
+                        <a href="{{ route('front.main') }}">صفحه اصلی</a>
+                    </li>
+
+                    <li id="industryNavToggle">
+                        <a  onclick="toggleNavFunctionStyle(this.parentNode.id)" href="#!">صنایع</a>
                         <ul class="nav-dropdown">
                             {{-- <div style="width: 450px; height:max-content; background-color:rgb(87, 87, 87)"> --}}
-
-                            <li>
-                                <a style="background-color: rgb(66, 127, 66)" href="{{ route('services.index') }}">همه خدمات</a>
-                            </li>
+                                @foreach ($NavIndustries as $industry)
+                                <li>
+                                    <a href="{{ route('industries.show', $industry->slug) }}">{{ $industry->name }}</a>
+                                </li>
+                                @endforeach
+                                <li>
+                                    <a style="background-color: rgb(66, 127, 66)" href="{{ route('industries.index') }}">همه صنایع</a>
+                                </li>
+                            {{-- </div> --}}
+                        </ul>
+                    </li>
+                    <li id="servicesNavToggle">
+                        <a  onclick="toggleNavFunctionStyle(this.parentNode.id)" href="#!">خدمات</a>
+                        <ul class="nav-dropdown">
                             @foreach ($NavServices as $service)
                                 <li>
                                     <a href="{{ route('services.show', $service->slug) }}">
@@ -60,41 +80,18 @@
                                     @endif
                                 </li>
                             @endforeach
-                            {{-- </div> --}}
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#!">صنایع</a>
-                        <ul class="nav-dropdown">
-                            {{-- <div style="width: 450px; height:max-content; background-color:rgb(87, 87, 87)"> --}}
-                                @foreach ($NavIndustries as $industry)
-                                <li>
-                                    <a href="{{ route('industries.show', $industry->slug) }}">{{ $industry->name }}</a>
-                                </li>
-                                @endforeach
-                                <li>
-                                    <a style="background-color: rgb(66, 127, 66)" href="{{ route('industries.index') }}">همه صنایع</a>
-                                </li>
-                            {{-- </div> --}}
-                        </ul>
-                    </li>
-                    <li><a href="#">همکاری با ما</a>
-                        <ul class="nav-dropdown">
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">Illustrator</a></li>
-                            <li><a href="#">Web Design</a>
-                                <ul>
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                </ul>
+                            <li>
+                                <a style="background-color: rgb(66, 127, 66)" href="{{ route('services.index') }}">همه خدمات</a>
                             </li>
+                            {{-- </div> --}}
                         </ul>
                     </li>
-                    <li class="articlesNav"><a href="#!">مقالات</a>
+                    <li class="articlesNav" id="articleNavToggle">
+                        <a  onclick="toggleNavFunctionStyle(this.parentNode.id)" href="#!">مقالات</a>
                         <ul class="nav-dropdown">
-                            <div class="row">
-                                <div class="industryList">
-                                    <li><a href="#">مفالات منتشر شده در این صنایع</a></li>
+                            <div class="row industryNavRow">
+                                <div class="col-6 industryList">
+                                    <li class="articleDropdown"><a href="#">مقالات منتشر شده در این صنایع</a></li>
                                     @foreach ($NavIndustries->random(3) as $industry)
                                         <li>
                                             <a href="{{ route('industry.articles', $industry->slug) }}">
@@ -107,7 +104,7 @@
                                         </li>
                                     @endforeach
                                 </div>
-                                <div class="industryArticles">
+                                <div class="col-3 industryArticles">
                                     @foreach ($NavArticles->random(2) as $article)
                                         <div>
                                             <a href="{{ route('articles.show', $article->slug) }}">
@@ -123,9 +120,10 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="#!">درباره ما</a>
+                    <li id="aboutusNavToggle">
+                        <a  onclick="toggleNavFunctionStyle(this.parentNode.id)" href="#!">درباره ما</a>
                         <ul class="nav-dropdown">
-                            <li><a href="#">رسالت و ارزش ها</a></li>
+                            <li><a href="{{ route('rules') }}">رسالت و ارزش ها</a></li>
                             <li><a href="{{ route('staffs.index') }}">اعضای هیئت مدیره و شرکا</a></li>
                             <li><a href="#">کمیته های تخصصی</a></li>
                             <li><a href="{{ route('jobOffers.index') }}">فرصت های شغلی</a></li>

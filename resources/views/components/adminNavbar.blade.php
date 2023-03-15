@@ -1,12 +1,10 @@
-<style>
-</style>
 <div>
     <section class="navigation">
-        <div class="nav-container">
-            <div class="brand">
+        <div class="nav-container" id="navbar">
+            {{-- <div class="brand">
                 <a href="#!">Logo</a>
-            </div>
-            <nav>
+            </div> --}}
+            <nav class="topnav" id="mainTopnav">
                 {{-- <div class="container"> --}}
 
                 <ul class="nav-list">

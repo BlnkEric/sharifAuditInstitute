@@ -161,6 +161,17 @@
     border-radius: 50%;
 }
 
+#mainLogo {
+    position: absolute;
+    width: 500px;
+    /* margin-top: 15px; */
+    /* padding-top: 15px; */
+    height: 150px;
+    background-color: white;
+    left: 5%;
+    top: 37.5%;
+    /* transform: translate(0%, 10%); */
+}
 /* WorkWithUS */
 .workWithUsHomeContainer {
     background-image: url('/images/WorkWithUS.jpg');

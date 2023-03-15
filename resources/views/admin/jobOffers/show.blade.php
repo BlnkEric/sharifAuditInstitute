@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row py-4 bg-white">
             @include('messages')
             <div class="row">
                 <table class="table table-striped mt-3 text-center table-hover" style="border-color: black;" border="1px;">

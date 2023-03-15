@@ -5,6 +5,9 @@
 @include('components.sliderLoop')
 
 <div class="container-fluid workWithUsHomeContainer">
+    {{-- <div id="mainLogo">
+        LOGO GOES HERE
+    </div> --}}
     <div class="container">
         <div class="row">
             <section>
@@ -43,7 +46,6 @@
                 <section>
                     <div class="articelFilterRowSection2">
                         <span class="float-start">دسته بندی ها</span>
-                        <span class="float-end">تازه ها</span>
                         <span class="float-end">اخبار و مقالات</span>
                         <span class="float-end">صنایع پربازدید</span>
                     </div>

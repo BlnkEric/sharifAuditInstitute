@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             {{-- Image Holder --}}
-            <div class="col-12 col-lg-6 d-none d-lg-block">
+            <div class="col-12 col-lg-6 d-none d-lg-block" style="background-image: url('/images/accountBG2.jpg');"">
                 <section>
                     <span>Logo Goes Here</span> <span class="me-3"></span>
                 </section>
@@ -17,7 +17,12 @@
                 </section>
             </div>
             <div class="text-center col-12 col-lg-6">
-                <section id="loginTab">
+                <button id="accountChangesBtn" onclick="changeRegisterPosition()">ورود</button>
+                <button id="accountChangesBtn" onclick="changeLoginPosition()">ثبت نام</button>
+                <button id="accountChangesBtn" href="{{ route('redirect.provider', 'github') }}" onclick="disableError('loginFormButt')">sign in with github</button>
+                <button id="accountChangesBtn" href="{{ route('redirect.provider', 'google') }}" onclick="disableError('loginFormButt')">sign in with google</button>
+            
+                <section id="loginTab" style="top: 67.5%;">
                     <h2>ورود</h2>
 
 
@@ -93,12 +98,6 @@
                     </form>
 
                 </section>
-                <button onclick="changeRegisterPosition()" id="RegisterChangeBtn">ورود</button>
-                <button onclick="changeLoginPosition()" id="LoginChangeBtn">ثبت نام</button>
-
-                <a class="btn btn-dark" href="{{ route('redirect.provider', 'github') }}" onclick="disableError('loginFormButt')">sign in with github</a>
-                <a class="btn btn-dark" href="{{ route('redirect.provider', 'google') }}" onclick="disableError('loginFormButt')">sign in with google</a>
-                
             </div>
         </div>
     </div>

@@ -5,18 +5,34 @@
                 <section>
                     <h1>گالری تصاویر</h1>
                     <h2>تصاویر مختلف از رویدادهای مهم , جلسات , لوگو مشتریان با سابقه و سایر تصاویر موجود در آرشیو موسسه</h2>
-                    <button class="buttonVersion1"><span>ازش بوس </span></button>
+                    <button class="buttonVersion1"><span>yeah whatever</span></button>
                     <ul>
                         <li>
-                            <div class="ms-2"><i class="fa-solid fa-phone"></i></div><span>ارتباط با ما</span>
+                            <div class="ms-2"><i class="fa-solid fa-phone"></i></div>
+                            <span>
+                                <a href="{{ route('contactus') }}#scrolltoContactus">
+                                ارتباط با ما
+                                </a>
+                            </span>
+                            
                         </li>
                         <li>
-                            <div class="ms-2"><i class="fa-solid fa-balance-scale"></i></div><span>قوانین و شاخص ها</span>
+                            <div class="ms-2"><i class="fa-solid fa-balance-scale"></i></div>
+                            <span>
+                                <a href="{{ route('rules') }}#scrolltoRulesSection">
+                                    قوانین و شاخص ها                 
+                                </a>
+                            </span>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <div class="ms-2"><i class="fa-solid fa-comment"></i></div><span>انتقادات و پیشنهادات خود را با ما در میان بگذارید</span>
+                            <div class="ms-2"><i class="fa-solid fa-comment"></i></div>
+                            <span>
+                                <a href="{{ route('contactus') }}#scrolltoCommentForm">
+                                    انتقادات و پیشنهادات خود را با ما در میان بگذارید
+                                </a>
+                            </span>
                         </li>
                     </ul>
                 </section>
