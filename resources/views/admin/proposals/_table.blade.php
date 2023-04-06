@@ -19,7 +19,14 @@
             <form action="{{ route('admin.proposals.destroy', $proposal->slug) }}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>حذف</button>
+                <a as="button" type="submit" class="btn btn-danger">
+                    <div>
+                        <i style="margin-left: 5px" class="fs-5 fa fa-trash"></i>
+                        <div class="fw-bold">
+                            حذف
+                        </div>
+                    </div>
+                </a>
             </form>
         </td>
         <td> {{ $proposal->created_at }}</td>

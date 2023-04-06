@@ -82,13 +82,10 @@ Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
     ]);
     Route::get('job-request/{uuid}/download/', [ App\Http\Controllers\Admin\JobOfferController::class, 'download'])->name('admin.jobRequests.download');
 
-    Route::resource('special-services', App\Http\Controllers\Admin\SpecialServiceController::class, [
-        'as' => 'admin',
-        'names' => [
-            'index' => 'admin.specialServices.index',
-            'destroy' => 'admin.specialServices.destroy',
-        ]
-    ])->only(['index', 'destroy']);;
+// ///////////////////////////////
+
+    Route::get('/service/{service}/special-services', [App\Http\Controllers\Admin\SpecialServiceController::class, 'index'])
+    ->name("admin.specialServices.index");
 
     Route::get('/service/{service}/special-services/create', [App\Http\Controllers\Admin\SpecialServiceController::class, 'create'])
     ->name("admin.specialServices.create");
@@ -102,6 +99,8 @@ Route::prefix('admin')->middleware('auth', 'is_admin')->group(function() {
     Route::put('/service/{service}/special-services/{specialService}', [App\Http\Controllers\Admin\SpecialServiceController::class, 'update'])
     ->name("admin.specialServices.update");
 
+    Route::delete('/service/{service}/special-services/{specialService}', [App\Http\Controllers\Admin\SpecialServiceController::class, 'destroy'])
+    ->name("admin.specialServices.destroy");
 
     Route::resource('clients', App\Http\Controllers\Admin\ClientsController::class, [
         'as' => 'admin'

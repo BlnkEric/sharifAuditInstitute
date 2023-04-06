@@ -5,8 +5,7 @@
         <th>نام</th>
         <th>صنعت</th>
         <th>خدمات دریافتی</th>
-        <th></th>
-        <th>Actions</th>
+        <th colspan="2">Actions</th>
         <th>لوگو مشتری</th>
         <th>ایجاد شده</th>
         <th>ویرایش شده</th>
@@ -46,13 +45,27 @@
         @endif
 
         <td>
-            <a href="{{ route('admin.clients.edit', $client->id) }}" class="btn btn-warning">ویرایش</a>
+            <a href="{{ route('admin.clients.edit', $client->id) }}" class="btn btn-warning">
+                <div>
+                    <i style="margin-left: 5px" class="fs-5 fa fa-edit"></i>
+                    <div class="fw-bold">
+                        ویرایش
+                    </div>
+                </div>
+            </a>
         </td>
         <td>
             <form action="{{ route('admin.clients.destroy', $client->id) }}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <a as="button" type="submit" class="btn btn-danger">
+                    <div>
+                        <i style="margin-left: 5px" class="fs-5 fa fa-trash"></i>
+                        <div class="fw-bold">
+                            حذف
+                        </div>
+                    </div>
+                </a>
             </form>
         </td>
 

@@ -6,8 +6,7 @@
         <th>نام</th>
         <th>سمت</th>
         <th>توضیحات</th>
-        <th>Actions</th>
-        <th></th>
+        <th colspan="2">Actions</th>
         <th>ایجاد شده</th>
         <th>ویرایش شده</th>
     </tr>
@@ -22,13 +21,27 @@
         <td>{{ $staff->role }}</td>
         <td>{{ Str::limit($staff->description, 40, $end='...') }}</td>
         <td>
-            <a href="{{ route('admin.staffs.edit', $staff->slug) }}" class="btn btn-warning">ویرایش</a>
+            <a href="{{ route('admin.staffs.edit', $staff->slug) }}" class="btn btn-warning">
+                <div>
+                    <i style="margin-left: 5px" class="fs-5 fa fa-edit"></i>
+                    <div class="fw-bold">
+                        ویرایش
+                    </div>
+                </div>
+            </a>
         </td>
         <td>
             <form action="{{ route('admin.staffs.destroy', $staff->slug) }}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>حذف</button>
+                <a as="button" type="submit" class="btn btn-danger">
+                    <div>
+                        <i style="margin-left: 5px" class="fs-5 fa fa-trash"></i>
+                        <div class="fw-bold">
+                            حذف
+                        </div>
+                    </div>
+                </a>
             </form>
         </td>
         <td> {{ $staff->created_at }}</td>

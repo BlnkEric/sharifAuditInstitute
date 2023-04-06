@@ -62,8 +62,8 @@
                 </div>
                 <div class="form-group">
                     <label for="description">توضیحات:</label>
-                    <textarea id="editor" name="description" cols="30" rows="10"
-                        class="text-dark @error('description') is-invalid @enderror">{{$industry->description}}</textarea>
+                    <textarea name="description" cols="30" rows="10"
+                        class="text-dark @error('description') is-invalid @enderror">{{ old('description', $industry->description) }}</textarea>
                     @error('description')
                     <span class="invalid-feedback badge bg-danger" role="alert">
                         <strong>{{ $message }}</strong>

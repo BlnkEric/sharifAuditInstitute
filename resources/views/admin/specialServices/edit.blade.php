@@ -102,7 +102,7 @@
                 </div>
                 <div class="form-group mt-3 mb-2">
                     <button type="submit" class="btn btn-warning">ویرایش</button>
-                    <a href="{{ route('admin.specialServices.index') }}" class="btn btn-secondary">بازگشت</a>
+                    <a href="{{ route('admin.specialServices.index', $service->slug) }}" class="btn btn-secondary">بازگشت</a>
                 </div>
             </form>
         </div>

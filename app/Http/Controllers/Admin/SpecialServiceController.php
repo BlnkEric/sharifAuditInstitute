@@ -25,12 +25,11 @@ class SpecialServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Service $service)
     {
-        $special_services = SpecialService::paginate(10);
-        $special_services->load(['service']);
+        $special_services = $service->specialServices()->paginate(10);
 
-        return view('admin.specialServices.index', compact('special_services'));
+        return view('admin.specialServices.index', compact(['service', 'special_services']));
     }
 
     /**
@@ -58,12 +57,12 @@ class SpecialServiceController extends Controller
             'slug' => $this->make_slug($request),
             'service_id' => $service->id
         ]);
-        $service = SpecialService::create($request->all());
+        $sp_service = SpecialService::create($request->all());
         $imagePath = $request->file('image')->store('public/special_service_images');
-        $service->image()->save(Image::make([
+        $sp_service->image()->save(Image::make([
             'path' => $imagePath
         ]));
-        return redirect(route('admin.specialServices.index'))->with('success', 'خدمت خاص جدید با موفقیت ساخته شد!');
+        return redirect(route('admin.specialServices.index', ['service' => $service->slug, 'specialService' => $sp_service->slug]))->with('success', 'خدمت خاص جدید با موفقیت ساخته شد!');
     }
 
     public function uploadImageOnCreate(Request $request) {
@@ -132,9 +131,10 @@ class SpecialServiceController extends Controller
      * @param  \App\Models\SpecialService  $specialService
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SpecialService $specialService)
+    public function destroy(Service $service, SpecialService $specialService)
     {
         $specialService_name = $specialService->name;
         $specialService->delete();
-        return redirect(route('admin.specialServices.index'))->with('success', "خدمت $specialService_name با موفقیت حذف شد.");    }
+        return redirect(route('admin.specialServices.index'))->with('success', "خدمت $specialService_name با موفقیت حذف شد.");    
+    }
 }
